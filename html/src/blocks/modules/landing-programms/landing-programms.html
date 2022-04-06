@@ -1,0 +1,80 @@
+<div class="landing-programms">
+    <div class="landing-programms__in center">
+        <div class="landing-programms__title">Программы оформления ВНЖ И ПМЖ</div>
+        <div class="landing-programms__names">
+            <div class="landing-programms__name landing-programms__width landing-programms__width--programm">Программа</div>
+            <div class="landing-programms__name landing-programms__width landing-programms__width--citizenship">Гражданство ЕС</div>
+            <div class="landing-programms__name landing-programms__width landing-programms__width--budget">Бюджет</div>
+            <div class="landing-programms__name landing-programms__width landing-programms__width--exec">Оформление</div>
+            <div class="landing-programms__name landing-programms__width landing-programms__width--object">Объект инвестиции</div>
+        </div>
+        <div class="landing-programms__items">
+            @@for (i = 0; i < 10; i++) {
+                <div class="landing-programms__item">
+                    <div class="landing-programms__item-trigger">
+                        <div class="landing-programms__item-programm landing-programms__width landing-programms__width--programm">
+                            <div class="flag">
+                                <img
+                                src="https://flagcdn.com/w20/ru.png"
+                                srcset="https://flagcdn.com/w40/ru.png 2x"
+                                style="width: 100%;"
+                                alt="Russia">
+                            </div>
+                            <div class="text">ВНЖ России</div>
+                        </div>
+                        <div class="landing-programms__item-name" v-if="window.width <= 800">Гражданство ЕС</div>
+                        <div class="landing-programms__item-citizenship landing-programms__width landing-programms__width--citizenship">нет</div>
+                        <div class="landing-programms__item-name" v-if="window.width <= 800">Бюджет</div>
+                        <div class="landing-programms__item-budget landing-programms__width landing-programms__width--budget">от 300 000$</div>
+                        <div class="landing-programms__item-name" v-if="window.width <= 800">Оформление</div>
+                        <div class="landing-programms__item-exec landing-programms__width landing-programms__width--exec">от 3 мес.</div>
+                        <div class="landing-programms__item-name" v-if="window.width <= 800">Объект инвестиции</div>
+                        <div class="landing-programms__item-object landing-programms__width landing-programms__width--object">
+                            <div class="text">Недвижимость</div>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
+                                    <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#FFBC19" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="landing-programms__item-src">
+                        <div class="landing-programms__item-src-in">
+                            <div class="landing-programms__item-src-top">
+                                <div class="image">
+                                    <img src="https://picsum.photos/1140/400" alt="">
+                                </div>
+                                <div class="overlay"></div>
+                                <div class="title">ВНЖ России</div>
+                            </div>
+                            <div class="landing-programms__item-src-middle">
+                                <div class="landing-programms__item-src-middle-item">
+                                    <div class="left">
+                                        ВНЖ Росии
+                                    </div>
+                                    <div class="right">
+                                        <p>Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, </p>
+                                    </div>
+                                </div>
+                                <div class="landing-programms__item-src-middle-item">
+                                    <div class="left">
+                                        ВНЖ Росии
+                                    </div>
+                                    <div class="right">
+                                        <ul>
+                                            <li>Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая</li>
+                                            <li>Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая</li>
+                                            <li>Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая</li>
+                                            <li>Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="landing-programms__item-src-link">Связаться для консультации</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

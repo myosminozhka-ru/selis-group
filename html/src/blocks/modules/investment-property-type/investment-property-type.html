@@ -1,0 +1,28 @@
+<div class="investment-property-type">
+    <div class="investment-property-type__in center">
+        <div class="investment-property-type__title">Выберите тип недвижимости</div>
+        <div class="investment-property-type__items">
+            @@for (var i = 0; i < 6; i++) {
+                <div class="investment-property-type__item" data-aos-delay="`+ i*100 +`" data-aos="zoom-in">
+                    <a href="#" class="property-type__item">
+                        <div class="property-type__item-category">Тип недвижимости</div>
+                        <div class="property-type__item-type">Загородная</div>
+                        <div class="property-type__item-image">
+                            <img src="https://picsum.photos/500/50`+ i +`" alt="" style="object-position: calc(50% - 7px) 50%;">
+                        </div>
+                        <div class="property-type__item-link">
+                            <span>
+                                <div class="text">Смотреть</div>
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
+                                        <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#050505" stroke-width="2"></path>
+                                    </svg>
+                                </div>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

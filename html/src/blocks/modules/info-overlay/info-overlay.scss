@@ -1,0 +1,92 @@
+.info-overlay {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200000;
+    text-align: center;
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        width: 0;
+    }
+    &__in {
+        width: vw(954);
+        box-sizing: border-box;
+        padding: vw(60) vw(106) vw(60) vw(80);
+        background: rgba(23, 23, 23, 0.5);
+        backdrop-filter: blur(50px);
+        display: inline-flex;
+        align-items: center;
+        vertical-align: middle;
+        @media all and (max-width: 1023px) {
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            overflow: auto;
+            padding: 20px;
+            flex-direction: column;
+        }
+    }
+    &__left {
+        width: vw(194);
+        height: vw(209);
+        font-size: 0;
+        @media all and (max-width: 1023px) {
+            width: 100px;
+            height: auto;
+            margin-bottom: 40px;
+        }
+    }
+    &__right {
+        width: calc(100% - #{vw(194)} - #{vw(65)});
+        margin-left: vw(65);
+        text-align: left;
+        @media all and (max-width: 1023px) {
+            width: 100%;
+            margin-left: 0;
+            text-align: center;
+        }
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 40px;
+            @media all and (max-width: 1023px) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+    &__title {
+        font-weight: bold;
+        font-size: vw(25);
+        margin-bottom: vw(10);
+        line-height: 140%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        @media all and (max-width: 1023px) {
+            font-size: 15px;
+        }
+    }
+    &__text {
+        font-size: vw(18);
+        margin-bottom: vw(20);
+        line-height: 160%;
+        color: #FFFFFF;
+        @media all and (max-width: 1023px) {
+            font-size: 13px;
+        }
+    }
+    &__email {
+        font-weight: bold;
+        font-size: vw(20);
+        line-height: 140%;
+        text-transform: uppercase;
+        color: #FFBC19;
+        @media all and (max-width: 1023px) {
+            font-size: 18px;
+        }
+    }
+}

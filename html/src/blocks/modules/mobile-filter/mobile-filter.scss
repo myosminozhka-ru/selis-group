@@ -1,0 +1,103 @@
+.mobile-filter {
+    position: relative;
+    z-index: 21;
+    &__opener {
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        padding: 20px;
+        box-sizing: border-box;
+        background: #fff !important;
+        z-index: 10;
+        cursor: pointer;
+        transition: bottom .3s ease-in-out;
+        svg {
+            transform: rotate(180deg);
+            transition: transform .3s ease-in-out;
+        }
+        &.isOpened {
+            bottom: calc(100% - 60px);
+            svg {
+                transform: rotate(0);
+            }
+        }
+    }
+    &__in {
+        height: 0;
+        overflow: hidden;
+    }
+    &__wrap {
+        padding: 17px 15px 30px;
+    }
+    &__title {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 26px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    &__form-select {
+        height: 56px;
+        padding: 0 13px;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        background: url('../img/svg/menu_arrow_black.svg') calc(100% - 13px ) 50% / 10px no-repeat !important;
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    &__form-item {
+        &[data-hidden="true"] {
+            height: 0;
+            overflow: hidden;
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    &__button {
+        justify-content: center;
+        width: 100%;
+    }
+    .main-filter__more {
+        .text:after {
+            content: "Еще фильтры";
+        }
+        &.isOpened .text:after {
+            content: "Свернуть";
+        }
+    }
+    .from-to {
+        padding: 20px 13px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        .title {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 100%;
+            color: #000000; 
+        }
+        input {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 100%;
+            color: #000000;
+            padding: 0 5px !important;
+        }
+        select {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 100%;
+            text-transform: lowercase;
+            color: #000000;
+            background: url('../img/svg/menu_arrow_black.svg') 100% 50% / 10px no-repeat !important;
+        }
+    }
+}

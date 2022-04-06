@@ -1,0 +1,42 @@
+<svg>
+    <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+        <feTurbulence baseFrequency=".015" type="fractalNoise"/>
+        <feColorMatrix type="hueRotate" values="0"></feColorMatrix>
+        <feDisplacementMap in="SourceGraphic" xChannelSelector="R" yChannelSelector="B" scale="0"></feDisplacementMap>
+    </filter>
+</svg>
+<div class="unique-offers object-similar">
+    <div class="unique-offers__in center">
+        <div class="unique-offers__top">
+            <div class="unique-offers__title">Похожие объекты</div>
+            <a href="#" class="unique-offers__link">
+                <div class="text">Все предложения</div>
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
+                        <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#050505" stroke-opacity="0.6" stroke-width="2"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="unique-offers__bottom">
+            <div class="unique-offers__items-glide unique-offers__items-glide--object glide">
+                <div class="unique-offers__items-track glide__track" data-glide-el="track">
+                    <div class="unique-offers__items glide__slides">
+                        @@for (var i = 0; i < 8; i++) {
+                            @@include("../unique-offers/unique-offers-item.html")
+                        }
+                    </div>
+                </div>
+                @@include("../slider-buttons/slider-buttons.html", {
+                    "next-function": "uniqueOffers.moveSlider('>')",
+                    "prev-function": "uniqueOffers.moveSlider('<')",
+                    "dots-function": "uniqueOffers.moveSlider",
+                    "slider-object": "uniqueOffers.slider",
+                    "dots_count": 8,
+                    "is_pagination": false,
+                    "is_white": false
+                })
+            </div>
+        </div>
+    </div>
+</div>

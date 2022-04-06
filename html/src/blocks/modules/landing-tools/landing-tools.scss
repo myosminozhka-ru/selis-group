@@ -1,0 +1,150 @@
+.landing-tools {
+    padding: vw(120) 0 vw(60);
+    @media all and (max-width: 1023px) {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    &__title {
+        padding-right: vw(709);
+        font-size: vw(60);
+        margin-bottom: vw(60);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #000000;
+        @media all and (max-width: 1023px) {
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+    }
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr );
+        grid-gap: vw(60) vw(20);
+        @media all and (max-width: 1023px) {
+            grid-template-columns: repeat(2, 1fr );
+            grid-gap: 30px; 
+        }
+        @media all and (max-width: 600px) {
+            grid-template-columns: repeat(1, 1fr );
+            grid-gap: 30px; 
+        }
+    }
+    &__item {
+        background: var(--background);
+        height: vw(376);
+        box-sizing: border-box;
+        padding: vw(30);
+        position: relative;
+        @media all and (max-width: 1023px) {
+            height: auto;
+            padding: 20px 20px 37px 20px;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background: linear-gradient(0deg, rgba(29, 29, 29, 0.56), rgba(29, 29, 29, 0.56));
+        }
+        &:hover {
+            z-index: 9;
+        }
+    }
+    &__item-in {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &__item--number {
+        display: inline-block;
+        font-size: vw(60);
+        margin-bottom: vw(24);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        position: relative;
+        border-bottom: vw(2) solid #FFFFFF;
+        @media all and (max-width: 1023px) {
+            font-size: 30px;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #FFFFFF;
+            margin-bottom: 20px;
+        }
+    }
+    &__item--text {
+        font-weight: bold;
+        font-size: vw(20);
+        line-height: 140%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        @media all and (max-width: 1023px) {
+            font-size: 16px;
+        }
+    }
+    &__item-dropdown {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        height: calc(100% + #{vw(60)});
+        background: #FFFFFF;
+        border: 2px solid #DBDBDB;
+        padding: vw(30) vw(30) vw(60);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s ease;
+        @media all and (max-width: 1023px) {
+            padding: 20px;
+            height: calc(200% + 90px);
+        }
+        .text {
+            height: calc(100% - #{vw(30)} - #{vw(60)});
+            @media all and (max-width: 1023px) {
+                height: calc(100% - 77px);
+            }
+            &__in {
+                max-height: 100%;
+                overflow: auto;
+                font-size: vw(16);
+                line-height: 140%;
+                color: #313131;
+                @media all and (max-width: 1023px) {
+                    font-size: 16px;
+                }
+            }
+        }
+        .landing-programms__item-src-link {
+            margin-top: 0;
+        }
+    }
+    &__item:nth-child(n+4) &__item-dropdown {
+        @media all and (min-width: 1024px) {
+            top: auto;
+            bottom: 100%;
+        }
+    }
+    &__item input:checked + &__item-dropdown {
+        @media all and (max-width: 1023px) {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &__item:hover &__item-dropdown {
+        @media all and (min-width: 1024px) {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    .landing-programms__item-src-link {
+        text-align: center;
+    }
+}

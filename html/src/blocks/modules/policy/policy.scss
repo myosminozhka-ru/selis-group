@@ -1,0 +1,86 @@
+.policy {
+    padding-top: vw(60);
+    padding-bottom: vw(63);
+    @media all and (max-width: 1023px) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    &__block {
+        display: flex;
+        align-items: flex-start;
+        &:not(:last-child) {
+            margin-bottom: vw(60);
+            @media all and (max-width: 600px) {
+                margin-bottom: 30px;
+            }
+        }
+        @media all and (max-width: 600px) {
+            display: block;
+        }
+    }
+    &__block-left {
+        width: calc(100% - #{vw(843)});
+        font-weight: bold;
+        font-size: vw(20);
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+        position: relative;
+        @media all and (max-width: 1023px) {
+            font-size: 20px;
+        }
+        @media all and (max-width: 600px) {
+            width: 100%;
+        }
+        @media all and (max-width: 600px) {
+            margin-bottom: 30px;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: vw(-10);
+            left: 0;
+            width: vw(50);
+            height: vw(2);
+            background: #000;
+            @media all and (max-width: 1023px) {
+                width: 50px;
+                height: 2px;
+                bottom: -10px;
+            }
+        }
+    }
+    &__block-right {
+        width: vw(793);
+        padding-right: vw(73);
+        margin-left: vw(50);
+        font-size: vw(16);
+        line-height: 140%;
+        color: #313131;
+        box-sizing: border-box;
+        @media all and (max-width: 1023px) {
+            margin-left: 50px;
+            padding-right: 0;
+            font-size: 16px;
+        }
+        @media all and (max-width: 600px) {
+            margin-left: 0;
+            width: 100%;
+        }
+        p {
+            margin: 0;
+            margin-bottom: vw(20);
+            @media all and (max-width: 600px) {
+                margin-bottom: 20px;
+            }
+        }
+        ul {
+            padding-left: vw(30);
+            margin: 0;
+            @media all and (max-width: 600px) {
+                padding-left: 20px;
+            }
+        }
+    }
+}

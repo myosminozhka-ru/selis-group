@@ -1,0 +1,25 @@
+<div class="landing-tools">
+    <div class="landing-tools__in center">
+        <div class="landing-tools__title">Подбор инструментов </div>
+        <div class="landing-tools__items">
+            @@for (i = 1; i < 7; i++) {
+                <label class="landing-tools__item" style="--background: url('https://picsum.photos/500/45`+ i +`') 50% 50% / cover no-repeat;">
+                    <input type="checkbox" name="opener">
+                    <div class="landing-tools__item-dropdown">
+                        <div class="text">
+                            <div class="text__in">
+                                Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, 
+                            </div>
+                        </div>
+                       <a href="#" class="landing-programms__item-src-link">связаться для консультации</a> 
+                    </div>
+                    <div class="landing-tools__item-in">
+                        <div class="landing-tools__item--number">0`+ i +`</div>
+                        <div class="landing-tools__item--text">Оценка уровня эффективности инвестиционных объектов (инструментов)</div>
+                    </div>
+                    
+                </label>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="object-calculator">
+    <div class="object-calculator__in center">
+        <div class="object-calculator__top">
+            <div class="object-calculator__title">
+                Рассчитайте ипотеку
+            </div>
+            <div class="object-calculator__text">
+                Уникальные ипотечные программы и специальные условия от ведущих банков. Просто заполните анкету и получите одобрение. Всего один шаг, и квартира – ваша
+            </div>
+        </div>
+        <div class="object-calculator__middle">
+            <div class="object-calculator__left">
+                <div class="object-calculator__currency">
+                    <div class="object-calculator__name">Выберите валюту</div>
+                    <select class="object-calculator__currency-select isDark isInline" v-model="calculatorCurrency">
+                        <option value="₽">RUB</option>
+                        <option value="$">USD</option>
+                    </select>
+                </div>
+                <div class="object-calculator__slider">
+                    <div class="object-calculator__name">Стоимость недвижимости</div>
+                    <div class="object-calculator__slider-value">
+                        <div class="left">{{ (calculatorPrice).toLocaleString() }} {{ calculatorCurrency }}</div>
+                        <div class="right"></div>
+                    </div>
+                </div>
+                <div class="object-calculator__slider">
+                    <div class="object-calculator__name">Первоначальный взнос</div>
+                    <div class="object-calculator__slider-value">
+                        <div class="left">
+                            <input type="number" pattern="[0-9]*[.]?[0-9]+" inputmode="decimal" v-model="calculatorFirstPayment" :max="calculatorPrice" />
+                            <div class="currency">
+                                {{ calculatorCurrency }}
+                            </div>
+                        </div>
+                        <div class="right">~ {{ Math.round(calculatorFirstPayment * 100 / calculatorPrice) }}%</div>
+                    </div>
+                    <div class="object-calculator__slider-line">
+                        <input type="range" name="price" min="0" :max="calculatorPrice" v-model.number="calculatorFirstPayment">
+                    </div>
+                </div>
+                <div class="object-calculator__slider">
+                    <div class="object-calculator__name">Срок ипотеки</div>
+                    <div class="object-calculator__slider-counter">
+                        <button class="object-calculator__slider-counter-button minus">—</button>
+                        <input type="number" inputmode="decimal" class="object-calculator__slider-counter-input" min="5" :max="calculatorMaxYears" v-model="calculatorMortgageTerm">
+                        <button class="object-calculator__slider-counter-button plus">+</button>
+                    </div>
+                    <div class="object-calculator__slider-line">
+                        <input type="range" name="mortgageTerm" min="5" :max="calculatorMaxYears" v-model="calculatorMortgageTerm">
+                    </div>
+                </div>
+                <div class="object-calculator__result">
+                    <div class="object-calculator__result-item">
+                        <div class="left">Сумма кредита</div>
+                        <div class="right">{{ (calculatorPrice - +calculatorFirstPayment).toLocaleString()  }} {{ calculatorCurrency }}</div>
+                    </div>
+                    <div class="object-calculator__result-item">
+                        <div class="left">Ставка</div>
+                        <div class="right">{{ calculatorPercentage }}%</div>
+                    </div>
+                    <div class="object-calculator__result-item">
+                        <div class="left">Ежемесячный платеж</div>
+                        <div class="right">~ {{ calculatorResult }} {{ calculatorCurrency }}</div>
+                    </div>
+                </div>
+                <div class="object-calculator__button">
+                    <a href="#" class="button orange">
+                        <div class="text">Подать заявку</div>
+                    </a>
+                </div>
+            </div>
+            <div class="object-calculator__right">
+                <div class="object-calculator__banks">
+                    <div class="object-calculator__bank" @click="objectCalculator.setPercentage(6); objectCalculator.setYears(40);">
+                        <div class="object-calculator__bank-left">
+                            <div class="object-calculator__bank-image">
+                                <img src="https://picsum.photos/80/80" alt="asd">
+                            </div>
+                            <div class="object-calculator__bank-name">Сбербанк</div>
+                        </div>
+                        <div class="object-calculator__bank-right">
+                            <div class="object-calculator__bank-percent">от 6%</div>
+                            <div class="object-calculator__bank-year">до 40 лет</div>
+                        </div>
+                    </div>
+                    <div class="object-calculator__bank" @click="objectCalculator.setPercentage(3); objectCalculator.setYears(20);">
+                        <div class="object-calculator__bank-left">
+                            <div class="object-calculator__bank-image">
+                                <img src="https://picsum.photos/80/80" alt="asd">
+                            </div>
+                            <div class="object-calculator__bank-name">Какой то банк</div>
+                        </div>
+                        <div class="object-calculator__bank-right">
+                            <div class="object-calculator__bank-percent">от 3%</div>
+                            <div class="object-calculator__bank-year">до 20 лет</div>
+                        </div>
+                    </div>
+                    <div class="object-calculator__bank" @click="objectCalculator.setPercentage(15); objectCalculator.setYears(15);">
+                        <div class="object-calculator__bank-left">
+                            <div class="object-calculator__bank-image">
+                                <img src="https://picsum.photos/80/80" alt="asd">
+                            </div>
+                            <div class="object-calculator__bank-name">Еще какой то банк</div>
+                        </div>
+                        <div class="object-calculator__bank-right">
+                            <div class="object-calculator__bank-percent">от 15%</div>
+                            <div class="object-calculator__bank-year">до 15 лет</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

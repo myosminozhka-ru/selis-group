@@ -1,0 +1,12 @@
+.services-first {
+    height: vw(639) !important;
+    @media all and (max-width: 1023px) {
+        height: auto !important;
+        min-height: 100vh;
+        padding-top: 160px;
+        box-sizing: border-box;
+        .main-first__image {
+            height: 100%;
+        }
+    }
+}

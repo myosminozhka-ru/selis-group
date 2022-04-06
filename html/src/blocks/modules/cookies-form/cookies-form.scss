@@ -1,0 +1,81 @@
+.cookies-form {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    transition: transform .3s ease;
+    @media all and (min-width: 1024px) {
+        transform: translateX(-100%);
+    }
+    @media all and (max-width: 1023px) {
+        transform: translateX(0);
+        transform: translateY(100%);
+        right: 0;
+    }
+    &.isVisible {
+        transform: translateX(0) translateY(0);
+    }
+    &__in {
+        width: vw(725);
+        background: rgba(23, 23, 23, 0.8);
+        padding: vw(30) vw(50);
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* if backdrop support: very transparent and blurred */
+        @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+            background: rgba(23, 23, 23, 0.5);
+        }
+        @media all and (max-width: 1023px) {
+            width: 100%;
+            padding: 15px;
+        }
+    }
+    &__left {
+        width: vw(416);
+        @media all and (max-width: 1023px) {
+            width: calc(100% - 90px);
+        }
+    }
+    &__title {
+        font-weight: bold;
+        font-size: vw(16);
+        margin-bottom: vw(10);
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        @media all and (max-width: 1023px) {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    }
+    &__subtitle {
+        font-size: vw(10);
+        line-height: 140%;
+        color: #FFFFFF;
+        @media all and (max-width: 1023px) {
+            font-size: 10px;
+        }
+    }
+    &__button {
+        background: #FFBC19;
+        padding: vw(11) vw(28);
+        border: none;
+        font-size: vw(18);
+        line-height: 100%;
+        color: #050505;
+        cursor: pointer;
+        transition: all .3s ease;
+        &:hover,
+        &:focus {
+            background: #FFCA49;
+        }
+        @media all and (max-width: 1023px) {
+            font-size: 15px;
+            padding: 10px;
+        }
+    }
+}

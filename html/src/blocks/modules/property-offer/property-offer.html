@@ -1,0 +1,25 @@
+<div class="property-offer" style="--background: url(@@background);">
+    <div class="property-offer__overlay"></div>
+    @@if (marker) {
+        <div class="property-item__marker@@if (marker == 'vip') { property-item__marker--vip}@@if (marker == 'hot') { property-item__marker--hot}@@if (marker == 'sale') { property-item__marker--sale}">
+            @@marker
+        </div>
+    }
+    <div class="property-offer__in">
+        <div class="property-offer__type">Продажа</div>
+        <div class="property-offer__name">Горячее предложение</div>
+        <div class="property-offer__description">
+            Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости 
+        </div>
+        <div class="property-offer__button">
+            <a href="#" class="button white">
+                <div class="text">подробнее</div>
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
+                        <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="black" stroke-width="2"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

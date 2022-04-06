@@ -1,0 +1,88 @@
+.main-info {
+    padding: vw(120) 0;
+    background: url('../img/info_bg.jpg') 50% 50%/cover no-repeat;
+    @media all and (max-width: 1023px) {
+        background: url('../img/info_bg.jpg') 50% 50%/cover no-repeat fixed;
+    }
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        @media all and (max-width: 1023px) {
+            display: block;
+        }
+        &:not(:last-child) {
+            margin-bottom: vw(40);
+            @media all and (max-width: 1023px) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &__item-left {
+        width: vw(300);
+        margin-right: vw(7);
+        font-weight: bold;
+        font-size: vw(20);
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+        position: relative;
+        @media all and (max-width: 1023px) {
+            margin-bottom: 30px;
+            font-size: 20px;
+            width: 100%;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: vw(-10);
+            left: 0;
+            width: vw(50);
+            height: vw(2);
+            background: #000;
+            @media all and (max-width: 1023px) {
+                bottom: -10px;
+                width: 50px;
+                height: 2px;
+            }
+        }
+    }
+    &__item-right {
+        width: calc( 100% - #{vw(307)} );
+        padding-right: vw(163);
+        box-sizing: border-box;
+        @media all and (max-width: 1023px) {
+            width: 100%;
+            padding-right: 0;
+        }
+        p {
+            margin: 0;
+            font-size: vw(16);
+            line-height: 160%;
+            color: #2C2C2C;
+            @media all and (max-width: 1023px) {
+                font-size: 16px;
+            }
+            &:not(:last-child) {
+                margin-bottom: vw(20);
+                @media all and (max-width: 1023px) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        ul {
+            margin: 0;
+            padding-left: vw(16);
+            @media all and (max-width: 1023px) {
+                padding-left: 16px;
+            }
+            li {
+                font-size: vw(16);
+                line-height: 160%;
+                color: #2C2C2C;
+                @media all and (max-width: 1023px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

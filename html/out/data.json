@@ -1,0 +1,1286 @@
+{
+    "project": {},
+    "files": {
+        "src\\blocks\\modules\\cookies-form\\cookies-form.js": {
+            "name": "src\\blocks\\modules\\cookies-form\\cookies-form.js",
+            "modules": {},
+            "classes": {
+                "CookiesForm": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\header\\header.js": {
+            "name": "src\\blocks\\modules\\header\\header.js",
+            "modules": {},
+            "classes": {
+                "Header": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\inner-contacts\\inner-contacts.js": {
+            "name": "src\\blocks\\modules\\inner-contacts\\inner-contacts.js",
+            "modules": {},
+            "classes": {
+                "InnerContacts": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\investment-first\\investment-first.js": {
+            "name": "src\\blocks\\modules\\investment-first\\investment-first.js",
+            "modules": {},
+            "classes": {
+                "InvestmentFirstSlider": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\investment-our-services\\investment-our-services.js": {
+            "name": "src\\blocks\\modules\\investment-our-services\\investment-our-services.js",
+            "modules": {},
+            "classes": {
+                "InvestmentOurServices": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\landing-examples\\landing-examples.js": {
+            "name": "src\\blocks\\modules\\landing-examples\\landing-examples.js",
+            "modules": {},
+            "classes": {
+                "Examples": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\landing-programms\\landing-programms.js": {
+            "name": "src\\blocks\\modules\\landing-programms\\landing-programms.js",
+            "modules": {},
+            "classes": {
+                "Programms": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\main-filter\\main-filter.js": {
+            "name": "src\\blocks\\modules\\main-filter\\main-filter.js",
+            "modules": {},
+            "classes": {
+                "MainFilter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\mobile-filter\\mobile-filter.js": {
+            "name": "src\\blocks\\modules\\mobile-filter\\mobile-filter.js",
+            "modules": {},
+            "classes": {
+                "MobileFilter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\object-calculator\\object-calculator.js": {
+            "name": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "modules": {},
+            "classes": {
+                "Calculator": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\object-first\\object-first.js": {
+            "name": "src\\blocks\\modules\\object-first\\object-first.js",
+            "modules": {},
+            "classes": {
+                "ObjectFirst": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\object-nearby\\object-nearby.js": {
+            "name": "src\\blocks\\modules\\object-nearby\\object-nearby.js",
+            "modules": {},
+            "classes": {
+                "ObjectNearby": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\object-options\\object-options.js": {
+            "name": "src\\blocks\\modules\\object-options\\object-options.js",
+            "modules": {},
+            "classes": {
+                "ObjectOptions": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\our-services\\our-services.js": {
+            "name": "src\\blocks\\modules\\our-services\\our-services.js",
+            "modules": {},
+            "classes": {
+                "OurServices": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\property-item\\property-item.js": {
+            "name": "src\\blocks\\modules\\property-item\\property-item.js",
+            "modules": {},
+            "classes": {
+                "PropertyItem": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\blocks\\modules\\property-sorting\\property-sorting.js": {
+            "name": "src\\blocks\\modules\\property-sorting\\property-sorting.js",
+            "modules": {},
+            "classes": {
+                "PropertySort": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "CookiesForm": {
+            "name": "CookiesForm",
+            "shortname": "CookiesForm",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\cookies-form\\cookies-form.js",
+            "line": 1,
+            "description": "Программный код для описания формы предупреждения о использовании cookie",
+            "is_constructor": 1,
+            "example": [
+                "\n   let сookiesForm = new CookiesForm() {}"
+            ]
+        },
+        "Header": {
+            "name": "Header",
+            "shortname": "Header",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 10,
+            "description": "Программный код для шапки сайта",
+            "is_constructor": 1,
+            "example": [
+                "\n   let header = new Header() {}"
+            ]
+        },
+        "InnerContacts": {
+            "name": "InnerContacts",
+            "shortname": "InnerContacts",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\inner-contacts\\inner-contacts.js",
+            "line": 3,
+            "description": "Программный код для страницы контактов",
+            "is_constructor": 1,
+            "example": [
+                "\n   let innerContacts = new InnerContacts() {}"
+            ]
+        },
+        "InvestmentFirstSlider": {
+            "name": "InvestmentFirstSlider",
+            "shortname": "InvestmentFirstSlider",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\investment-first\\investment-first.js",
+            "line": 3,
+            "description": "Программный код для первого блока страницы инвестирования",
+            "is_constructor": 1,
+            "example": [
+                "\n   let investmentFirstSlider = new InvestmentFirstSlider() {}"
+            ]
+        },
+        "InvestmentOurServices": {
+            "name": "InvestmentOurServices",
+            "shortname": "InvestmentOurServices",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\investment-our-services\\investment-our-services.js",
+            "line": 5,
+            "description": "Программный код для для блока \"НАШИ УСЛУГИ\" на странице инвестирования",
+            "is_constructor": 1,
+            "example": [
+                "\n   let investmentOurServices = new InvestmentOurServices() {}"
+            ]
+        },
+        "Examples": {
+            "name": "Examples",
+            "shortname": "Examples",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\landing-examples\\landing-examples.js",
+            "line": 4,
+            "description": "Программный код для блока \"ПРИМЕРЫ РАБОТ\" на странице landing",
+            "is_constructor": 1,
+            "example": [
+                "\n   let examples = new Examples() {}"
+            ]
+        },
+        "Programms": {
+            "name": "Programms",
+            "shortname": "Programms",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\landing-programms\\landing-programms.js",
+            "line": 3,
+            "description": "Программный код для блока \"ПРОГРАММЫ ОФОРМЛЕНИЯ ВНЖ И ПМЖ\" на странице landing",
+            "is_constructor": 1,
+            "example": [
+                "\n   let landingProgramms = new Programms() {}"
+            ]
+        },
+        "MainFilter": {
+            "name": "MainFilter",
+            "shortname": "MainFilter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\main-filter\\main-filter.js",
+            "line": 4,
+            "description": "Программный код для фильтра на главной",
+            "is_constructor": 1,
+            "example": [
+                "\n   let mainFilter = new MainFilter() {{\n       isOpened: false\n   }}"
+            ]
+        },
+        "MobileFilter": {
+            "name": "MobileFilter",
+            "shortname": "MobileFilter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\mobile-filter\\mobile-filter.js",
+            "line": 3,
+            "description": "Программный код для мобильного фильтра",
+            "is_constructor": 1,
+            "example": [
+                "\n   let mobileFilter = new MobileFilter() {}"
+            ]
+        },
+        "Calculator": {
+            "name": "Calculator",
+            "shortname": "Calculator",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 3,
+            "description": "Программный код для калькулятора ипотеки",
+            "is_constructor": 1,
+            "example": [
+                "\n   let сalculator = new Calculator() {\n       apiUrl: \"https://openexchangerates.org/api/latest.json?app_id=a8a2d37a99d5493c9e51901ea87662e0&base=USD\",\n       oneUsdOnRub: 70,\n       currency: '₽',\n       price: 8699900,\n       firstPayment: 4950000,\n       mortgageTerm: 20\n   }"
+            ]
+        },
+        "ObjectFirst": {
+            "name": "ObjectFirst",
+            "shortname": "ObjectFirst",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\object-first\\object-first.js",
+            "line": 3,
+            "description": "Программный код для первого блока страницы объекта недвижимости",
+            "is_constructor": 1,
+            "example": [
+                "\n   let objectFirst = new ObjectFirst() {}"
+            ]
+        },
+        "ObjectNearby": {
+            "name": "ObjectNearby",
+            "shortname": "ObjectNearby",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\object-nearby\\object-nearby.js",
+            "line": 3,
+            "description": "Программный код для блока \"ОБЪЕКТЫ РЯДОМ\"",
+            "is_constructor": 1,
+            "example": [
+                "\n   let objectNearby = new ObjectNearby() {}"
+            ]
+        },
+        "ObjectOptions": {
+            "name": "ObjectOptions",
+            "shortname": "ObjectOptions",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\object-options\\object-options.js",
+            "line": 11,
+            "description": "Программный код для описания карточки объекта",
+            "is_constructor": 1,
+            "example": [
+                "\n   let objectOptions = new ObjectOptions() {}"
+            ]
+        },
+        "OurServices": {
+            "name": "OurServices",
+            "shortname": "OurServices",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\our-services\\our-services.js",
+            "line": 3,
+            "description": "Программный код для блока \"НАШИ УСЛУГИ\"",
+            "is_constructor": 1,
+            "example": [
+                "\n   let ourServices = new OurServices() {}"
+            ]
+        },
+        "PropertyItem": {
+            "name": "PropertyItem",
+            "shortname": "PropertyItem",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\property-item\\property-item.js",
+            "line": 4,
+            "description": "Программный код для элементов каталога",
+            "is_constructor": 1,
+            "example": [
+                "\n   let propertyItem = new PropertyItem() {}"
+            ]
+        },
+        "PropertySort": {
+            "name": "PropertySort",
+            "shortname": "PropertySort",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\blocks\\modules\\property-sorting\\property-sorting.js",
+            "line": 3,
+            "description": "Программный код для сортировки каталога",
+            "is_constructor": 1,
+            "example": [
+                "\n   let propertySort = new PropertySort() {}"
+            ]
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src\\blocks\\modules\\cookies-form\\cookies-form.js",
+            "line": 11,
+            "description": "Проверяет если в localStorage есть объект isCookiesFormAccepted\nЕсли нет, то добавляет класс isVisible к .cookies-form иначе удаляет этот класс",
+            "itemtype": "method",
+            "name": "setFormVisibility",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.CookiesForm.setFormVisibility();\n       // переопределение\n       app.CookiesForm.setFormVisibility = () => {// тут код}"
+            ],
+            "class": "CookiesForm"
+        },
+        {
+            "file": "src\\blocks\\modules\\cookies-form\\cookies-form.js",
+            "line": 29,
+            "description": "Инициализирует работу скриптов в форме предупреждения о использовании cookie\nТак же добавляет обработчик события click на кнопку '.cookies-form__button' для закрытия формы",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.CookiesForm.init();\n       // переопределение\n       app.CookiesForm.init = () => {// тут код}"
+            ],
+            "class": "CookiesForm"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 19,
+            "itemtype": "property",
+            "name": "isMainMenuOpened",
+            "type": "Boolean",
+            "default": "false",
+            "example": [
+                "\n    app.header.isMainMenuOpened = true;"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 27,
+            "itemtype": "property",
+            "name": "isMobileMenuOpened",
+            "type": "Boolean",
+            "default": "false",
+            "example": [
+                "\n    app.header.isMobileMenuOpened = true;"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 36,
+            "itemtype": "property",
+            "name": "isLangMenuOpened",
+            "type": "Boolean",
+            "default": "false",
+            "example": [
+                "\n    app.header.isLangMenuOpened = true;"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 45,
+            "description": "инициализирует работу скриптов в шапке",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.header.init();\n       // переопределение\n       app.header.init = () => {// тут код}"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 97,
+            "description": "Выбор экрана в мобильном меню по параметру",
+            "itemtype": "method",
+            "name": "chooseScreen",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.header.chooseScreen('main');\n       // переопределение\n       app.header.chooseScreen = () => {// тут код}"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 118,
+            "description": "Открывает главное меню в шапке, принимая параметром индекс который передан в аттрибуте data-item_id",
+            "itemtype": "method",
+            "name": "openModalMenu",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.header.openModalMenu(1);\n       // переопределение\n       app.header.openModalMenu = (index) => {// тут код}"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 137,
+            "description": "Закрывает главное меню в шапке",
+            "itemtype": "method",
+            "name": "closeModalMenu",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.header.closeModalMenu();\n       // переопределение\n       app.header.closeModalMenu = () => {// тут код}"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 152,
+            "description": "Открывает/Закрывает второстепенное меню в шапке",
+            "itemtype": "method",
+            "name": "toggleMainMenu",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.header.toggleMainMenu();\n       // переопределение\n       app.header.toggleMainMenu = () => {// тут код}"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 169,
+            "description": "Открывает/Закрывает выбор языков",
+            "itemtype": "method",
+            "name": "toggleLangMenu",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.header.toggleLangMenu();\n       // переопределение\n       app.header.toggleLangMenu = () => {// тут код}"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 187,
+            "description": "Анимирует шапку при скролле",
+            "itemtype": "method",
+            "name": "animateOnScroll",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.header.animateOnScroll();\n       // переопределение\n       app.header.animateOnScroll = () => {// тут код}"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 220,
+            "description": "Открывает/Закрывает мобильное меню",
+            "itemtype": "method",
+            "name": "toggleMobileMenu",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.header.toggleMobileMenu();\n       // переопределение\n       app.header.toggleMobileMenu = () => {// тут код}"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 244,
+            "description": "Закрывает все меню в шапке",
+            "itemtype": "method",
+            "name": "closeAllMenus",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.header.closeAllMenus();\n       // переопределение\n       app.header.closeAllMenus = () => {// тут код}"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\header\\header.js",
+            "line": 261,
+            "description": "Высчитывает высоту '.header__mobile_menu-bottom' и устанавливает высоту для '.header__mobile_menu-in[data-screen=\"main\"] .header__mobile_menu-top' calc( 100% - то что посчитали - 78px );",
+            "itemtype": "method",
+            "name": "setHeight",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.header.setHeight();\n       // переопределение\n       app.header.setHeight = () => {// тут код}"
+            ],
+            "class": "Header"
+        },
+        {
+            "file": "src\\blocks\\modules\\inner-contacts\\inner-contacts.js",
+            "line": 13,
+            "description": "Инициализирует nativejs-select для '.inner-contacts__office select'",
+            "itemtype": "method",
+            "name": "initSelectStyler",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.innerContacts.initSelectStyler();\n       // переопределение\n       app.innerContacts.initSelectStyler = () => {\n           // тут код\n           // например\n           if (!document.querySelector('.inner-contacts__office')) return;\n           new NativejsSelect({\n               selector: '.inner-contacts__office select',\n               disableMobile: true,\n           });\n       }"
+            ],
+            "class": "InnerContacts"
+        },
+        {
+            "file": "src\\blocks\\modules\\inner-contacts\\inner-contacts.js",
+            "line": 38,
+            "description": "Инициализирует работу скриптов на странице контактов",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.innerContacts.init();\n       // переопределение\n       app.innerContacts.init = () => {// тут код}"
+            ],
+            "class": "InnerContacts"
+        },
+        {
+            "file": "src\\blocks\\modules\\investment-first\\investment-first.js",
+            "line": 13,
+            "itemtype": "property",
+            "name": "slider",
+            "type": "Object",
+            "default": "new Glide('.glide', { type: 'carousel', startAt: 0, perView: 1, gap: 0 })",
+            "example": [
+                "\n    app.investmentFirstSlider.slider = new Glide('.glide', {\n        type: 'carousel',\n        startAt: 0,\n        perView: 1,\n        gap: 0\n    })\n    // Передаваемые опции тут https://glidejs.com/docs/options/"
+            ],
+            "class": "InvestmentFirstSlider"
+        },
+        {
+            "file": "src\\blocks\\modules\\investment-first\\investment-first.js",
+            "line": 35,
+            "description": "Инициализирует слайдеры с передаными в sliderOptions параметрами на все найденные элементы с классом .object-options__item-slider.glide",
+            "itemtype": "method",
+            "name": "moveSlider",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.investmentFirstSlider.moveSlider(=3);\n\n       // Варианты параметров\n       // > - Переключить вперед на один\n       // < - Переключить назад на один\n       // ={i} - Перейдите к {i} слайду (экв. '=1', перейдем ко второму слайду)\n       // >> - Перемотка в конец (последний слайд)\n       // << - Перемотка к началу (первый слайд)\n\n       // переопределение\n       app.investmentFirstSlider.moveSlider = () => {// тут код}"
+            ],
+            "class": "InvestmentFirstSlider"
+        },
+        {
+            "file": "src\\blocks\\modules\\investment-first\\investment-first.js",
+            "line": 57,
+            "description": "Инициализирует слайдер если на странице есть '.investment-first__right'",
+            "itemtype": "method",
+            "name": "initSlider",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.investmentFirstSlider.initSlider();\n       // переопределение\n       app.investmentFirstSlider.initSlider = () => {// тут код}"
+            ],
+            "class": "InvestmentFirstSlider"
+        },
+        {
+            "file": "src\\blocks\\modules\\investment-first\\investment-first.js",
+            "line": 72,
+            "description": "Инициализирует работу скриптов в первом блока страницы инвестирования",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.investmentFirstSlider.init();\n       // переопределение\n       app.investmentFirstSlider.init = () => {// тут код}"
+            ],
+            "class": "InvestmentFirstSlider"
+        },
+        {
+            "file": "src\\blocks\\modules\\investment-our-services\\investment-our-services.js",
+            "line": 15,
+            "description": "Инициализирует работу скриптов в блоке \"НАШИ УСЛУГИ\" на странице инвестирования",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.investmentOurServices.init();\n       // переопределение\n       app.investmentOurServices.init = () => {// тут код}"
+            ],
+            "class": "InvestmentOurServices"
+        },
+        {
+            "file": "src\\blocks\\modules\\investment-our-services\\investment-our-services.js",
+            "line": 28,
+            "description": "Инициализирует анимацию при скролле в блоке \"НАШИ УСЛУГИ\" если на странице есть '.investment-our-services__item' и размер окна больше 1023px",
+            "itemtype": "method",
+            "name": "initAnimation",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.investmentOurServices.initAnimation();\n       // переопределение\n       app.investmentOurServices.initAnimation = () => {// тут код}"
+            ],
+            "class": "InvestmentOurServices"
+        },
+        {
+            "file": "src\\blocks\\modules\\landing-examples\\landing-examples.js",
+            "line": 15,
+            "itemtype": "property",
+            "name": "slider",
+            "type": "Object",
+            "default": "new Glide('.landing-examples__slide-left', { perView: 1, type: 'slider', gap: 0, startAt: 1 })",
+            "example": [
+                "\n    app.landingExamples.slider = new Glide('.landing-examples__slide-left', {\n        perView: 1,\n        type: 'slider',\n        gap: 0,\n        startAt: 1\n    })\n    // Передаваемые опции тут https://glidejs.com/docs/options/"
+            ],
+            "class": "Examples"
+        },
+        {
+            "file": "src\\blocks\\modules\\landing-examples\\landing-examples.js",
+            "line": 37,
+            "description": "Инициализирует слайдер с картинками в блоках '.landing-examples__slide-images' если они есть на странице",
+            "itemtype": "method",
+            "name": "initImagesSliders",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.landingExamples.initImagesSliders();\n       // переопределение\n       app.landingExamples.initImagesSliders = () => {// тут код}"
+            ],
+            "class": "Examples"
+        },
+        {
+            "file": "src\\blocks\\modules\\landing-examples\\landing-examples.js",
+            "line": 60,
+            "description": "Инициализирует слайдеры с передаными в sliderOptions параметрами на все найденные элементы с классом .object-options__item-slider.glide",
+            "itemtype": "method",
+            "name": "moveSlider",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.landingExamples.moveSlider(=3);\n\n       // Варианты параметров\n       // > - Переключить вперед на один\n       // < - Переключить назад на один\n       // ={i} - Перейдите к {i} слайду (экв. '=1', перейдем ко второму слайду)\n       // >> - Перемотка в конец (последний слайд)\n       // << - Перемотка к началу (первый слайд)\n\n       // переопределение\n       app.landingExamples.moveSlider = () => {// тут код}"
+            ],
+            "class": "Examples"
+        },
+        {
+            "file": "src\\blocks\\modules\\landing-examples\\landing-examples.js",
+            "line": 82,
+            "description": "Инициализирует работу скриптов в блокe \"ПРИМЕРЫ РАБОТ\" на странице landing",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.landingExamples.init();\n       // переопределение\n       app.landingExamples.init = () => {// тут код}"
+            ],
+            "class": "Examples"
+        },
+        {
+            "file": "src\\blocks\\modules\\landing-programms\\landing-programms.js",
+            "line": 13,
+            "description": "Инициализирует работу скриптов в блокe \"ПРОГРАММЫ ОФОРМЛЕНИЯ ВНЖ И ПМЖ\" на странице landing\nДобавляет обработчик события click на каждый '.landing-programms__item-trigger' передавая его же как параметр в  app.landingProgramms.toggleItem(item)",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.landingProgramms.init();\n       // переопределение\n       app.landingProgramms.init = () => {// тут код}"
+            ],
+            "class": "Programms"
+        },
+        {
+            "file": "src\\blocks\\modules\\landing-programms\\landing-programms.js",
+            "line": 32,
+            "description": "Добавляет/Удаляет ближайшему родителю с классом '.landing-programms__item' переданного элемента класс 'isOpened' и анимирует высоту",
+            "itemtype": "method",
+            "name": "toggleItem",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       document.querySelectorAll('.landing-programms__item-trigger').forEach(item => {\n           item.addEventListener('click', (event) => {\n               this.toggleItem(item)\n           });\n       })\n       // переопределение\n       app.landingProgramms.toggleItem = (item) => {// тут код}"
+            ],
+            "class": "Programms"
+        },
+        {
+            "file": "src\\blocks\\modules\\main-filter\\main-filter.js",
+            "line": 16,
+            "description": "Маркер открытости/закрытости фильтра по умолчанию",
+            "itemtype": "property",
+            "name": "isOpened",
+            "type": "Boolean",
+            "default": "false",
+            "example": [
+                "\n           app.mainFilter.isOpened = true;"
+            ],
+            "class": "MainFilter"
+        },
+        {
+            "file": "src\\blocks\\modules\\main-filter\\main-filter.js",
+            "line": 26,
+            "description": "Открывает/Закрывает фильтр",
+            "itemtype": "method",
+            "name": "toggleFilter",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.mainFilter.toggleFilter();\n       // переопределение\n       app.mainFilter.toggleFilter = () => {// тут код}"
+            ],
+            "class": "MainFilter"
+        },
+        {
+            "file": "src\\blocks\\modules\\main-filter\\main-filter.js",
+            "line": 39,
+            "description": "Инициализирует 'nativejs-select' для '.main-filter__field select'",
+            "itemtype": "method",
+            "name": "initSelectStyler",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.mainFilter.initSelectStyler();\n       // переопределение\n       app.mainFilter.initSelectStyler = () => {\n           // тут код\n           // например\n           if (!document.querySelector('.main-filter__field')) return;\n           new NativejsSelect({\n               selector: '.main-filter__field select',\n               disableMobile: true,\n           });\n       }"
+            ],
+            "class": "MainFilter"
+        },
+        {
+            "file": "src\\blocks\\modules\\main-filter\\main-filter.js",
+            "line": 64,
+            "description": "Инициализирует событие window.scrollTo через опеределенное количество времени (параметр delay)",
+            "itemtype": "method",
+            "name": "dispatchScroll",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.mainFilter.dispatchScroll(1000);\n       // переопределение\n       app.mainFilter.dispatchScroll = (delay) => {// тут код}"
+            ],
+            "class": "MainFilter"
+        },
+        {
+            "file": "src\\blocks\\modules\\main-filter\\main-filter.js",
+            "line": 81,
+            "description": "Показывает/Скрывает скрытые поля фильтра ('.main-filter__fields-in' c аттрибутом hidden) анимируя высоту",
+            "itemtype": "method",
+            "name": "toggleHiddenFields",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.mainFilter.toggleHiddenFields();\n       // переопределение\n       app.mainFilter.toggleHiddenFields = () => {// тут код}"
+            ],
+            "class": "MainFilter"
+        },
+        {
+            "file": "src\\blocks\\modules\\main-filter\\main-filter.js",
+            "line": 105,
+            "description": "Высчитывает пересечение кнопки открытия фильтра с блоками и меняет градиент в ней",
+            "itemtype": "method",
+            "name": "changeFilterOpenerColor",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.mainFilter.changeFilterOpenerColor();\n       // переопределение\n       app.mainFilter.changeFilterOpenerColor = () => {// тут код}"
+            ],
+            "class": "MainFilter"
+        },
+        {
+            "file": "src\\blocks\\modules\\main-filter\\main-filter.js",
+            "line": 153,
+            "description": "инициализирует работу скриптов фильтра",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.mainFilter.init();\n       // переопределение\n       app.mainFilter.init = () => {// тут код}"
+            ],
+            "class": "MainFilter"
+        },
+        {
+            "file": "src\\blocks\\modules\\mobile-filter\\mobile-filter.js",
+            "line": 13,
+            "description": "Показывает/Скрывает '.mobile-filter__in' при клике на '.mobile-filter__opener' анимируя высоту",
+            "itemtype": "method",
+            "name": "toggleFilter",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.mobileFilter.toggleFilter();\n       // переопределение\n       app.mobileFilter.toggleFilter = () => {// тут код}"
+            ],
+            "class": "MobileFilter"
+        },
+        {
+            "file": "src\\blocks\\modules\\mobile-filter\\mobile-filter.js",
+            "line": 39,
+            "description": "Показывает/Скрывает скрытые поля фильтра ('.mobile-filter__form-item' c аттрибутом data-hidden=\"true\") анимируя высоту",
+            "itemtype": "method",
+            "name": "toggleMore",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.mobileFilter.toggleMore();\n       // переопределение\n       app.mobileFilter.toggleMore = () => {// тут код}"
+            ],
+            "class": "MobileFilter"
+        },
+        {
+            "file": "src\\blocks\\modules\\mobile-filter\\mobile-filter.js",
+            "line": 64,
+            "description": "инициализирует работу скриптов мобильного фильтра",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.mobileFilter.init();\n       // переопределение\n       app.mobileFilter.init = () => {// тут код}"
+            ],
+            "class": "MobileFilter"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 26,
+            "description": "Ссылка на API для получения курса валют",
+            "itemtype": "property",
+            "name": "apiUrl",
+            "type": "String",
+            "default": "'https://openexchangerates.org/api/latest.json?app_id=a8a2d37a99d5493c9e51901ea87662e0&base=USD'",
+            "example": [
+                "\n           app.objectCalculator.apiUrl = 'https://openexchangerates.org/api/latest.json?app_id=a8a2d37a99d5493c9e51901ea87662e0&base=USD';"
+            ],
+            "class": "Calculator"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 35,
+            "description": "Курс рубля по умолчанию если API недоступно",
+            "itemtype": "property",
+            "name": "oneUsdOnRub",
+            "type": "Number",
+            "default": "70",
+            "example": [
+                "\n           app.objectCalculator.oneUsdOnRub = 70;"
+            ],
+            "class": "Calculator"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 44,
+            "description": "Валюта по умолчанию",
+            "itemtype": "property",
+            "name": "currency",
+            "type": "String",
+            "default": "'₽'",
+            "example": [
+                "\n           // Js\n           app.objectCalculator.currency = '$';\n           // HTML\n           <select v-model=\"objectCalculator.currency\">"
+            ],
+            "class": "Calculator"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 56,
+            "description": "Стоимость недвижимости",
+            "itemtype": "property",
+            "name": "price",
+            "type": "Number",
+            "default": "8699900",
+            "example": [
+                "\n           // Js\n           app.objectCalculator.price = 8699900;\n           // HTML\n           <input v-model=\"objectCalculator.price\">"
+            ],
+            "class": "Calculator"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 68,
+            "description": "Первый взнос",
+            "itemtype": "property",
+            "name": "firstPayment",
+            "type": "Number",
+            "default": "4950000",
+            "example": [
+                "\n           // Js\n           app.objectCalculator.firstPayment = 4950000;\n           // HTML\n           <input v-model=\"objectCalculator.firstPayment\">"
+            ],
+            "class": "Calculator"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 80,
+            "description": "Срок ипотеки",
+            "itemtype": "property",
+            "name": "mortgageTerm",
+            "type": "Number",
+            "default": "20",
+            "example": [
+                "\n           // Js\n           app.objectCalculator.mortgageTerm = 20;\n           // HTML\n           <input v-model=\"objectCalculator.mortgageTerm\">"
+            ],
+            "class": "Calculator"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 93,
+            "description": "Получает курс валют из apiUrl и записывает значение отношения доллара к рублю в oneUsdOnRub, если API недоступно, то в oneUsdOnRub остается неизменным",
+            "itemtype": "method",
+            "name": "getExchangeRate",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectCalculator.getExchangeRate();\n       // переопределение\n       app.objectCalculator.getExchangeRate = () => {// тут код}"
+            ],
+            "class": "Calculator"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 112,
+            "description": "Увеличивает на 1 mortgageTerm",
+            "itemtype": "method",
+            "name": "mortgageTermIncrease",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectCalculator.mortgageTermIncrease();\n       // переопределение\n       app.objectCalculator.mortgageTermIncrease = () => {// тут код}"
+            ],
+            "class": "Calculator"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 126,
+            "description": "Уменьшает на 1 mortgageTerm",
+            "itemtype": "method",
+            "name": "mortgageTermDecrease",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectCalculator.mortgageTermDecrease();\n       // переопределение\n       app.objectCalculator.mortgageTermDecrease = () => {// тут код}"
+            ],
+            "class": "Calculator"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-calculator\\object-calculator.js",
+            "line": 147,
+            "description": "инициализирует работу скриптов калькулятора",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectCalculator.init();\n       // переопределение\n       app.objectCalculator.init = () => {// тут код}"
+            ],
+            "class": "Calculator"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-first\\object-first.js",
+            "line": 12,
+            "description": "Инициализирует 'nativejs-select' для '.object-first__price-bottom select'",
+            "itemtype": "method",
+            "name": "initSelectStyler",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectFirst.initSelectStyler();\n       // переопределение\n       app.objectFirst.initSelectStyler = () => {\n           // тут код\n           // например\n           if (!document.querySelector('.object-first__price-bottom')) return;\n           new NativejsSelect({\n               selector: '.object-first__price-bottom select',\n               disableMobile: true,\n           });\n       }"
+            ],
+            "class": "ObjectFirst"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-first\\object-first.js",
+            "line": 37,
+            "description": "инициализирует работу скриптов первого блока страницы объекта недвижимости",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectFirst.init();\n       // переопределение\n       app.objectFirst.init = () => {// тут код}"
+            ],
+            "class": "ObjectFirst"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-nearby\\object-nearby.js",
+            "line": 14,
+            "itemtype": "property",
+            "name": "slider",
+            "type": "Object",
+            "default": "new Glide('.object-nearby__middle.glide', { perView: 2, type: 'slider', gap: 20, startAt: 1, breakpoints: { 600: { perView: 1, gap: 0, startAt: 0, } } })",
+            "example": [
+                "\n    app.investmentFirstSlider.slider = new Glide('.object-nearby__middle.glide', {\n        perView: 2,\n        type: 'slider',\n        gap: 20,\n        startAt: 1,\n        breakpoints: {\n            600: {\n                perView: 1,\n                gap: 0,\n                startAt: 0,\n            }\n        }\n    })\n    // Передаваемые опции тут https://glidejs.com/docs/options/"
+            ],
+            "class": "ObjectNearby"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-nearby\\object-nearby.js",
+            "line": 55,
+            "description": "Монтирует слайдер",
+            "itemtype": "method",
+            "name": "mountSlider",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectNearby.mountSlider();\n       // переопределение\n       app.objectNearby.mountSlider = () => {// тут код}"
+            ],
+            "class": "ObjectNearby"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-nearby\\object-nearby.js",
+            "line": 70,
+            "description": "Размонтирует слайдер",
+            "itemtype": "method",
+            "name": "unmountSlider",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectNearby.unmountSlider();\n       // переопределение\n       app.objectNearby.unmountSlider = () => {// тут код}"
+            ],
+            "class": "ObjectNearby"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-nearby\\object-nearby.js",
+            "line": 85,
+            "description": "при window.innerWidth > 1023 размонтирует слайдер ( app.objectNearby.unmountSlider(); ) иначе монтирует слайдер ( app.objectNearby.mountSlider(); )",
+            "itemtype": "method",
+            "name": "toggleSliderOnWindowResize",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectNearby.toggleSliderOnWindowResize();\n       // переопределение\n       app.objectNearby.toggleSliderOnWindowResize = () => {// тут код}"
+            ],
+            "class": "ObjectNearby"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-options\\object-options.js",
+            "line": 25,
+            "itemtype": "property",
+            "name": "sliderOptions",
+            "type": "Object",
+            "default": "{perView: 1, gap: 0}",
+            "example": [
+                "\n    app.objectOptions.sliderOptions = {\n        perView: 1,\n        autoplay: 2000,\n    };\n    // Передаваемые опции тут https://glidejs.com/docs/options/"
+            ],
+            "class": "ObjectOptions"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-options\\object-options.js",
+            "line": 47,
+            "description": "Инициализирует работу скриптов в карточке объекта",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectOptions.init();\n       // переопределение\n       app.objectOptions.init = () => {// тут код}"
+            ],
+            "class": "ObjectOptions"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-options\\object-options.js",
+            "line": 62,
+            "description": "Инициализирует Анимацию",
+            "itemtype": "method",
+            "name": "initAnimation",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectOptions.initAnimation();\n       // переопределение\n       app.objectOptions.initAnimation = () => {// тут код}"
+            ],
+            "class": "ObjectOptions"
+        },
+        {
+            "file": "src\\blocks\\modules\\object-options\\object-options.js",
+            "line": 85,
+            "description": "Инициализирует слайдеры",
+            "itemtype": "method",
+            "name": "initSliders",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.objectOptions.initSliders();\n       // переопределение\n       app.objectOptions.initSliders = () => {// тут код}"
+            ],
+            "class": "ObjectOptions"
+        },
+        {
+            "file": "src\\blocks\\modules\\our-services\\our-services.js",
+            "line": 13,
+            "description": "Расстояние между карточками",
+            "itemtype": "property",
+            "name": "gap",
+            "type": "Number",
+            "default": "( 20 / 1920  * window.innerWidth )",
+            "example": [
+                "\n           app.ourServices.gap = 40 / 1920  * window.innerWidth;"
+            ],
+            "class": "OurServices"
+        },
+        {
+            "file": "src\\blocks\\modules\\our-services\\our-services.js",
+            "line": 24,
+            "description": "Размеры '.our-services__blocks'",
+            "itemtype": "property",
+            "name": "parent",
+            "type": "Object",
+            "default": "{ width: 0, height: 0 }",
+            "example": [
+                "\n           app.ourServices.parent = {\n               width: 0,\n               height: 0\n           };"
+            ],
+            "class": "OurServices"
+        },
+        {
+            "file": "src\\blocks\\modules\\our-services\\our-services.js",
+            "line": 40,
+            "description": "Размеры каждого '.our-services__block-in'",
+            "itemtype": "property",
+            "name": "block",
+            "type": "Object",
+            "default": "{ width: 0, height: 0 }",
+            "example": [
+                "\n           app.ourServices.block = {\n               width: 0,\n               height: 0\n           };"
+            ],
+            "class": "OurServices"
+        },
+        {
+            "file": "src\\blocks\\modules\\our-services\\our-services.js",
+            "line": 57,
+            "description": "Рассчет размеров '.our-services__blocks' и запись результатов в app.ourServices.parent",
+            "itemtype": "method",
+            "name": "calculateParentHeight",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.ourServices.calculateParentHeight();\n       // переопределение\n       app.ourServices.calculateParentHeight = () => {// тут код}"
+            ],
+            "class": "OurServices"
+        },
+        {
+            "file": "src\\blocks\\modules\\our-services\\our-services.js",
+            "line": 77,
+            "description": "Рассчет размеров переданного элементы и запись результатов в app.ourServices.block",
+            "itemtype": "method",
+            "name": "calculateBlockSize",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       document.querySelectorAll('.our-services__block-in').forEach((item, i) => {\n           app.ourServices.calculateBlockSize(item).then( result => { console.log(result) } );\n       });\n       // переопределение\n       app.ourServices.calculateParentHeight = () => {// тут код}"
+            ],
+            "class": "OurServices"
+        },
+        {
+            "file": "src\\blocks\\modules\\our-services\\our-services.js",
+            "line": 96,
+            "description": "анимирование блоков",
+            "itemtype": "method",
+            "name": "animateBlock",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.ourServices.animateBlock( document.querySelectorAll('.our-services__block-in')[0], 0 );\n       // переопределение\n       app.ourServices.animateBlock = () => {// тут код};"
+            ],
+            "class": "OurServices"
+        },
+        {
+            "file": "src\\blocks\\modules\\our-services\\our-services.js",
+            "line": 175,
+            "description": "анимирование блоков в обратную сторону",
+            "itemtype": "method",
+            "name": "animateBlockBack",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.ourServices.animateBlockBack( document.querySelectorAll('.our-services__block-in')[0], 0 );\n       // переопределение\n       app.ourServices.animateBlockBack = (target, i) => {// тут код};"
+            ],
+            "class": "OurServices"
+        },
+        {
+            "file": "src\\blocks\\modules\\our-services\\our-services.js",
+            "line": 228,
+            "description": "инициализирует работу скриптов блока \"НАШИ УСЛУГИ\"",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.ourServices.init();\n       // переопределение\n       app.ourServices.init = () => {// тут код}"
+            ],
+            "class": "OurServices"
+        },
+        {
+            "file": "src\\blocks\\modules\\property-item\\property-item.js",
+            "line": 15,
+            "description": "Инициализирует 'nativejs-select' для '.property-item__price-in select'",
+            "itemtype": "method",
+            "name": "initSelectStyler",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.propertyItem.initSelectStyler();\n       // переопределение\n       app.propertyItem.initSelectStyler = () => {\n           // тут код\n           // например\n           if (!document.querySelector('.property-item__price-in')) return;\n           new NativejsSelect({\n               selector: '.property-item__price-in select',\n               disableMobile: true,\n           });\n       }"
+            ],
+            "class": "PropertyItem"
+        },
+        {
+            "file": "src\\blocks\\modules\\property-item\\property-item.js",
+            "line": 40,
+            "description": "Инициализирует слайдер для '.property-item__slider-glide'",
+            "itemtype": "method",
+            "name": "initSlider",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.propertyItem.initSlider();\n       // переопределение\n       app.propertyItem.initSlider = () => {\n           // тут код\n           // например\n           if (document.querySelector('.property-item__slider-glide')) {\n               document.querySelectorAll('.property-item__slider-glide').forEach(item => {\n                   new Glide(item, {\n                       perView: 1,\n                       type: 'slider',\n                       gap: 0,\n                       startAt: 0\n                   }).mount();\n               })\n           }\n       }"
+            ],
+            "class": "PropertyItem"
+        },
+        {
+            "file": "src\\blocks\\modules\\property-item\\property-item.js",
+            "line": 75,
+            "description": "инициализирует работу элементов каталога",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.propertyItem.init();\n       // переопределение\n       app.propertyItem.init = () => {// тут код}"
+            ],
+            "class": "PropertyItem"
+        },
+        {
+            "file": "src\\blocks\\modules\\property-sorting\\property-sorting.js",
+            "line": 14,
+            "description": "Инициализирует 'nativejs-select' для '.property-sorting__right select'",
+            "itemtype": "method",
+            "name": "initSelectStyler",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.propertySort.initSelectStyler();\n       // переопределение\n       app.propertySort.initSelectStyler = () => {\n           // тут код\n           // например\n           if (!document.querySelector('.property-sorting__right')) return;\n           new NativejsSelect({\n               selector: '.property-sorting__right select',\n               disableMobile: true,\n           });\n       }"
+            ],
+            "class": "PropertySort"
+        },
+        {
+            "file": "src\\blocks\\modules\\property-sorting\\property-sorting.js",
+            "line": 39,
+            "description": "инициализирует работу сортировки каталога",
+            "itemtype": "method",
+            "name": "init",
+            "static": 1,
+            "example": [
+                "\n       // вызов\n       app.propertySort.init();\n       // переопределение\n       app.propertySort.init = () => {// тут код}"
+            ],
+            "class": "PropertySort"
+        }
+    ],
+    "warnings": []
+}

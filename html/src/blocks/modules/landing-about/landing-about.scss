@@ -1,0 +1,46 @@
+.landing-about {
+    padding-top: vw(120);
+    padding-bottom: vw(60);
+    @media all and (max-width: 1023px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    &__in {
+        @media all and (min-width: 1024px) {
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+    &__left {
+        font-size: vw(60);
+        line-height: 100%;
+        text-transform: uppercase;        
+        color: #000000;
+        width: calc( 100% - #{vw(600)} );
+        @media all and (max-width: 1023px) {
+            width: 100%;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+    }
+    &__right {
+        width: vw(591);
+        margin-left: vw(9);
+        font-size: vw(16);
+        line-height: 140%;
+        color: #313131;
+        @media all and (max-width: 1023px) {
+            width: 100%;
+            font-size: 16px;
+            margin-left: 0;
+        }
+        p {
+            &:not(:last-child) {
+                margin-bottom: vw(20);
+                @media all and (max-width: 1023px) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,399 @@
+.object-calculator {
+    background: #fff;
+    padding: vw(120) 0 vw(60);
+    @media all and (max-width: 1023px) {
+        padding: 60px 0 30px;
+    }
+    &__top {
+        padding-right: vw(660);
+        margin-bottom: vw(26);
+        @media all and (max-width: 1023px) {
+            padding-right: 0;
+            margin-bottom: 52px;
+
+        }
+    }
+    &__title {
+        font-size: vw(60);
+        margin-bottom: vw(20);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #000000;
+        @media all and (max-width: 1023px) {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+    }
+    &__text {
+        font-size: vw(16);
+        line-height: 160%;
+        color: #2C2C2C;
+        @media all and (max-width: 1023px) {
+            font-size: 16px;
+        }
+    }
+    &__middle {
+        display: flex;
+        align-items: flex-start;
+    }
+    &__left {
+        width: vw(488);
+        margin-right: vw(109);
+        @media all and (max-width: 1023px) {
+            width: calc( 100% - 400px - 30px );
+            margin-right: 30px;
+        }
+        @media all and (max-width: 800px) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+    &__right {
+        width: calc(100% - #{vw(597)});
+        @media all and (max-width: 1023px) {
+            width: 400px;
+        }
+        @media all and (max-width: 800px) {
+            display: none;
+        }
+    }
+    &__currency {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: vw(40);
+        @media all and (max-width: 1023px) {
+            margin-bottom: 30px;
+        }
+    }
+    &__name {
+        font-weight: 500;
+        font-size: vw(20);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #000000;
+        @media all and (max-width: 1023px) {
+            font-size: 20px;
+        }
+    }
+    &__currency-select:not([hidden]) {
+        padding: vw(20) vw(18);
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        box-sizing: border-box;
+        font-weight: bold;
+        font-size: vw(16);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #000000;
+        background: none !important;
+        @media all and (max-width: 1023px) {
+            padding: 13px 11px;
+            font-size: 14px;
+        }
+    }
+    &__slider {
+        margin-bottom: vw(60);
+        @media all and (max-width: 1023px) {
+            margin-bottom: 35px;
+        }
+    }
+    &__slider-value {
+        margin-top: vw(30);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media all and (max-width: 1023px) {
+            margin-top: 20px;
+        }
+        .left,
+        .right {
+            font-weight: 300;
+            font-size: vw(30);
+            line-height: 120%;
+            text-transform: uppercase;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            @media all and (max-width: 1023px) {
+                font-size: 20px;
+            }
+        }
+        input {
+            border: none;
+            padding: 0;
+            margin: 0;
+            min-width: 0;
+            outline: none;
+        }
+        .currency {
+            flex: 1 1 auto;
+        }
+    }
+    &__slider-line {
+        margin-top: vw(20);
+        @media all and (max-width: 1023px) {
+            margin-top: 16px;
+        }
+        input[type="range"] {
+            width: 100%;
+            height: 2px;
+            -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+            background: none;
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+            }
+            
+            &:focus {
+                outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+            }
+            
+            &::-ms-track {
+                width: 100%;
+                cursor: pointer;
+                
+                /* Hides the slider so custom styles can be added */
+                background: transparent; 
+                border-color: transparent;
+                color: transparent;
+            }
+            /* Special styling for WebKit/Blink */
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                height: vw(13);
+                width: vw(13);
+                background: #FFBC19;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: none;
+                margin-top: vw(-6); /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+                @media all and (max-width: 1023px) {
+                    width: 13px;
+                    height: 13px;
+                    margin-top: -6px;
+                }
+            }
+            
+            /* All the same stuff for Firefox */
+            &::-moz-range-thumb {
+                height: vw(13);
+                width: vw(13);
+                @media all and (max-width: 1023px) {
+                    width: 13px;
+                    height: 13px;
+                }
+                background: #FFBC19;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: none;
+            }
+            
+            /* All the same stuff for IE */
+            &::-ms-thumb {
+                height: vw(13);
+                width: vw(13);
+                @media all and (max-width: 1023px) {
+                    width: 13px;
+                    height: 13px;
+                }
+                background: #FFBC19;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: none;
+            }
+            &::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 2px;
+                cursor: pointer;
+                background: #FFBC19;
+            }
+
+            &:focus::-webkit-slider-runnable-track {
+                background: #FFBC19;
+            }
+
+            &::-moz-range-track {
+                width: 100%;
+                height: 2px;
+                cursor: pointer;
+                background: #FFBC19;
+            }
+
+            &::-ms-track {
+                width: 100%;
+                height: 2px;
+                cursor: pointer;
+                background: transparent;
+                border-color: transparent;
+                color: transparent;
+            }
+            &::-ms-fill-lower {
+                background: #FFBC19;
+            }
+            &:focus::-ms-fill-lower {
+                background: #FFBC19;
+            }
+            &::-ms-fill-upper {
+                background: #FFBC19;
+            }
+            &:focus::-ms-fill-upper {
+                background: #FFBC19;
+            }
+        }
+    }
+    &__slider-counter {
+        margin-top: vw(30);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media all and (max-width: 1023px) {
+            margin-top: 20px;
+        }
+    }
+    &__slider-counter-button {
+        width: vw(54);
+        height: vw(36);
+        display: block;
+        box-sizing: border-box;
+        font-weight: 300;
+        font-size: vw(20);
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        @media all and (max-width: 1023px) {
+            width: 36px;
+            height: 24px;
+            font-size: 20px;
+        }
+    }
+    &__slider-counter-input {
+        height: vw(36);
+        display: block;
+        font-weight: 300;
+        font-size: vw(30);
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+        border: none;
+        outline: none;
+        // pointer-events: none;
+        box-sizing: border-box;
+        text-align: center;
+        -moz-appearance:textfield;
+        @media all and (max-width: 1023px) {
+            height: 24px;
+            font-size: 20px;
+        }
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+    &__result-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &:not(:last-child) {
+            margin-bottom: vw(15);
+            @media all and (max-width: 1023px) {
+                margin-bottom: vw(13);
+            }
+        }
+        .left {
+            font-size: vw(20);
+            line-height: 100%;
+            color: #000000;
+            @media all and (max-width: 1023px) {
+                font-size: 16px;
+            }
+        }
+        .right {
+            font-weight: 500;
+            font-size: vw(30);
+            line-height: 120%;
+            text-align: right;
+            text-transform: uppercase;
+            color: #000000;
+            @media all and (max-width: 1023px) {
+                font-size: 20px;
+            }
+        }
+    }
+    &__result {
+        margin-bottom: vw(55);
+    }
+    &__bank {
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        padding: vw(20);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        @media all and (max-width: 1023px) {
+            padding: 20px;
+        }
+        &:not(:last-child) {
+            margin-bottom: vw(13);
+            @media all and (max-width: 1023px) {
+                margin-bottom: vw(13);
+            }
+        }
+    }
+    &__bank-left {
+        display: flex;
+        align-items: center;
+    }
+    &__bank-image {
+        margin-right: vw(20);
+        width: vw(80);
+        @media all and (max-width: 1023px) {
+            margin-right: 20px;
+            width: 50px;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    &__bank-name {
+        font-weight: 500;
+        font-size: vw(20);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #000000;
+        @media all and (max-width: 1023px) {
+            font-size: 14px;
+        }
+    }
+    &__bank-right {
+        display: flex;
+        align-items: center;
+    }
+    &__bank-percent {
+        width: vw(125);
+        text-align: center;
+        font-weight: bold;
+        font-size: vw(20);
+        line-height: 120%;
+        text-align: center;
+        text-transform: lowercase;
+        color: #000000;
+        @media all and (max-width: 1023px) {
+            font-size: 14px;
+            width: 100px;
+        }
+    }
+    &__bank-year {
+        font-size: vw(20);
+        line-height: 120%;
+        text-transform: lowercase;
+        color: #000000;
+        @media all and (max-width: 1023px) {
+            font-size: 14px;
+        }
+    }
+}

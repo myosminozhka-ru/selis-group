@@ -1,0 +1,42 @@
+.property-buy-content {
+    padding-top: vw(70);
+    background: #fff; 
+    &__offer {
+        margin-top: vw(124);
+        margin-bottom: vw(120);
+        @media all and (max-width: 1023px) {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+    }
+    &__pagination {
+        background: #fff;
+        padding-top: vw(82);
+        @media all and (max-width: 1023px) {
+            padding-top: 60px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+    &__info {
+        padding-right: vw(746);
+        font-size: vw(20);
+        line-height: 130%;
+        color: #000000;
+        @media all and (max-width: 1023px) {
+            font-size: 16px;
+            padding-right: 0;
+        }
+    }
+    &__buttons {
+        display: flex;
+        align-items: center;
+        padding-bottom: vw(148);
+        .button.orange {
+            border: vw(1) solid #FFBC19;
+            margin-right: vw(20);
+            padding-left: vw(73);
+            padding-right: vw(73);
+        }
+    }
+}

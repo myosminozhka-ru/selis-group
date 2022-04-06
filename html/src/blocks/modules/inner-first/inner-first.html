@@ -1,0 +1,40 @@
+<div class="inner-first@@if (buttons.length) { inner-first--hasButtons}@@if(isArticle) { isArticle}">
+    <div class="inner-first__image" style="--background: @@background"></div>
+    <div class="inner-first__in center@@if (buttons.length) { inner-first__in--hasButtons}">
+        <h1 class="inner-first__title@@if(isArticle) { isArticle}" data-aos="fade-up">@@title</h1>
+        @@if (buttons.length) {
+            <div class="inner-first__buttons">
+                @@for (var i = 0; i < buttons.length; i++) {
+                    <label class="inner-first__button" data-aos="fade-up" data-aos-delay="`+ i*50 +`">
+                        <input type="checkbox">
+                        <span class="label">`+buttons[i]+`</span>
+                    </label>
+                }
+                @@if(!isArticle) {
+                    <a href="#" class="inner-first__button inner-first__button--more" data-aos="fade-up" data-aos-delay="650">
+                        <div class="label">Еще</div>
+                    </a>
+                }
+            </div>
+            @@if(!isArticle) {
+                <select class="inner-first__buttons mob" multiple="multiple">
+                    <option value="" selected disabled hidden>Поиск по тегам</option>
+                    @@for (var i = 0; i < buttons.length; i++) {
+                        <option value="`+buttons[i]+`">`+buttons[i]+`</option>
+                    }
+                </select>
+            }
+            @@if(isArticle) {
+                <div class="inner-first__by-tags">
+                    <div class="inner-first__by-tags-title">по тегам:</div>
+                    <div class="inner-first__by-tags-items">
+                        <div class="inner-first__by-tags-item">#Городская недвижимость</div>
+                        <div class="inner-first__by-tags-item">#Аренда</div>
+                        <div class="inner-first__by-tags-item">#Загородная недвижимость</div>
+                        <div class="inner-first__by-tags-item">#Ипотека</div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

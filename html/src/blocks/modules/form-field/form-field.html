@@ -1,0 +1,32 @@
+@@if (type == "text") {
+    <div class="form-field">
+        <input type="text" placeholder="@@placeholder">
+    </div>
+}
+@@if (type == "select") {
+    <div class="form-field">
+        <select>
+            <option value="test">test</option>
+            <option value="test 2">test 2</option>
+            <option value="test 3">test 3</option>
+        </select>
+    </div>
+}
+@@if (type == "fromto") {
+    <div class="form-field from-to">
+        <div class="title">Цена от</div>
+        <input type="text">
+        <div class="title">- до</div>
+        <input type="text">
+        <div class="title">.</div>
+        <select class="bgless">
+            <option value="rub">rub</option>
+            <option value="usd">usd</option>
+        </select>
+    </div>
+}
+@@if (type == "button") {
+    <div class="form-field">
+        <button>Показать</button>
+    </div>
+}

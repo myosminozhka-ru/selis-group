@@ -1,0 +1,48 @@
+<div class="cities-map">
+    <div class="cities-map__in center">
+        <div class="cities-map__title">Недвижимость в Городах и странах</div>
+        <div class="cities-map__map">
+            <img src="img/map.png" style="width: 100%;" alt="">
+        </div>
+        <div class="cities-map__popular">
+            <div class="cities-map__popular-top">
+                <div class="cities-map__popular-title">Популярные города</div>
+                <a href="#" class="cities-map__popular-link" v-if="window.width > 1023">
+                    <span class="text">Вся недвижимость</span>
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
+                            <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#000" stroke-opacity="0.6" stroke-width="2"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            <div class="cities-map__popular-bottom">
+                <div class="cities-map__popular-cities">
+                    @@for (var i = 0; i < 7; i++) {
+                        <a href="#" class="cities-map__popular-city">
+                            <div class="flag">
+                                <img
+                                src="https://flagcdn.com/60x45/ru.png"
+                                srcset="https://flagcdn.com/120x90/ru.png 2x,
+                                    https://flagcdn.com/180x135/ru.png 3x"
+                                    style="width: 100%;"
+                                alt="South Africa">
+                            </div>
+                            <div class="name">Россия</div>
+                        </a>
+                    }
+                </div>
+            </div>
+            <div class="cities-map__popular-button">
+                <a href="#" class="cities-map__popular-link" v-if="window.width <= 1023">
+                    <span class="text">Вся недвижимость</span>
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
+                            <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#000" stroke-opacity="0.6" stroke-width="2"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

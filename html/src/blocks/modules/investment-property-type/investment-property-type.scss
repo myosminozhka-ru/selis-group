@@ -1,0 +1,50 @@
+.investment-property-type {
+    padding-top: vw(120);
+    padding-bottom: vw(100);
+    &__title {
+        font-size: vw(60);
+        padding-right: vw(673);
+        margin-bottom: vw(60);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #000000;
+        @media all and (max-width: 1023px) {
+            font-size: 25px;
+            padding-right: 0;
+            margin-bottom: 80px;
+        }
+    }
+    &__items {
+        
+        @media all and (min-width: 1024px) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 0 vw(20);
+            padding-top: vw(30);
+        }
+        @media all and (max-width: 1023px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        @media all and (max-width: 500px) {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 20px;
+        }
+        
+    }
+    &__item {
+        @media all and (min-width: 1024px) {
+            &:nth-child(3n+2) {
+                margin-top: vw(60);
+            }
+            &:nth-child(3n+1) {
+                margin-top: vw(-30);
+            }
+            &:nth-child(3n+3) {
+                margin-top: vw(-30);
+            }
+        }
+    }
+}

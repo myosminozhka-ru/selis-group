@@ -1,0 +1,54 @@
+.about-experience {
+    padding: vw(120) 0 vw(108);
+    background: #fff;
+    &.isGray {
+        background: #F8F8F8;
+    }
+    @media all and (max-width: 1023px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    &__top {
+        display: flex;
+        align-items: flex-start;
+        @media all and (max-width: 1023px) {
+            flex-direction: column;
+        }
+    }
+    &__title {
+        width: calc(100% - #{vw(611)});
+        font-size: vw(60);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #000000;
+        @media all and (max-width: 1023px) {
+            width: 100%;
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+    }
+    &__texts {
+        width: vw(591);
+        margin-left: vw(20);
+        @media all and (max-width: 1023px) {
+            margin-left: 0;
+            width: 100%;
+            margin-bottom: 60px;
+        }
+    }
+    &__text {
+        font-size: vw(16);
+        line-height: 140%;
+        color: #313131;
+        margin: 0;
+        &:not(:last-child) {
+            margin-bottom: vw(20);
+            @media all and (max-width: 1023px) {
+                margin-bottom: 20px;
+            }
+        }
+        @media all and (max-width: 1023px) {
+            font-size: 16px;
+        }
+    }
+}

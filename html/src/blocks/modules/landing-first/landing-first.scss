@@ -1,0 +1,177 @@
+.landing-first {
+    min-height: 100vh;
+    position: relative;
+    background: var(--background);
+    &__overlay {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        background: linear-gradient(116.1deg, rgba(0, 0, 0, 0.21) 9.71%, rgba(0, 0, 0, 0.12) 56.79%, rgba(0, 0, 0, 0.099) 87.49%);
+    }
+    &__in {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        justify-content: flex-end;
+        padding-bottom: vw(120);
+        padding-top: vw(220);
+        @media all and (max-width: 1023px) {
+            height: 100%;
+            padding-bottom: 60px;
+            padding-top: 160px;
+        }
+    }
+    &__title {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-size: vw(120);
+        margin-bottom: vw(144);
+        line-height: 80%;
+        @media all and (max-width: 1023px) {
+            font-size: 30px;
+            margin-bottom: 60px;
+        }
+    }
+    &__bottom {
+        padding-right: vw(606);
+        @media all and (max-width: 1023px) {
+            padding-right: 0;
+        }
+    }
+    &__bottom-title {
+        font-size: vw(60);
+        margin-bottom: vw(23);
+        line-height: 100%;
+        text-transform: uppercase;        
+        color: #FFFFFF;
+        @media all and (max-width: 1023px) {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+    }
+    &__bottom-subtitle {
+        font-size: vw(20);
+        margin-bottom: vw(30);
+        padding-right: vw(142);
+        line-height: 130%;
+        color: #FFFFFF;
+        @media all and (max-width: 1023px) {
+            font-size: 16px;
+            margin-bottom: 20px;
+            padding-right: 0;
+        }
+    }
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: vw(20);
+        @media all and (max-width: 600px) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 10px;   
+        }
+    }
+    &__input {
+        input {
+            width: 100%;
+            // height: vw(60);
+            padding: vw(21) vw(20);
+            box-sizing: border-box;
+            border: 1px solid #C4C4C4;
+            border-radius: 0;
+            outline: none;
+            background: #fff;
+            @media all and (max-width: 1023px) {
+                height: 60px;
+                padding: 20px;
+            }
+            &,
+            &::placeholder {
+                font-weight: 300;
+                font-size: vw(16);
+                line-height: 100%;
+                // color: #fff;
+                color: #000000;
+                @media all and (max-width: 1023px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    &__button {
+        @media all and (max-width: 600px) {
+            order: 10;  
+        }
+        .button,
+        .text {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    &__checkbox {
+        display: flex;
+        align-items: flex-start;
+        margin-top: vw(10);
+        input {
+            display: none;
+        }
+        @media all and (max-width: 1023px) {
+            margin-top: 0;
+        }
+        .phantom {
+            width: vw(20);
+            height: vw(20);
+            border: 1px solid #fff;
+            margin-right: vw(10);
+            position: relative;
+            display: block;
+            @media all and (max-width: 1023px) {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                display: block;
+                top: 50%;
+                left: 50%;
+                right: 50%;
+                bottom: 50%;
+                background: #fff;
+                transition: all .3s ease;
+            }
+        }
+        .text {
+            width: calc( 100% - #{vw(30)} );
+            font-weight: 300;
+            font-size: vw(14);
+            line-height: 130%;
+            color: #fff;
+            display: block;
+            @media all and (max-width: 1023px) {
+                font-size: 14px;
+                width: calc( 100% - 30px );
+            }
+        }
+        input:checked + .phantom:after {
+            top: vw(2);
+            left: vw(2);
+            right: vw(2);
+            bottom: vw(2);
+            @media all and (max-width: 1023px) {
+                top: 2px;
+                left: 2px;
+                right: 2px;
+                bottom: 2px;
+            }
+        }
+    }
+}

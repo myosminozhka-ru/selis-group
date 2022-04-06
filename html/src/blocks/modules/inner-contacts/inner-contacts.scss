@@ -1,0 +1,122 @@
+.contact_page {
+    .inner-page {
+        @media all and (max-width: 1023px) {
+            padding-top: 30px;
+            padding-bottom: 0;
+        }
+    }
+}
+.inner-contacts {
+    display: flex;
+    align-items: flex-start;
+    @media all and (max-width: 1023px) {
+        flex-direction: column;
+    }
+    &__left {
+        width: vw(491);
+        margin-right: vw(120);
+        @media all and (max-width: 1023px) {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+    }
+    &__right {
+        width: calc(100% - #{ vw(611) });
+        height: vw(721);
+        @media all and (max-width: 1023px) {
+            width: calc(100% + 30px);
+            margin-left: -15px;
+            height: 390px;
+        }
+    }
+    &__office {
+        margin-bottom: vw(60);
+        select:not([hidden]) {
+            width: 100%;
+            display: block;
+            padding: vw(20);
+            box-sizing: border-box;
+            border: vw(1) solid rgba(0, 0, 0, 0.4);
+            outline: none;
+            font-weight: 300;
+            font-size: vw(16);
+            line-height: 100%;
+            color: #000000;
+            border-radius: 0;
+            @media all and (max-width: 1023px) {
+                font-size: 16px;
+                padding: 20px;
+            }
+        }
+        @media all and (max-width: 1023px) {
+            margin-bottom: 30px;
+        }
+    }
+    &__info-item {
+        &:not(:last-child) {
+            margin-bottom: vw(40);
+            @media all and (max-width: 1023px) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &__info-row {
+        display: flex;
+        align-items: flex-start;
+        & > div {
+            margin-right: vw(50);
+            @media all and (max-width: 1023px) {
+                margin-right: 10px;
+            }
+        }
+    }
+    &__info-title {
+        font-weight: bold;
+        font-size: vw(20);
+        margin-bottom: vw(30);
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+        position: relative;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: vw(-10);
+            height: vw(2);
+            width: vw(50);
+            background: #000;
+            @media all and (max-width: 1023px) {
+                bottom: -10px;
+                height: 2px;
+                width: 50px;
+            }
+        }
+        @media all and (max-width: 1023px) {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+    }
+    &__info-text {
+        .text {
+            font-size: vw(20);
+            line-height: 140%;
+            text-transform: uppercase;
+            color: #000000;
+            text-decoration: none;
+            display: block;
+            @media all and (max-width: 1023px) {
+                font-size: 16px;
+            }
+        }
+        .info {
+            font-size: vw(14);
+            line-height: 140%;
+            color: #666666; 
+            @media all and (max-width: 1023px) {
+                font-size: 12px;
+            }
+        }
+    }
+}

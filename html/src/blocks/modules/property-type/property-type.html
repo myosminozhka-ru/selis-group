@@ -1,0 +1,40 @@
+<div class="property-type scroll-section" data-section-color="light">
+    <div class="property-type__title">Выберите тип недвижимости</div>
+    <div class="property-type__items-glide glide">
+        <div class="property-type__items-track glide__track" data-glide-el="track">
+            <div class="property-type__items glide__slides">
+                @@for (var i = 0; i < 8; i++) {
+                    <a href="#" class="property-type__item" data-aos-delay="`+ i*100 +`" data-aos="zoom-in">
+                        <div class="property-type__item-bg"></div>
+                        <div class="property-type__item-in">
+                            <div class="property-type__item-category">Тип недвижимости</div>
+                            <div class="property-type__item-type">Загородная</div>
+                            <div class="property-type__item-image">
+                                <img class="withLoader" src="https://picsum.photos/500/50`+ i +`" alt="">
+                            </div>
+                            <div class="property-type__item-link">
+                                <span>
+                                    <div class="text">Смотреть</div>
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
+                                            <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#050505" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+        @@include("../slider-buttons/slider-buttons.html", {
+            "next-function": "propertyType.moveSlider('>')",
+            "prev-function": "propertyType.moveSlider('<')",
+            "dots-function": "propertyType.moveSlider('=5')",
+            "slider-object": "propertyType.slider",
+            "dots_count": 8,
+            "is_pagination": false,
+            "is_white": false
+        })
+    </div>
+</div>

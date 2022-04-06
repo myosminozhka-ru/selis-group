@@ -1,0 +1,58 @@
+<div class="inner-blog">
+    <div class="inner-blog__top">
+        <div class="inner-blog__title">Все статьи</div>
+        <form action="blog_found.html" class="inner-blog__search">
+            <input type="text" name="q" placeholder="Поиск">
+            <button type="submit">Найти</button>
+        </form>
+    </div>
+    @@if (search_results) {
+        <div class="inner-blog__results">
+            <div class="inner-blog__results-left">По вашему запросу найдено:</div>
+            <div class="inner-blog__results-right">@@founded статей</div>
+        </div>
+    }
+    @@if (!not_found) {
+        <div class="inner-blog__items">
+            @@include("../inner-blog-item/inner-blog-item.html", {
+                "hasDescription": true
+            })
+            @@for (var i = 1; i < 5; i++) {
+                @@include("../inner-blog-item/inner-blog-item.html", {
+                    "hasDescription": false
+                })
+            }
+            @@include("../inner-blog-item/inner-blog-item.html", {
+                "hasDescription": true
+            })
+            @@for (var i = 1; i < 5; i++) {
+                @@include("../inner-blog-item/inner-blog-item.html", {
+                    "hasDescription": false
+                })
+            }
+        </div>
+        <div class="inner-blog__pagination">
+            @@include("../slider-buttons/slider-buttons.html", {
+                "next-function": "console.log('next')",
+                "prev-function": "console.log('prev')",
+                "dots-function": "console.log('dot')",
+                "slider-object": "propertyType.slider",
+                "dots_count": 7,
+                "is_pagination": "true",
+                "is_white": false
+            })
+        </div>
+    }
+    @@if (not_found) {
+        <div class="inner-blog__see-all">
+            <a href="#" class="button">
+                <div class="text">Смотреть все статьи</div>
+                <div class="icon">
+                    <svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#050505" stroke-width="2"/>
+                    </svg>    
+                </div>
+            </a>
+        </div>
+    }
+</div>

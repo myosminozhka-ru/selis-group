@@ -1,0 +1,88 @@
+.object-nearby {
+    padding: vw(60) 0 vw(100);
+    @media all and (max-width: 1023px) {
+        padding: 30px 0 60px;
+        .slider-buttons {
+            margin-top: 20px;
+        }
+    }
+    .unique-offers__item {
+        filter: none;
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: vw(60);
+        @media all and (max-width: 1023px) {
+            margin-bottom: 30px;
+        }
+    }
+    &__title {
+        font-weight: bold;
+        font-size: vw(30);
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+        @media all and (max-width: 1023px) {
+            font-size: 20px;
+        }
+    }
+    &__map {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        @media all and (max-width: 1023px) {
+            margin-top: 30px;
+        }
+        .text {
+            font-size: vw(18);
+            margin-right: vw(20);
+            line-height: 100%;
+            color: #000000;
+            @media all and (max-width: 1023px) {
+                font-size: 16px;
+                margin-right: 10px;
+            }
+        }
+        .icon {
+            width: vw(40);
+            height: vw(40);
+            border-radius: 50%;
+            transition: all .3s ease;
+            font-size: 0;
+            @media all and (max-width: 1023px) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &:hover {
+            .text {
+                text-decoration: underline;
+            }
+            .icon {
+                background: #FFBC19;
+            }
+        }
+    }
+    &__slides {
+        @media all and (min-width: 1024px) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: vw(20);
+        }
+    }
+    &__bottom {
+        margin-top: vw(60);
+        display: flex;
+        justify-content: center;
+        @media all and (max-width: 1023px) {
+            margin-top: 60px;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button {
+            margin-top: 0;
+        }
+    }
+}

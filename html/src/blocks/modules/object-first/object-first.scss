@@ -1,0 +1,160 @@
+.object-first {
+    @media all and (max-width: 1023px) {
+        &.main-first {
+            padding-top: 181px;
+            height: auto;
+        }
+        .main-first__items {
+            display: block;
+        }
+        .investment-first__right {
+            display: none;
+        }
+        .main-first__image {
+            height: 100%;
+        }
+    }
+    &__left {
+        @media all and (max-width: 1023px) {
+            width: 100%;
+        }
+    }
+    &__right {
+        padding: vw(55) vw(351) vw(55) vw(60);
+        background: rgba(0, 0, 0, 0.6);
+        position: static;
+        @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+        }
+        display: flex;
+        align-items: center;
+        @media all and (max-width: 1023px) {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 184px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    }
+    &__right-item {
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+            margin-right: vw(30);
+            @media all and (max-width: 1023px) {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+        .icon {
+            width: vw(40);
+            height: vw(40);
+            margin-right: vw(10);
+            font-size: 0;
+            @media all and (max-width: 1023px) {
+                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .text {
+            font-size: vw(16);
+            line-height: 100%;
+            text-transform: lowercase;
+            color: #FFFFFF;
+            white-space: nowrap;
+            @media all and (max-width: 1023px) {
+                font-size: 12px;
+            }
+        }
+    }
+    &__arrow {
+        width: vw(16);
+        height: vw(60);
+        padding: vw(50) vw(50) vw(45);
+        @media all and (max-width: 1023px) {
+            height: 40px;
+            width: 16px;
+            padding: 110px 60px 60px 45px;
+        }
+    }
+    &__price {
+        margin: vw(30) 0;
+        @media all and (max-width: 1023px) {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+    &__price-top {
+        font-size: vw(20);
+        margin-bottom: vw(10);
+        line-height: 100%;
+        text-transform: capitalize;
+        color: #FFFFFF;
+        @media all and (max-width: 1023px) {
+            margin-bottom: 2px;
+            font-size: 12px;
+        }
+    }
+    &__price-bottom {
+        display: flex;
+        align-items: flex-end;
+        .price {
+            font-size: vw(60);
+            line-height: 100%;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            a {
+                color: #FFFFFF;
+            }
+            @media all and (max-width: 1023px) {
+                font-size: 20px;
+            }
+        }
+        .currency {
+            margin-left: vw(20);
+            font-weight: bold;
+            font-size: vw(20);
+            line-height: 80%;
+            text-align: right;
+            text-decoration-line: underline;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            border: none;
+            background: none;
+            outline: none;
+            padding-bottom: vw(7);
+            @media all and (max-width: 1023px) {
+                font-size: 14px;
+                padding: 0 30px 0 10px;
+                text-decoration: none;
+            }
+            option {
+                color: #000;
+            }
+        }
+        .nativejs-select:not(.nativejs-select_active) .nativejs-select__placeholder {
+            border: none !important;
+        }
+        .nativejs-select {
+            margin-left: vw(20);
+            
+            &__placeholder {
+                text-transform: uppercase;
+            }
+            &__option {
+                text-transform: uppercase;
+            }
+        }
+    }
+    &__pagination {
+        @media all and (max-width: 1023px) {
+            display: none;
+        }
+    }
+}

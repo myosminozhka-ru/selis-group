@@ -1,0 +1,113 @@
+<div class="property-buy-content scroll-section" data-section-color="light">
+    <div class="property-buy-content__in center">
+        
+        @@if (!not_founded) {
+            @@include("../property-sorting/property-sorting.html", {
+                "founded": 120
+            })
+            <div class="property-buy-content__items">
+                @@include("../property-item/property-item.html", {
+                    "is_on_request": false,
+                    "name": "Название объекта",
+                    "marker": "new",
+                    "type": "sale"
+                })
+                @@include("../property-item/property-item.html", {
+                    "is_on_request": true,
+                    "name": "Название объекта",
+                    "marker": "vip",
+                    "type": "sale"
+                })
+                @@include("../property-item/property-item.html", {
+                    "is_on_request": false,
+                    "name": "Название объекта",
+                    "marker": "hot",
+                    "type": "sale"
+                })
+                @@include("../property-item/property-item.html", {
+                    "is_on_request": false,
+                    "name": "Название объекта",
+                    "marker": "sale",
+                    "type": "sale"
+                })
+                <!-- @@include("../property-item/property-item.html", {
+                    "is_on_request": false,
+                    "name": "Название объекта",
+                    "marker": "sale",
+                    "type": "rent"
+                })
+                @@include("../property-item/property-item.html", {
+                    "is_on_request": false,
+                    "name": "Название объекта",
+                    "marker": "sale",
+                    "type": "hybrid",
+                }) -->
+            </div>
+            <div class="property-buy-content__offer">
+                @@include("../property-offer/property-offer.html", {
+                    "background": "https://picsum.photos/1200/500",
+                    "marker": "hot"
+                })
+            </div>
+            <div class="property-buy-content__items">
+                @@include("../property-item/property-item.html", {
+                    "is_on_request": false,
+                    "name": "Название объекта",
+                    "marker": "new",
+                    "type": "sale"
+                })
+                @@include("../property-item/property-item.html", {
+                    "is_on_request": true,
+                    "name": "Название объекта",
+                    "marker": "vip",
+                    "type": "sale"
+                })
+                @@include("../property-item/property-item.html", {
+                    "is_on_request": false,
+                    "name": "Название объекта",
+                    "marker": "hot",
+                    "type": "sale"
+                })
+                @@include("../property-item/property-item.html", {
+                    "is_on_request": false,
+                    "name": "Название объекта",
+                    "marker": "sale",
+                    "type": "sale"
+                })
+                <!-- @@include("../property-item/property-item.html", {
+                    "is_on_request": false,
+                    "name": "Название объекта",
+                    "marker": "sale",
+                    "type": "rent"
+                })
+                @@include("../property-item/property-item.html", {
+                    "is_on_request": false,
+                    "name": "Название объекта",
+                    "marker": "sale",
+                    "type": "hybrid",
+                }) -->
+            </div>
+        }
+        @@if (not_founded) {
+            @@include("../property-sorting/property-sorting.html", {
+                "founded": 0
+            })
+            <div class="property-buy-content__info">
+                Оставьте свои контакты и мы свяжемся с вами в ближайшее время.
+            </div>
+            <div class="property-buy-content__buttons">
+                <a href="#" class="button orange">
+                    <div class="text">Оставить заявку</div>
+                </a>
+                <a href="#" class="button">
+                    <div class="text">Смотреть все предложения</div>
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
+                            <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#050505" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

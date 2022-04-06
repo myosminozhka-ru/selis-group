@@ -1,0 +1,89 @@
+<div class="property-buy-content scroll-section" data-section-color="light">
+    <div class="property-buy-content__in center">
+        @@include("../property-sorting/property-sorting.html", {
+            "founded": 120
+        })
+        <div class="property-buy-content__items">
+            @@include("../property-item/property-item.html", {
+                "is_on_request": false,
+                "name": "Название объекта",
+                "marker": "new",
+                "type": "rent"
+            })
+            @@include("../property-item/property-item.html", {
+                "is_on_request": true,
+                "name": "Название объекта",
+                "marker": "vip",
+                "type": "rent"
+            })
+            @@include("../property-item/property-item.html", {
+                "is_on_request": false,
+                "name": "Название объекта",
+                "marker": "hot",
+                "type": "rent"
+            })
+            @@include("../property-item/property-item.html", {
+                "is_on_request": false,
+                "name": "Название объекта",
+                "marker": "sale",
+                "type": "rent"
+            })
+            <!-- @@include("../property-item/property-item.html", {
+                "is_on_request": false,
+                "name": "Название объекта",
+                "marker": "sale",
+                "type": "rent"
+            })
+            @@include("../property-item/property-item.html", {
+                "is_on_request": false,
+                "name": "Название объекта",
+                "marker": "sale",
+                "type": "hybrid",
+            }) -->
+        </div>
+        <div class="property-buy-content__offer">
+            @@include("../property-offer/property-offer.html", {
+                "background": "https://picsum.photos/1200/500",
+                "marker": "hot"
+            })
+        </div>
+        <div class="property-buy-content__items">
+            @@include("../property-item/property-item.html", {
+                "is_on_request": false,
+                "name": "Название объекта",
+                "marker": "new",
+                "type": "rent"
+            })
+            @@include("../property-item/property-item.html", {
+                "is_on_request": true,
+                "name": "Название объекта",
+                "marker": "vip",
+                "type": "rent"
+            })
+            @@include("../property-item/property-item.html", {
+                "is_on_request": false,
+                "name": "Название объекта",
+                "marker": "hot",
+                "type": "rent"
+            })
+            @@include("../property-item/property-item.html", {
+                "is_on_request": false,
+                "name": "Название объекта",
+                "marker": "sale",
+                "type": "rent"
+            })
+            <!-- @@include("../property-item/property-item.html", {
+                "is_on_request": false,
+                "name": "Название объекта",
+                "marker": "sale",
+                "type": "rent"
+            })
+            @@include("../property-item/property-item.html", {
+                "is_on_request": false,
+                "name": "Название объекта",
+                "marker": "sale",
+                "type": "hybrid",
+            }) -->
+        </div>
+    </div>
+</div>

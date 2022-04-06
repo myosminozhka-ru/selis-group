@@ -1,0 +1,167 @@
+.main-first {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+    z-index: 20;
+    &:not(.isInnerPage) {
+        height: 100vh;
+    }
+    @media all and (max-width: 1023px) {
+        &.isInnerPage {
+            height: 350px;
+        }
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        background: linear-gradient(116.1deg, rgba(0, 0, 0, 0.21) 41.86%, rgba(0, 0, 0, 0.12) 56.56%, rgba(0, 0, 0, 0.099) 87.49%);
+    }
+    &.isInnerPage {
+        height: vw(700);
+    }
+    &__image {
+        height: 100%;
+        background: var(--background);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    &__items {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-left: vw(346);
+        width: 100%;
+        box-sizing: border-box;
+        @media all and (max-width: 1023px) {
+            padding-left: 15px;
+        }
+    }
+    &__left {
+        width: vw(902);
+        margin-right: vw(51);
+        @media all and (max-width: 1023px) {
+            width: 100%;
+        }
+    }
+    &__right {
+        width: vw(601);
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+    &__location {
+        display: flex;
+        align-items: center;
+        margin-bottom: vw(12);
+        @media all and (max-width: 1023px) {
+            margin-bottom: 7px;
+            align-items: flex-end;
+        }
+        .icon {
+            width: vw(40);
+            height: vw(40);
+            margin-right: vw(20);
+            @media all and (max-width: 1023px) {
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+            }
+        }
+        .text {
+            font-weight: bold;
+            font-size: vw(20);
+            line-height: 120%;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            position: relative;
+            @media all and (max-width: 1023px) {
+                font-size: 10px;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: vw(-10);
+                left: 0;
+                height: vw(2);
+                width: vw(50);
+                background: #fff;
+                @media all and (max-width: 1023px) {
+                    width: 20px;
+                    height: 2px;
+                }
+            }
+        }
+    }
+    &__title {
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        &:not(.isInnerPage) {
+            font-size: vw(120);
+            line-height: 80%;
+            @media all and (max-width: 1023px) {
+                font-size: 35px;
+                line-height: 110%;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+        &.isInnerPage {
+            font-size: vw(90);
+            line-height: 100%;
+            @media all and (max-width: 1023px) {
+                font-size: 30px;
+                line-height: 110%;
+            }
+        }        
+    }
+    &__arrow {
+        height: vw(60);
+        width: vw(30);
+        box-sizing: content-box;
+        animation: scroll_down 3s linear infinite;
+        @media all and (max-width: 1023px) {
+            height: 40px;
+            width: 16px;
+            transform: none !important;
+            opacity: 1 !important;
+        }
+        &:not(.isInnerPage) {
+            padding: vw(124) vw(50);
+            @media all and (max-width: 1023px) {
+                padding: 60px 45px;
+            }
+        }
+        &.isInnerPage {
+            padding: vw(50);
+            @media all and (max-width: 1023px) {
+                padding: 30px 45px;
+            }
+        }
+    }
+}
+
+@keyframes scroll_down {
+    0% {
+        transform: translateY(0);
+    }
+    66% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

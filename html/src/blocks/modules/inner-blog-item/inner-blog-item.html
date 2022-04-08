@@ -1,13 +1,11 @@
-<div class="inner-blog__item">
+<div class="inner-blog__item" v-if="blog.selected.includes('@@type')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        @@if (hasDescription) {
-            <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
-        }
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>

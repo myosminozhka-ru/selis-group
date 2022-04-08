@@ -249,6 +249,16 @@
             margin-bottom: 30px;
         }
     }
+    &__item:nth-child(15n+2) &__item-description,
+    &__item:nth-child(15n+3) &__item-description,
+    &__item:nth-child(15n+4) &__item-description,
+    &__item:nth-child(15n+7) &__item-description,
+    &__item:nth-child(15n+8) &__item-description,
+    &__item:nth-child(15n+9) &__item-description {
+        @media all and (min-width: 1024px) {
+            display: none;
+        }
+    }
     &__item-button {
         padding-top: vw(10);
         .button {
@@ -256,6 +266,9 @@
         }
     }
     &__pagination {
+        a, span {
+            color: #000 !important; 
+        }
         margin-top: vw(60);
         @media all and (max-width: 1023px) {
             margin-top: 40px;

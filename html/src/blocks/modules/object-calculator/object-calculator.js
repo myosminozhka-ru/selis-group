@@ -19,7 +19,7 @@ const Calculator = class Calculator {
         apiUrl: "https://openexchangerates.org/api/latest.json?app_id=a8a2d37a99d5493c9e51901ea87662e0&base=USD",
         oneUsdOnRub: 70,
         currency: '₽',
-        price: document.querySelector('.object-first__price-bottom .price').innerHTML,
+        price: document.querySelector('.object-first__price-bottom .price') ? document.querySelector('.object-first__price-bottom .price').innerHTML : 0,
         firstPayment: 1000000,
         mortgageTerm: 20,
         percentage: 5.39,

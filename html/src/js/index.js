@@ -20,6 +20,7 @@ import ObjectFirst from "%modules%/object-first/object-first";
 import mobileFilter from "%modules%/mobile-filter/mobile-filter";
 import Modals from "%modules%/modals/modals";
 import ModalQuiz from "%modules%/modal-quiz/modal-quiz";
+import Blog from "%modules%/inner-first/inner-first";
 
 
 import AOS from 'aos';
@@ -53,6 +54,9 @@ window.app = new Vue({
         innerContacts: new InnerContacts(),
         objectFirst: new ObjectFirst(),
         mobileFilter: new mobileFilter(),
+        blog: new Blog({
+            selected: []
+        }),
         modals: new Modals({
             modalsSelector: "data-modal",
             modalsOpenerSelector: "data-modal-id",

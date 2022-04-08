@@ -1,23 +1,24 @@
 <div class="inner-first@@if (buttons.length) { inner-first--hasButtons}@@if(isArticle) { isArticle}">
     <div class="inner-first__image" style="--background: @@background"></div>
+    {{ blog.selected }}
     <div class="inner-first__in center@@if (buttons.length) { inner-first__in--hasButtons}">
         <h1 class="inner-first__title@@if(isArticle) { isArticle}" data-aos="fade-up">@@title</h1>
         @@if (buttons.length) {
-            <div class="inner-first__buttons">
+            <div class="inner-first__buttons" :class="{'isMoreShowed': blog.isMoreShowed}">
                 @@for (var i = 0; i < buttons.length; i++) {
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="`+ i*50 +`">
-                        <input type="checkbox">
+                        <input type="checkbox" value="`+buttons[i]+`" v-model="blog.selected">
                         <span class="label">`+buttons[i]+`</span>
                     </label>
                 }
                 @@if(!isArticle) {
-                    <a href="#" class="inner-first__button inner-first__button--more" data-aos="fade-up" data-aos-delay="650">
+                    <a href="#" class="inner-first__button inner-first__button--more" data-aos="fade-up" data-aos-delay="650" v-if="!blog.isMoreShowed" @click="blog.isMoreShowed = true">
                         <div class="label">Еще</div>
                     </a>
                 }
             </div>
             @@if(!isArticle) {
-                <select class="inner-first__buttons mob" multiple="multiple">
+                <select class="inner-first__buttons mob" multiple="multiple" v-model="blog.selected">
                     <option value="" selected disabled hidden>Поиск по тегам</option>
                     @@for (var i = 0; i < buttons.length; i++) {
                         <option value="`+buttons[i]+`">`+buttons[i]+`</option>

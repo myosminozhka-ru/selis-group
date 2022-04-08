@@ -11232,6 +11232,10 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   border-color: #FFCA49;
 }
 
+.inner-first__buttons:not(.isMoreShowed) .inner-first__button:not(.inner-first__button--more):nth-child(n+13) {
+  display: none;
+}
+
 .partnership .inner-first {
   height: 23.59375vw;
 }
@@ -11522,6 +11526,11 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
 
 .inner-blog__pagination {
   margin-top: 3.125vw;
+}
+
+.inner-blog__pagination a,
+.inner-blog__pagination span {
+  color: #000 !important;
 }
 
 .inner-blog-article {
@@ -14716,6 +14725,15 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   }
 
   .inner-first__by-tags {
+    display: none;
+  }
+
+  .inner-blog__item:nth-child(15n+2) .inner-blog__item-description,
+  .inner-blog__item:nth-child(15n+3) .inner-blog__item-description,
+  .inner-blog__item:nth-child(15n+4) .inner-blog__item-description,
+  .inner-blog__item:nth-child(15n+7) .inner-blog__item-description,
+  .inner-blog__item:nth-child(15n+8) .inner-blog__item-description,
+  .inner-blog__item:nth-child(15n+9) .inner-blog__item-description {
     display: none;
   }
 

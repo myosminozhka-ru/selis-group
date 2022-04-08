@@ -2069,84 +2069,120 @@
 </div>
             <div class="inner-first inner-first--hasButtons">
     <div class="inner-first__image" style="--background: url('../img/main_first.png') 50% 50% / cover no-repeat fixed"></div>
+    {{ blog.selected }}
     <div class="inner-first__in center inner-first__in--hasButtons">
         <h1 class="inner-first__title" data-aos="fade-up">Наш блог</h1>
         
-            <div class="inner-first__buttons">
+            <div class="inner-first__buttons" :class="{'isMoreShowed': blog.isMoreShowed}">
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="0">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Городская недвижимость" v-model="blog.selected">
                         <span class="label">Городская недвижимость</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="50">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Загородная недвижимость" v-model="blog.selected">
                         <span class="label">Загородная недвижимость</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="100">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Коммерческая недвижимость" v-model="blog.selected">
                         <span class="label">Коммерческая недвижимость</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="150">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Аренда" v-model="blog.selected">
                         <span class="label">Аренда</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="200">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Продажа" v-model="blog.selected">
                         <span class="label">Продажа</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="250">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Покупка" v-model="blog.selected">
                         <span class="label">Покупка</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="300">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Ипотека" v-model="blog.selected">
                         <span class="label">Ипотека</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="350">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Продажа" v-model="blog.selected">
                         <span class="label">Продажа</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="400">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Городская недвижимость" v-model="blog.selected">
                         <span class="label">Городская недвижимость</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="450">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Ипотека" v-model="blog.selected">
                         <span class="label">Ипотека</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="500">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Коммерческая недвижимость" v-model="blog.selected">
                         <span class="label">Коммерческая недвижимость</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="550">
-                        <input type="checkbox">
-                        <span class="label">Покупка</span>
+                        <input type="checkbox" value="Городская недвижимость" v-model="blog.selected">
+                        <span class="label">Городская недвижимость</span>
                     </label>
                 
                     <label class="inner-first__button" data-aos="fade-up" data-aos-delay="600">
-                        <input type="checkbox">
+                        <input type="checkbox" value="Загородная недвижимость" v-model="blog.selected">
+                        <span class="label">Загородная недвижимость</span>
+                    </label>
+                
+                    <label class="inner-first__button" data-aos="fade-up" data-aos-delay="650">
+                        <input type="checkbox" value="Коммерческая недвижимость" v-model="blog.selected">
+                        <span class="label">Коммерческая недвижимость</span>
+                    </label>
+                
+                    <label class="inner-first__button" data-aos="fade-up" data-aos-delay="700">
+                        <input type="checkbox" value="Аренда" v-model="blog.selected">
+                        <span class="label">Аренда</span>
+                    </label>
+                
+                    <label class="inner-first__button" data-aos="fade-up" data-aos-delay="750">
+                        <input type="checkbox" value="Продажа" v-model="blog.selected">
+                        <span class="label">Продажа</span>
+                    </label>
+                
+                    <label class="inner-first__button" data-aos="fade-up" data-aos-delay="800">
+                        <input type="checkbox" value="Ипотека" v-model="blog.selected">
+                        <span class="label">Ипотека</span>
+                    </label>
+                
+                    <label class="inner-first__button" data-aos="fade-up" data-aos-delay="850">
+                        <input type="checkbox" value="Городская недвижимость" v-model="blog.selected">
+                        <span class="label">Городская недвижимость</span>
+                    </label>
+                
+                    <label class="inner-first__button" data-aos="fade-up" data-aos-delay="900">
+                        <input type="checkbox" value="Коммерческая недвижимость" v-model="blog.selected">
+                        <span class="label">Коммерческая недвижимость</span>
+                    </label>
+                
+                    <label class="inner-first__button" data-aos="fade-up" data-aos-delay="950">
+                        <input type="checkbox" value="Аренда" v-model="blog.selected">
                         <span class="label">Аренда</span>
                     </label>
                 
                 
-                    <a href="#" class="inner-first__button inner-first__button--more" data-aos="fade-up" data-aos-delay="650">
+                    <a href="#" class="inner-first__button inner-first__button--more" data-aos="fade-up" data-aos-delay="650" v-if="!blog.isMoreShowed" @click="blog.isMoreShowed = true">
                         <div class="label">Еще</div>
                     </a>
                 
             </div>
             
-                <select class="inner-first__buttons mob" multiple="multiple">
+                <select class="inner-first__buttons mob" multiple="multiple" v-model="blog.selected">
                     <option value="" selected disabled hidden>Поиск по тегам</option>
                     
                         <option value="Городская недвижимость">Городская недвижимость</option>
@@ -2171,7 +2207,21 @@
                     
                         <option value="Коммерческая недвижимость">Коммерческая недвижимость</option>
                     
-                        <option value="Покупка">Покупка</option>
+                        <option value="Городская недвижимость">Городская недвижимость</option>
+                    
+                        <option value="Загородная недвижимость">Загородная недвижимость</option>
+                    
+                        <option value="Коммерческая недвижимость">Коммерческая недвижимость</option>
+                    
+                        <option value="Аренда">Аренда</option>
+                    
+                        <option value="Продажа">Продажа</option>
+                    
+                        <option value="Ипотека">Ипотека</option>
+                    
+                        <option value="Городская недвижимость">Городская недвижимость</option>
+                    
+                        <option value="Коммерческая недвижимость">Коммерческая недвижимость</option>
                     
                         <option value="Аренда">Аренда</option>
                     
@@ -2194,16 +2244,14 @@
     
     
         <div class="inner-blog__items">
-            <div class="inner-blog__item">
+            <div class="inner-blog__item" v-if="blog.selected.includes('Городская недвижимость')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        
-            <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
-        
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>
@@ -2217,14 +2265,14 @@
     </div>
 </div>
             
-                <div class="inner-blog__item">
+                <div class="inner-blog__item" v-if="blog.selected.includes('Ипотека')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>
@@ -2238,14 +2286,14 @@
     </div>
 </div>
             
-                <div class="inner-blog__item">
+                <div class="inner-blog__item" v-if="blog.selected.includes('Ипотека')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>
@@ -2259,14 +2307,14 @@
     </div>
 </div>
             
-                <div class="inner-blog__item">
+                <div class="inner-blog__item" v-if="blog.selected.includes('Ипотека')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>
@@ -2280,14 +2328,14 @@
     </div>
 </div>
             
-                <div class="inner-blog__item">
+                <div class="inner-blog__item" v-if="blog.selected.includes('Ипотека')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>
@@ -2301,16 +2349,14 @@
     </div>
 </div>
             
-            <div class="inner-blog__item">
+            <div class="inner-blog__item" v-if="blog.selected.includes('Аренда')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        
-            <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
-        
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>
@@ -2324,14 +2370,14 @@
     </div>
 </div>
             
-                <div class="inner-blog__item">
+                <div class="inner-blog__item" v-if="blog.selected.includes('Продажа')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>
@@ -2345,14 +2391,14 @@
     </div>
 </div>
             
-                <div class="inner-blog__item">
+                <div class="inner-blog__item" v-if="blog.selected.includes('Продажа')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>
@@ -2366,14 +2412,14 @@
     </div>
 </div>
             
-                <div class="inner-blog__item">
+                <div class="inner-blog__item" v-if="blog.selected.includes('Продажа')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>
@@ -2387,14 +2433,14 @@
     </div>
 </div>
             
-                <div class="inner-blog__item">
+                <div class="inner-blog__item" v-if="blog.selected.includes('Продажа')">
     <div class="inner-blog__item-image">
         <img src="https://picsum.photos/800/700" alt="Название статьи Название статьи Название статьи Название статьи">
     </div>
     <div class="inner-blog__item-in">
         <div class="inner-blog__item-date">01 декабря 2021</div>
         <div class="inner-blog__item-title">Название статьи Название статьи Название статьи Название статьи</div>
-        
+        <div class="inner-blog__item-description">Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости от главных автомагистралей столицы — Садовое и Бульварное кольца.Жилой комплекс «Большая Дмитровка IX» расположен на улице Большая Дмитровка, в непосредственной близости </div>
         <div class="inner-blog__item-button">
             <a href="blog_article.html" class="button white">
                 <div class="text">Читать</div>
@@ -3024,5 +3070,11 @@
         </div>
         <script src="js/main.js"></script>
         <script src="js/vendor.js"></script>
+        <script>
+            app.blog.selected = [
+                "Продажа",
+                "Загородная недвижимость"
+            ]
+        </script>
     </body>
 </html>

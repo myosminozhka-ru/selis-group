@@ -164,6 +164,9 @@
             }
         }
     }
+    &__buttons:not(.isMoreShowed) &__button:not(.inner-first__button--more):nth-child(n+13) {
+        display: none;
+    }
 }
 
  

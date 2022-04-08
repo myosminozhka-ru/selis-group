@@ -901,6 +901,37 @@ var InnerContacts = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/inner-first/inner-first.js":
+/*!*******************************************************!*\
+  !*** ./src/blocks/modules/inner-first/inner-first.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+var Blog = /*#__PURE__*/_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_0___default()(function Blog(_ref) {
+  var selected = _ref.selected;
+
+  _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, Blog);
+
+  this.selected = selected, this.isMoreShowed = false;
+});
+
+/* harmony default export */ __webpack_exports__["default"] = (Blog);
+
+/***/ }),
+
 /***/ "./src/blocks/modules/investment-first/investment-first.js":
 /*!*****************************************************************!*\
   !*** ./src/blocks/modules/investment-first/investment-first.js ***!
@@ -2063,7 +2094,7 @@ var Calculator = /*#__PURE__*/function () {
       apiUrl: "https://openexchangerates.org/api/latest.json?app_id=a8a2d37a99d5493c9e51901ea87662e0&base=USD",
       oneUsdOnRub: 70,
       currency: '₽',
-      price: document.querySelector('.object-first__price-bottom .price').innerHTML,
+      price: document.querySelector('.object-first__price-bottom .price') ? document.querySelector('.object-first__price-bottom .price').innerHTML : 0,
       firstPayment: 1000000,
       mortgageTerm: 20,
       percentage: 5.39,
@@ -3844,8 +3875,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobile_filter_mobile_filter__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! %modules%/mobile-filter/mobile-filter */ "./src/blocks/modules/mobile-filter/mobile-filter.js");
 /* harmony import */ var _modules_modals_modals__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! %modules%/modals/modals */ "./src/blocks/modules/modals/modals.js");
 /* harmony import */ var _modules_modal_quiz_modal_quiz__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! %modules%/modal-quiz/modal-quiz */ "./src/blocks/modules/modal-quiz/modal-quiz.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _modules_inner_first_inner_first__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! %modules%/inner-first/inner-first */ "./src/blocks/modules/inner-first/inner-first.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_24__);
 
 
 
@@ -3870,7 +3902,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-aos__WEBPACK_IMPORTED_MODULE_23___default.a.init({
+
+aos__WEBPACK_IMPORTED_MODULE_24___default.a.init({
   disable: 'mobile'
 });
 window.app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
@@ -3899,6 +3932,9 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
       innerContacts: new _modules_inner_contacts_inner_contacts__WEBPACK_IMPORTED_MODULE_18__["default"](),
       objectFirst: new _modules_object_first_object_first__WEBPACK_IMPORTED_MODULE_19__["default"](),
       mobileFilter: new _modules_mobile_filter_mobile_filter__WEBPACK_IMPORTED_MODULE_20__["default"](),
+      blog: new _modules_inner_first_inner_first__WEBPACK_IMPORTED_MODULE_23__["default"]({
+        selected: []
+      }),
       modals: new _modules_modals_modals__WEBPACK_IMPORTED_MODULE_21__["default"]({
         modalsSelector: "data-modal",
         modalsOpenerSelector: "data-modal-id",

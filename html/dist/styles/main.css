@@ -7539,16 +7539,23 @@ img.withLoader {
   text-transform: capitalize;
 }
 
+.header__lang-dropdown {
+  padding: 3.90625vw 0.5208333333vw 1.0416666667vw;
+}
+
+.header__services-dropdown {
+  padding: 6.4583333333vw 0.5208333333vw 1.0416666667vw;
+}
+
 .header__lang-dropdown,
 .header__services-dropdown {
-  background: rgba(23, 23, 23, 0.5);
   position: absolute;
   left: -0.5208333333vw;
   right: -0.5208333333vw;
   top: -2.6041666667vw;
-  padding: 6.4583333333vw 0.5208333333vw 1.0416666667vw;
   transform: translateY(-100%);
   transition: all 0.3s ease;
+  background: rgba(23, 23, 23, 0.5);
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -7601,6 +7608,11 @@ img.withLoader {
 
 .header__services-dropdown a {
   white-space: nowrap;
+  font-weight: 300;
+  line-height: 100%;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9375vw;
 }
 
 .header__right {
@@ -7763,10 +7775,10 @@ body .header__main-mobile-menu-opener.isOpened div:nth-child(3) {
 
 .header__main-menu ul a {
   font-weight: 300;
-  font-size: 0.8333333333vw;
-  text-decoration: none;
   line-height: 100%;
   color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9375vw;
   transition: all 0.3s ease;
 }
 

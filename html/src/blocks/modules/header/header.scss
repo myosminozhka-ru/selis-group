@@ -522,10 +522,10 @@
         justify-content: space-between;
         position: relative;
         z-index: 10;
-        width: vw(60);
-        height: vw(60);
-        padding: vw(15) 0 vw(15) vw(10);
-        margin-left: vw(35);
+        width: vw(40);
+        height: vw(30);
+        padding: 0;
+        margin-left: vw(20);
         cursor: pointer;
         @media all and (max-width: 1023px) {
             width: 40px;
@@ -563,24 +563,23 @@
 
     &__main-menu-opener {
         &.isOpened {
-            padding: vw(15);
             font-size: 0;
             div  {
-                width: 100%;
+                width: 80%;
                 transition: all .3s ease !important;
                 margin-left: 0;
-                &:nth-child(1) {
-                    transform: translateY(#{vw(-2)})
-                }
+                // &:nth-child(1) {
+                //     transform: translateY(#{vw(-10)})
+                // }
                 &:nth-child(3) {
-                    width: 100%;
+                    width: 80%;
                     transform-origin: 100% 50%;
-                    transform: rotate(90deg);
+                    transform: rotate(90deg) translateX(0.2vw);
                 }
                 &:nth-child(2) {
-                    width: 120%;
+                    width: 100%;
                     transform-origin: 50% 50%;
-                    transform: rotate(-45deg);
+                    transform: rotate(-45deg) translateY(0) translateX(0);
                 }
             }
         }
@@ -879,6 +878,48 @@
             font-size: 14px;  
             line-height: 100%;
             color: #000000;
+        }
+    }
+    &__favorites {
+        width: vw(30);
+        position: relative;
+        z-index: 1;
+        margin-right: vw(20);
+        @media all and (max-width: 1023px) {
+            margin-right: 20px;
+            width: 20px;
+        }
+        cursor: pointer;
+        .value {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translateX(50%) translateY(-50%);
+            pointer-events: none;
+            width: vw(15);
+            height: vw(15);
+            font-size: vw(10);
+            text-align: center;
+            line-height: vw(15);
+            border-radius: 50%;
+            color: #000;
+            background: #FFBC19;
+            @media all and (max-width: 1023px) {
+                width: 15px;
+                height: 15px;
+                font-size: 10px;
+                line-height: 15px;
+            }
+        }
+        .icon {
+            font-size: 0;
+            svg {
+                fill: #fff;
+                transition: all .3s ease;
+            }
+        }
+        &:hover .icon svg {
+            fill: #FFBC19;
         }
     }
 }

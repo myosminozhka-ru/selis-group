@@ -7652,10 +7652,10 @@ img.withLoader {
   justify-content: space-between;
   position: relative;
   z-index: 10;
-  width: 3.125vw;
-  height: 3.125vw;
-  padding: 0.78125vw 0 0.78125vw 0.5208333333vw;
-  margin-left: 1.8229166667vw;
+  width: 2.0833333333vw;
+  height: 1.5625vw;
+  padding: 0;
+  margin-left: 1.0416666667vw;
   cursor: pointer;
 }
 
@@ -7690,30 +7690,25 @@ img.withLoader {
 }
 
 .header__main-menu-opener.isOpened {
-  padding: 0.78125vw;
   font-size: 0;
 }
 
 .header__main-menu-opener.isOpened div {
-  width: 100%;
+  width: 80%;
   transition: all 0.3s ease !important;
   margin-left: 0;
 }
 
-.header__main-menu-opener.isOpened div:nth-child(1) {
-  transform: translateY(-0.1041666667vw);
-}
-
 .header__main-menu-opener.isOpened div:nth-child(3) {
-  width: 100%;
+  width: 80%;
   transform-origin: 100% 50%;
-  transform: rotate(90deg);
+  transform: rotate(90deg) translateX(0.2vw);
 }
 
 .header__main-menu-opener.isOpened div:nth-child(2) {
-  width: 120%;
+  width: 100%;
   transform-origin: 50% 50%;
-  transform: rotate(-45deg);
+  transform: rotate(-45deg) translateY(0) translateX(0);
 }
 
 body .header__main-mobile-menu-opener {
@@ -8055,6 +8050,43 @@ body .header__main-mobile-menu-opener.isOpened div:nth-child(3) {
   font-size: 14px;
   line-height: 100%;
   color: #000000;
+}
+
+.header__favorites {
+  width: 1.5625vw;
+  position: relative;
+  z-index: 1;
+  margin-right: 1.0416666667vw;
+  cursor: pointer;
+}
+
+.header__favorites .value {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(50%) translateY(-50%);
+  pointer-events: none;
+  width: 0.78125vw;
+  height: 0.78125vw;
+  font-size: 0.5208333333vw;
+  text-align: center;
+  line-height: 0.78125vw;
+  border-radius: 50%;
+  color: #000;
+  background: #FFBC19;
+}
+
+.header__favorites .icon {
+  font-size: 0;
+}
+
+.header__favorites .icon svg {
+  fill: #fff;
+  transition: all 0.3s ease;
+}
+
+.header__favorites:hover .icon svg {
+  fill: #FFBC19;
 }
 
 body.isMounted .header__main-menu-opener:not(.isOpened) div,
@@ -14117,6 +14149,17 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   background-color: linear-gradient(115.14deg, rgba(0, 0, 0, 0.21) 14.31%, rgba(0, 0, 0, 0.12) 47.42%, rgba(0, 0, 0, 0.186) 75.76%);
 }
 
+.modal-quiz__question {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.0416666667vw;
+  margin-bottom: 3.125vw;
+  line-height: 160%;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
 .modal-quiz__content {
   box-sizing: border-box;
   display: flex;
@@ -14239,11 +14282,29 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
 .modal-quiz__steps {
   margin-bottom: auto;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: height 1s ease;
 }
 
 .modal-quiz__step {
   display: flex;
   flex-direction: column;
+  transform: translateX(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: transform 1s ease;
+}
+
+.modal-quiz__step.isActive {
+  transform: translateX(0);
+}
+
+.modal-quiz__step.isSlided {
+  transform: translateX(-100%);
 }
 
 .modal-quiz__description {
@@ -14262,6 +14323,7 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
 
 .modal-quiz__grid-row {
   display: grid;
+  padding: 0 2.7604166667vw;
 }
 
 .modal-quiz__grid-row--3 {
@@ -14345,6 +14407,11 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
 
 .modal-quiz-radio:hover .modal-quiz-radio__label {
   background-color: #727272;
+}
+
+.modal-quiz-radio:hover .modal-quiz-radio__icon {
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal-quiz-radio__input {
@@ -14933,6 +15000,18 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
 
   .header__main-menu {
     display: none;
+  }
+
+  .header__favorites {
+    margin-right: 20px;
+    width: 20px;
+  }
+
+  .header__favorites .value {
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    line-height: 15px;
   }
 
   .main-first.isInnerPage {

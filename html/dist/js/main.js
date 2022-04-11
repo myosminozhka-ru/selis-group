@@ -1683,113 +1683,36 @@ var mobileFilter = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ModalQuiz; });
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
 
 
 
 var ModalQuiz = /*#__PURE__*/function () {
   function ModalQuiz() {
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, ModalQuiz);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, ModalQuiz);
 
     this.isShowModal = false;
-    this.arrayBtnFirstQuestion = [{
-      id: 1,
-      title: 'Продать'
-    }, {
-      id: 2,
-      title: 'Сдать'
-    }, {
-      id: 3,
-      title: 'Арендовать'
-    }];
-    this.answerFirstQuestion = '';
-    this.arrayBtnSecondQuestion = [{
-      id: 1,
-      title: 'Офис'
-    }, {
-      id: 2,
-      title: 'Торговая площадка'
-    }, {
-      id: 3,
-      title: 'Готовый бизнес'
-    }, {
-      id: 4,
-      title: 'Склад'
-    }];
-    this.answerSecondQuestion = '';
-    this.arrayBtnThirdQuestion = [{
-      id: 1,
-      title: 'В москве'
-    }, {
-      id: 2,
-      title: 'В санкт-петербурге'
-    }, {
-      id: 3,
-      title: 'В другой стране'
-    }];
-    this.answerThirdQuestion = '';
-    this.fourthForm = {
-      option1: [{
-        id: 1,
-        type: 'text',
-        placeholder: 'Район',
-        value: ''
-      }, {
-        id: 2,
-        type: 'text',
-        placeholder: 'Метро',
-        value: ''
-      }, {
-        id: 3,
-        type: 'text',
-        placeholder: 'Адрес',
-        value: ''
-      }],
-      option2: [{
-        id: 1,
-        type: 'text',
-        placeholder: 'Укажите страну',
-        value: ''
-      }, {
-        id: 2,
-        type: 'text',
-        placeholder: 'Укажите регин',
-        value: ''
-      }]
-    }, this.fifthForm = [{
-      id: 1,
-      type: 'text',
-      placeholder: 'Площадь в м²',
-      value: ''
-    }];
-    this.sixthForm = [{
-      id: 1,
-      type: 'text',
-      placeholder: 'Цена в рублях',
-      value: ''
-    }];
-    this.seventhForm = [{
-      id: 1,
-      type: 'text',
-      placeholder: 'Ваш имя',
-      value: ''
-    }, {
-      id: 2,
-      type: 'tel',
-      placeholder: 'Телефон',
-      value: ''
-    }];
-    this.seventhCheckbox = '';
-    this.currentQuestion = 1;
-    this.allQuestions = 8;
+    this.questionHeight = 0;
+    this.stepId = null;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ModalQuiz, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ModalQuiz, [{
     key: "init",
-    value: function init() {}
+    value: function init() {
+      document.querySelector('.modal-quiz__steps').style.height = "".concat(document.querySelector('.modal-quiz__step.isActive').offsetHeight, "px");
+    }
   }, {
     key: "showModalQuiz",
     value: function showModalQuiz() {
@@ -1803,142 +1726,45 @@ var ModalQuiz = /*#__PURE__*/function () {
       document.querySelector('body').style.overflow = 'auto';
     }
   }, {
-    key: "setProgress",
-    value: function setProgress() {
-      return this.currentQuestion * 100 / this.allQuestions + '%';
+    key: "setQuestionHeight",
+    value: function setQuestionHeight(item) {
+      console.log(item);
+      this.questionHeight = item.offsetHeight;
+      document.querySelector('.modal-quiz__steps').style.height = "".concat(this.questionHeight, "px");
     }
   }, {
-    key: "disabledNextBtn",
-    value: function disabledNextBtn() {
-      var findEmptyField;
+    key: "getStep",
+    value: function () {
+      var _getStep = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee() {
+        var newStep;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://api.npoint.io/b791be325d9557b568a6');
 
-      switch (this.currentQuestion) {
-        case 1:
-          return this.answerFirstQuestion ? false : true;
+              case 2:
+                newStep = _context.sent;
+                console.log(newStep, document.querySelector("[data-step_id=\"".concat(newStep.data[0].previousId, "\"]")));
+                document.querySelector("[data-step_id=\"".concat(newStep.data[0].previousId, "\"]")).classList.add("isSlided");
+                document.querySelector("[data-step_id=\"".concat(newStep.data[0].nextId, "\"]")).classList.add("isActive");
+                this.setQuestionHeight(document.querySelector("[data-step_id=\"".concat(newStep.data[0].nextId, "\"]")));
 
-        case 2:
-          return this.answerSecondQuestion ? false : true;
-
-        case 3:
-          return this.answerThirdQuestion ? false : true;
-
-        case 4:
-          if (this.answerThirdQuestion !== 3) {
-            findEmptyField = this.fourthForm.option1.find(function (field) {
-              return field.value.trim() === '';
-            });
-            return findEmptyField ? true : false;
-          } else {
-            findEmptyField = this.fourthForm.option2.find(function (field) {
-              return field.value.trim() === '';
-            });
-            return findEmptyField ? true : false;
+              case 7:
+              case "end":
+                return _context.stop();
+            }
           }
+        }, _callee, this);
+      }));
 
-          ;
-
-        case 5:
-          findEmptyField = this.fifthForm.find(function (field) {
-            return field.value.trim() === '';
-          });
-          return findEmptyField ? true : false;
-
-        case 6:
-          findEmptyField = this.sixthForm.find(function (field) {
-            return field.value.trim() === '';
-          });
-          return findEmptyField ? true : false;
-
-        case 7:
-          findEmptyField = this.seventhForm.find(function (field) {
-            return field.value.trim() === '';
-          });
-          console.log(this.seventhCheckbox);
-          return findEmptyField || this.seventhCheckbox !== true ? true : false;
-      }
-    }
-  }, {
-    key: "nextQuestion",
-    value: function nextQuestion() {
-      this.currentQuestion++;
-    }
-  }, {
-    key: "prevQuestion",
-    value: function prevQuestion() {
-      this.currentQuestion--;
-    }
-  }, {
-    key: "declinationForTheThirdStep",
-    value: function declinationForTheThirdStep() {
-      var declinationAction;
-
-      switch (this.answerFirstQuestion) {
-        case 1:
-          declinationAction = 'продажу ';
-          break;
-
-        case 2:
-          declinationAction = 'сдать ';
-          break;
-
-        case 3:
-          declinationAction = 'аренду ';
-          break;
+      function getStep() {
+        return _getStep.apply(this, arguments);
       }
 
-      switch (this.answerSecondQuestion) {
-        case 1:
-          return declinationAction + (this.answerFirstQuestion === 2 ? 'офис' : 'офиса');
-
-        case 2:
-          return declinationAction + (this.answerFirstQuestion === 2 ? 'торговую площадку' : 'торговой площадки');
-
-        case 3:
-          return declinationAction + (this.answerFirstQuestion === 2 ? 'готовый бизнес' : 'готового бизнеса');
-
-        case 4:
-          return declinationAction + (this.answerFirstQuestion === 2 ? 'склад' : 'склада');
-      }
-    }
-  }, {
-    key: "declinationForTheFourthStep",
-    value: function declinationForTheFourthStep() {
-      switch (this.answerSecondQuestion) {
-        case 1:
-          return 'расположен офис';
-
-        case 2:
-          return 'расположена торговая площадка';
-
-        case 3:
-          return 'расположен готовый бизнес';
-
-        case 4:
-          return 'расположен склад';
-      }
-    }
-  }, {
-    key: "filterFourthForm",
-    value: function filterFourthForm() {
-      return this.answerThirdQuestion !== 3 ? this.fourthForm.option1 : this.fourthForm.option2;
-    }
-  }, {
-    key: "declinationForTheFifthStepAndSixthStep",
-    value: function declinationForTheFifthStepAndSixthStep() {
-      switch (this.answerSecondQuestion) {
-        case 1:
-          return 'вашего офиса';
-
-        case 2:
-          return 'вашей торговой площадки';
-
-        case 3:
-          return 'вашего готового бизнеса';
-
-        case 4:
-          return 'вашего склада';
-      }
-    }
+      return getStep;
+    }()
   }]);
 
   return ModalQuiz;
@@ -3850,34 +3676,32 @@ var UniqueOffers = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
-/* harmony import */ var _babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
-/* harmony import */ var _modules_main_filter_main_filter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/main-filter/main-filter */ "./src/blocks/modules/main-filter/main-filter.js");
-/* harmony import */ var _modules_property_type_property_type__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/property-type/property-type */ "./src/blocks/modules/property-type/property-type.js");
-/* harmony import */ var _modules_unique_offers_unique_offers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/unique-offers/unique-offers */ "./src/blocks/modules/unique-offers/unique-offers.js");
-/* harmony import */ var _modules_our_services_our_services__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/our-services/our-services */ "./src/blocks/modules/our-services/our-services.js");
-/* harmony import */ var _modules_property_item_property_item__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/property-item/property-item */ "./src/blocks/modules/property-item/property-item.js");
-/* harmony import */ var _modules_object_options_object_options__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/object-options/object-options */ "./src/blocks/modules/object-options/object-options.js");
-/* harmony import */ var _modules_object_calculator_object_calculator__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/object-calculator/object-calculator */ "./src/blocks/modules/object-calculator/object-calculator.js");
-/* harmony import */ var _modules_landing_examples_landing_examples__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/landing-examples/landing-examples */ "./src/blocks/modules/landing-examples/landing-examples.js");
-/* harmony import */ var _modules_object_nearby_object_nearby__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/object-nearby/object-nearby */ "./src/blocks/modules/object-nearby/object-nearby.js");
-/* harmony import */ var _modules_investment_our_services_investment_our_services__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/investment-our-services/investment-our-services */ "./src/blocks/modules/investment-our-services/investment-our-services.js");
-/* harmony import */ var _modules_landing_programms_landing_programms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! %modules%/landing-programms/landing-programms */ "./src/blocks/modules/landing-programms/landing-programms.js");
-/* harmony import */ var _modules_cookies_form_cookies_form__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! %modules%/cookies-form/cookies-form */ "./src/blocks/modules/cookies-form/cookies-form.js");
-/* harmony import */ var _modules_investment_first_investment_first__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! %modules%/investment-first/investment-first */ "./src/blocks/modules/investment-first/investment-first.js");
-/* harmony import */ var _modules_property_map_content_property_map_content__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! %modules%/property-map-content/property-map-content */ "./src/blocks/modules/property-map-content/property-map-content.js");
-/* harmony import */ var _modules_property_sorting_property_sorting__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! %modules%/property-sorting/property-sorting */ "./src/blocks/modules/property-sorting/property-sorting.js");
-/* harmony import */ var _modules_inner_contacts_inner_contacts__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! %modules%/inner-contacts/inner-contacts */ "./src/blocks/modules/inner-contacts/inner-contacts.js");
-/* harmony import */ var _modules_object_first_object_first__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! %modules%/object-first/object-first */ "./src/blocks/modules/object-first/object-first.js");
-/* harmony import */ var _modules_mobile_filter_mobile_filter__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! %modules%/mobile-filter/mobile-filter */ "./src/blocks/modules/mobile-filter/mobile-filter.js");
-/* harmony import */ var _modules_modals_modals__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! %modules%/modals/modals */ "./src/blocks/modules/modals/modals.js");
-/* harmony import */ var _modules_modal_quiz_modal_quiz__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! %modules%/modal-quiz/modal-quiz */ "./src/blocks/modules/modal-quiz/modal-quiz.js");
-/* harmony import */ var _modules_inner_first_inner_first__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! %modules%/inner-first/inner-first */ "./src/blocks/modules/inner-first/inner-first.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_24__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_header_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/header/header */ "./src/blocks/modules/header/header.js");
+/* harmony import */ var _modules_main_filter_main_filter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! %modules%/main-filter/main-filter */ "./src/blocks/modules/main-filter/main-filter.js");
+/* harmony import */ var _modules_property_type_property_type__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! %modules%/property-type/property-type */ "./src/blocks/modules/property-type/property-type.js");
+/* harmony import */ var _modules_unique_offers_unique_offers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! %modules%/unique-offers/unique-offers */ "./src/blocks/modules/unique-offers/unique-offers.js");
+/* harmony import */ var _modules_our_services_our_services__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! %modules%/our-services/our-services */ "./src/blocks/modules/our-services/our-services.js");
+/* harmony import */ var _modules_property_item_property_item__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! %modules%/property-item/property-item */ "./src/blocks/modules/property-item/property-item.js");
+/* harmony import */ var _modules_object_options_object_options__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! %modules%/object-options/object-options */ "./src/blocks/modules/object-options/object-options.js");
+/* harmony import */ var _modules_object_calculator_object_calculator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! %modules%/object-calculator/object-calculator */ "./src/blocks/modules/object-calculator/object-calculator.js");
+/* harmony import */ var _modules_landing_examples_landing_examples__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! %modules%/landing-examples/landing-examples */ "./src/blocks/modules/landing-examples/landing-examples.js");
+/* harmony import */ var _modules_object_nearby_object_nearby__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! %modules%/object-nearby/object-nearby */ "./src/blocks/modules/object-nearby/object-nearby.js");
+/* harmony import */ var _modules_investment_our_services_investment_our_services__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! %modules%/investment-our-services/investment-our-services */ "./src/blocks/modules/investment-our-services/investment-our-services.js");
+/* harmony import */ var _modules_landing_programms_landing_programms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! %modules%/landing-programms/landing-programms */ "./src/blocks/modules/landing-programms/landing-programms.js");
+/* harmony import */ var _modules_cookies_form_cookies_form__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! %modules%/cookies-form/cookies-form */ "./src/blocks/modules/cookies-form/cookies-form.js");
+/* harmony import */ var _modules_investment_first_investment_first__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! %modules%/investment-first/investment-first */ "./src/blocks/modules/investment-first/investment-first.js");
+/* harmony import */ var _modules_property_map_content_property_map_content__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! %modules%/property-map-content/property-map-content */ "./src/blocks/modules/property-map-content/property-map-content.js");
+/* harmony import */ var _modules_property_sorting_property_sorting__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! %modules%/property-sorting/property-sorting */ "./src/blocks/modules/property-sorting/property-sorting.js");
+/* harmony import */ var _modules_inner_contacts_inner_contacts__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! %modules%/inner-contacts/inner-contacts */ "./src/blocks/modules/inner-contacts/inner-contacts.js");
+/* harmony import */ var _modules_object_first_object_first__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! %modules%/object-first/object-first */ "./src/blocks/modules/object-first/object-first.js");
+/* harmony import */ var _modules_mobile_filter_mobile_filter__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! %modules%/mobile-filter/mobile-filter */ "./src/blocks/modules/mobile-filter/mobile-filter.js");
+/* harmony import */ var _modules_modals_modals__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! %modules%/modals/modals */ "./src/blocks/modules/modals/modals.js");
+/* harmony import */ var _modules_modal_quiz_modal_quiz__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! %modules%/modal-quiz/modal-quiz */ "./src/blocks/modules/modal-quiz/modal-quiz.js");
+/* harmony import */ var _modules_inner_first_inner_first__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! %modules%/inner-first/inner-first */ "./src/blocks/modules/inner-first/inner-first.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_23__);
 
 
 
@@ -3902,40 +3726,39 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-aos__WEBPACK_IMPORTED_MODULE_24___default.a.init({
+aos__WEBPACK_IMPORTED_MODULE_23___default.a.init({
   disable: 'mobile'
 });
-window.app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
+window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: function data() {
     return {
       message: 'message',
-      header: new _modules_header_header__WEBPACK_IMPORTED_MODULE_2__["default"](),
-      mainFilter: new _modules_main_filter_main_filter__WEBPACK_IMPORTED_MODULE_3__["default"]({
+      header: new _modules_header_header__WEBPACK_IMPORTED_MODULE_1__["default"](),
+      mainFilter: new _modules_main_filter_main_filter__WEBPACK_IMPORTED_MODULE_2__["default"]({
         isOpened: false
       }),
-      propertyType: new _modules_property_type_property_type__WEBPACK_IMPORTED_MODULE_4__["default"](),
-      ourServices: new _modules_our_services_our_services__WEBPACK_IMPORTED_MODULE_6__["default"](),
-      uniqueOffers: new _modules_unique_offers_unique_offers__WEBPACK_IMPORTED_MODULE_5__["default"](),
-      propertyItem: new _modules_property_item_property_item__WEBPACK_IMPORTED_MODULE_7__["default"](),
-      objectOptions: new _modules_object_options_object_options__WEBPACK_IMPORTED_MODULE_8__["default"](),
-      objectCalculator: new _modules_object_calculator_object_calculator__WEBPACK_IMPORTED_MODULE_9__["default"](),
-      landingExamples: new _modules_landing_examples_landing_examples__WEBPACK_IMPORTED_MODULE_10__["default"](),
-      objectNearby: new _modules_object_nearby_object_nearby__WEBPACK_IMPORTED_MODULE_11__["default"](),
-      investmentOurServices: new _modules_investment_our_services_investment_our_services__WEBPACK_IMPORTED_MODULE_12__["default"](),
-      landingProgramms: new _modules_landing_programms_landing_programms__WEBPACK_IMPORTED_MODULE_13__["default"](),
-      cookiesForm: new _modules_cookies_form_cookies_form__WEBPACK_IMPORTED_MODULE_14__["default"](),
-      investmentFirstSlider: new _modules_investment_first_investment_first__WEBPACK_IMPORTED_MODULE_15__["default"](),
-      propertyMapContent: new _modules_property_map_content_property_map_content__WEBPACK_IMPORTED_MODULE_16__["default"](),
-      propertySort: new _modules_property_sorting_property_sorting__WEBPACK_IMPORTED_MODULE_17__["default"](),
-      innerContacts: new _modules_inner_contacts_inner_contacts__WEBPACK_IMPORTED_MODULE_18__["default"](),
-      objectFirst: new _modules_object_first_object_first__WEBPACK_IMPORTED_MODULE_19__["default"](),
-      mobileFilter: new _modules_mobile_filter_mobile_filter__WEBPACK_IMPORTED_MODULE_20__["default"](),
-      blog: new _modules_inner_first_inner_first__WEBPACK_IMPORTED_MODULE_23__["default"]({
+      propertyType: new _modules_property_type_property_type__WEBPACK_IMPORTED_MODULE_3__["default"](),
+      ourServices: new _modules_our_services_our_services__WEBPACK_IMPORTED_MODULE_5__["default"](),
+      uniqueOffers: new _modules_unique_offers_unique_offers__WEBPACK_IMPORTED_MODULE_4__["default"](),
+      propertyItem: new _modules_property_item_property_item__WEBPACK_IMPORTED_MODULE_6__["default"](),
+      objectOptions: new _modules_object_options_object_options__WEBPACK_IMPORTED_MODULE_7__["default"](),
+      objectCalculator: new _modules_object_calculator_object_calculator__WEBPACK_IMPORTED_MODULE_8__["default"](),
+      landingExamples: new _modules_landing_examples_landing_examples__WEBPACK_IMPORTED_MODULE_9__["default"](),
+      objectNearby: new _modules_object_nearby_object_nearby__WEBPACK_IMPORTED_MODULE_10__["default"](),
+      investmentOurServices: new _modules_investment_our_services_investment_our_services__WEBPACK_IMPORTED_MODULE_11__["default"](),
+      landingProgramms: new _modules_landing_programms_landing_programms__WEBPACK_IMPORTED_MODULE_12__["default"](),
+      cookiesForm: new _modules_cookies_form_cookies_form__WEBPACK_IMPORTED_MODULE_13__["default"](),
+      investmentFirstSlider: new _modules_investment_first_investment_first__WEBPACK_IMPORTED_MODULE_14__["default"](),
+      propertyMapContent: new _modules_property_map_content_property_map_content__WEBPACK_IMPORTED_MODULE_15__["default"](),
+      propertySort: new _modules_property_sorting_property_sorting__WEBPACK_IMPORTED_MODULE_16__["default"](),
+      innerContacts: new _modules_inner_contacts_inner_contacts__WEBPACK_IMPORTED_MODULE_17__["default"](),
+      objectFirst: new _modules_object_first_object_first__WEBPACK_IMPORTED_MODULE_18__["default"](),
+      mobileFilter: new _modules_mobile_filter_mobile_filter__WEBPACK_IMPORTED_MODULE_19__["default"](),
+      blog: new _modules_inner_first_inner_first__WEBPACK_IMPORTED_MODULE_22__["default"]({
         selected: []
       }),
-      modals: new _modules_modals_modals__WEBPACK_IMPORTED_MODULE_21__["default"]({
+      modals: new _modules_modals_modals__WEBPACK_IMPORTED_MODULE_20__["default"]({
         modalsSelector: "data-modal",
         modalsOpenerSelector: "data-modal-id",
         openedClass: "isOpened"
@@ -3946,7 +3769,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
           height: window.innerHeight
         }
       },
-      modalQuiz: new _modules_modal_quiz_modal_quiz__WEBPACK_IMPORTED_MODULE_22__["default"]()
+      modalQuiz: new _modules_modal_quiz_modal_quiz__WEBPACK_IMPORTED_MODULE_21__["default"]()
     };
   },
   mounted: function mounted() {
@@ -4081,13 +3904,13 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     calculatorResult: {
       get: function get() {
         // let result = Math.round((this.objectCalculator.price.split(' ').join('') - this.objectCalculator.firstPayment)*(this.objectCalculator.precentage / 12)/(1-(1/(1+(this.objectCalculator.precentage / 12)))*(this.objectCalculator.mortgageTerm * 12))).toLocaleString().replace('-', '');
+        console.clear();
         var S = this.calculatorPrice - this.calculatorFirstPayment;
         var r = this.calculatorPercentage / 12;
         var n = this.objectCalculator.mortgageTerm * 12; // let result = Math.round((S + (S*this.objectCalculator.percentage/100)) / n);
 
         var result = S * r / (1 - 1 / (1 + r) * n);
-        console.log(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default()(S), S + S * this.objectCalculator.percentage / 100);
-        console.log(_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default()(n), n);
+        console.log("\n                    \u0424\u043E\u043C\u0443\u043B\u0430: S*r/(1-(1/(1+r))*n)\n                    S = ".concat(this.calculatorPrice - this.calculatorFirstPayment, " (\u0426\u0435\u043D\u0430 (").concat(this.calculatorPrice, ") - \u041F\u0435\u0440\u0432\u044B\u0439 \u0432\u0437\u043D\u043E\u0441 (").concat(this.calculatorFirstPayment, ") )\n                    r = ").concat(this.calculatorPercentage / 12, " (\u041F\u0440\u043E\u0446\u0435\u043D\u0442\u043D\u0430\u044F \u0441\u0442\u0430\u0432\u043A\u0430 (").concat(this.calculatorPercentage, " / 12))\n                    n = ").concat(this.objectCalculator.mortgageTerm * 12, " (\u0421\u0440\u043E\u043A \u0438\u043F\u043E\u0442\u0435\u043A\u0438 (").concat(this.objectCalculator.mortgageTerm, ") * 12)\n                    \u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 = ").concat(result.toFixed(2).replace('-', ''), "\n                "));
         return result.toFixed(2).replace('-', '');
       },
       set: function set(newValue) {

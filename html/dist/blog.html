@@ -79,6 +79,18 @@
             </div>
         </div>
         <div class="header__right">
+            <div class="header__favorites">
+                <div class="icon">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="100%" height="100%" viewBox="0 0 544.582 544.582" style="enable-background:new 0 0 544.582 544.582;" xml:space="preserve">
+                        <g>
+                            <path d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
+                                C23.111,81.784-16.975,160.885,6.894,234.708c22.95,70.38,235.773,258.876,263.006,258.876
+                                c27.234,0,244.801-188.267,267.751-258.876C561.595,160.732,521.509,81.631,448.069,57.839z"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="value">99</div>
+            </div>
             <div class="header__lang" v-if="window.width <= 1023">
                 <div class="header__lang-opener">
                     <span>RU</span>
@@ -1890,120 +1902,135 @@
                     stroke-linejoin="round" />
             </svg>
         </button>
-        <h3 class="modal-quiz__title" v-if="modalQuiz.currentQuestion < 8">{{ modalQuiz.currentQuestion !== 7 ? 'Выберите, что вас интересует?' : 'Найдем покупателя или арендатора для вашей недвижимости' }}</h3>
-        <span class="modal-quiz__progress" v-if="modalQuiz.currentQuestion < 8">
-            <span class="modal-quiz__progress-fill" :style="`width: ${modalQuiz.setProgress()}`"></span>
-        </span>
-        <div class="modal-quiz__info" v-if="modalQuiz.currentQuestion < 7">
-            <span class="modal-quiz__info-text">Вопрос</span>
-            <span class="modal-quiz__info-current-question">0{{ modalQuiz.currentQuestion }}</span>
-            <span class="modal-quiz__info-all-questions">{{ modalQuiz.allQuestions }}</span>
-        </div>
+        <h3 class="modal-quiz__title">Выберите, что вас интересует?</h3>
         <div class="modal-quiz__steps">
-            <transition enter-active-class="animate__animated animate__slideInRight" leave-active-class="animate__animated animate__slideOutLeft" mode="out-in">
-                <div :key="1" class="modal-quiz__step" v-if="modalQuiz.currentQuestion === 1">
-                    <span class="modal-quiz__description">Ответьте на несколько вопросов и узнайте, есть ли прямо сейчас клиенты на покупку или аренду вашей недвижимости</span>
-                    <div class="modal-quiz__grid-row modal-quiz__grid-row--3">
-                        <div class="modal-quiz-radio" v-for="button in modalQuiz.arrayBtnFirstQuestion" :key="`arrayBtnFirstQuestion-${button.id}`">
-                            <input class="modal-quiz-radio__input" type="radio" :value="button.id" v-model="modalQuiz.answerFirstQuestion" name="firstQuestion" :id="`firstQuestion-${button.id}`">
-                            <label class="modal-quiz-radio__label" :for="`firstQuestion-${button.id}`">
-                                <span class="modal-quiz-radio__text">{{ button.title }}</span>
-                                <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
-                                </svg>
-                            </label>
+            
+            <div class="modal-quiz__step isActive" data-step_id="111">
+                <span class="modal-quiz__description">Ответьте на несколько вопросов и узнайте, есть ли прямо сейчас клиенты на покупку или аренду вашей недвижимости</span>
+                <div class="modal-quiz__grid-row modal-quiz__grid-row--3">
+                    <label class="modal-quiz-radio">
+                        <input class="modal-quiz-radio__input" type="radio" name="what" value="Продать">
+                        <div class="modal-quiz-radio__label">
+                            <span class="modal-quiz-radio__text">Продать</span>
+                            <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
                         </div>
-                    </div>
-                </div>
-                <div :key="2" class="modal-quiz__step" v-if="modalQuiz.currentQuestion === 2">
-                    <span class="modal-quiz__description modal-quiz__description--big">Категория недвижимости?</span>
-                    <div class="modal-quiz__grid-row modal-quiz__grid-row--4">
-                        <div class="modal-quiz-radio" v-for="button in modalQuiz.arrayBtnSecondQuestion" :key="`arrayBtnSecondQuestion-${button.id}`">
-                            <input class="modal-quiz-radio__input" type="radio" :value="button.id" v-model="modalQuiz.answerSecondQuestion" name="secondQuestion" :id="`secondQuestion-${button.id}`">
-                            <label class="modal-quiz-radio__label" :for="`secondQuestion-${button.id}`">
-                                <span class="modal-quiz-radio__text">{{ button.title }}</span>
-                                <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
-                                </svg>
-                            </label>
+                    </label>
+                    <label class="modal-quiz-radio">
+                        <input class="modal-quiz-radio__input" type="radio" name="what" value="Сдать">
+                        <div class="modal-quiz-radio__label">
+                            <span class="modal-quiz-radio__text">Сдать</span>
+                            <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
                         </div>
-                    </div>
-                </div>
-                <div :key="3" class="modal-quiz__step" v-if="modalQuiz.currentQuestion === 3">
-                    <span class="modal-quiz__description modal-quiz__description--big">Где вы планируете {{ modalQuiz.declinationForTheThirdStep() }}?</span>
-                    <div class="modal-quiz__grid-row modal-quiz__grid-row--3">
-                        <div class="modal-quiz-radio" v-for="button in modalQuiz.arrayBtnThirdQuestion"
-                            :key="`arrayBtnThirdQuestion-${button.id}`">
-                            <input class="modal-quiz-radio__input" type="radio" :value="button.id"
-                                v-model="modalQuiz.answerThirdQuestion" name="thirdQuestion" :id="`thirdQuestion-${button.id}`">
-                            <label class="modal-quiz-radio__label" :for="`thirdQuestion-${button.id}`">
-                                <span class="modal-quiz-radio__text">{{ button.title }}</span>
-                                <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
-                                </svg>
-                            </label>
+                    </label>
+                    <label class="modal-quiz-radio">
+                        <input class="modal-quiz-radio__input" type="radio" name="what" value="арендовать">
+                        <div class="modal-quiz-radio__label">
+                            <span class="modal-quiz-radio__text">арендовать</span>
+                            <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
                         </div>
-                    </div>
+                    </label>
                 </div>
-                <div :key="4" class="modal-quiz__step" v-if="modalQuiz.currentQuestion === 4">
-                    <span class="modal-quiz__description modal-quiz__description--big">Где {{ modalQuiz.declinationForTheFourthStep() }}?</span>
-                    <div v-for="input in modalQuiz.filterFourthForm()" :key="input.id"  class="landing-first__input modal-quiz__input">
-                        <input :type="input.type" v-model="input.value"
-                            :placeholder="input.placeholder">
-                    </div>
-                </div>
-                <div :key="5" class="modal-quiz__step" v-if="modalQuiz.currentQuestion === 5">
-                    <span class="modal-quiz__description modal-quiz__description--big">Площадь {{ modalQuiz.declinationForTheFifthStepAndSixthStep()
-                        }}?</span>
-                    <div v-for="input in modalQuiz.fifthForm" :key="input.id" class="landing-first__input modal-quiz__input">
-                        <input :type="input.type" v-model="input.value" :placeholder="input.placeholder">
-                    </div>
-                </div>
-                <div :key="6" class="modal-quiz__step" v-if="modalQuiz.currentQuestion === 6">
-                    <span class="modal-quiz__description modal-quiz__description--big">Стоимость {{ modalQuiz.declinationForTheFifthStepAndSixthStep()
-                        }}?</span>
-                    <div v-for="input in modalQuiz.sixthForm" :key="input.id" class="landing-first__input modal-quiz__input">
-                        <input :type="input.type" v-model="input.value" :placeholder="input.placeholder">
-                    </div>
-                </div>
-                <div :key="7" class="modal-quiz__step" v-if="modalQuiz.currentQuestion === 7">
-                    <div class="modal-quiz__grid-row modal-quiz__grid-row--10">
-                        <div class="modal-quiz__col-3">
-                            <span class="modal-quiz__description modal-quiz__description--big">Оставьте свои контакты для дальнейшей работы</span>
-                            <div v-for="(input, index) in modalQuiz.seventhForm" :key="input.id" class="landing-first__input modal-quiz__input":class="{'modal-quiz__input--mb-20': index === modalQuiz.seventhForm.length}">
-                                <input :type="input.type" v-model="input.value" :placeholder="input.placeholder">
-                            </div>
-
-                            <button class="modal-quiz-btn modal-quiz-btn--yellow modal-quiz-btn--form" :disabled="modalQuiz.disabledNextBtn()" @click.prevent="modalQuiz.nextQuestion()">
-                                <span class="modal-quiz-btn__text">Оставить заявку</span>
-                            </button>
-
-                            <label class="landing-form__checkbox modal-quiz__checkbox">
-                                <input type="checkbox" value="true" v-model="modalQuiz.seventhCheckbox">
-                                <span class="phantom"></span>
-                                <span class="text">Нажимая на кнопку “Оставить заявку” вы даете согласие на обработку персональных данных.</span>
-                            </label>
+            </div>
+            <div class="modal-quiz__step" data-step_id="222">
+                <span class="modal-quiz__question">Категория недвижимости?</span>
+                <div class="modal-quiz__grid-row modal-quiz__grid-row--4">
+                    <label class="modal-quiz-radio">
+                        <input class="modal-quiz-radio__input" type="radio" name="category" value="Офис">
+                        <div class="modal-quiz-radio__label">
+                            <span class="modal-quiz-radio__text">Офис</span>
+                            <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
                         </div>
-                    </div>
-                </div>
-                <div :key="8" class="modal-quiz__step" v-if="modalQuiz.currentQuestion === 8">
-                    <div class="modal-quiz__grid-row modal-quiz__grid-row--10">
-                        <div class="modal-quiz__col-3">
-                            <h3 class="modal-quiz__title">Отлично!</h3>
-                            <span class="modal-quiz__description modal-quiz__description--big">Ожидайте звонка нашего менеджера!</span>
-                            <button class="modal-quiz-btn modal-quiz-btn--yellow" @click.prevent="modalQuiz.nextQuestion()">
-                                <span class="modal-quiz-btn__text">На главную</span>
-                                <svg class="modal-quiz-btn__icon modal-quiz-btn__icon--20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="currentColor" stroke-width="2" />
-                                </svg>
-                            </button>
+                    </label>
+                    <label class="modal-quiz-radio">
+                        <input class="modal-quiz-radio__input" type="radio" name="category" value="Торговая">
+                        <div class="modal-quiz-radio__label">
+                            <span class="modal-quiz-radio__text">Торговая</span>
+                            <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
                         </div>
-                    </div>
+                    </label>
+                    <label class="modal-quiz-radio">
+                        <input class="modal-quiz-radio__input" type="radio" name="category" value="Готовый бизнес">
+                        <div class="modal-quiz-radio__label">
+                            <span class="modal-quiz-radio__text">Готовый бизнес</span>
+                            <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </label>
+                    <label class="modal-quiz-radio">
+                        <input class="modal-quiz-radio__input" type="radio" name="category" value="Склад">
+                        <div class="modal-quiz-radio__label">
+                            <span class="modal-quiz-radio__text">Склад</span>
+                            <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </label>
                 </div>
-            </transition>
+            </div>
+            <div class="modal-quiz__step" data-step_id="333">
+                <span class="modal-quiz__question">Где вы планируете продажу Офиса?</span>
+                <div class="modal-quiz__grid-row modal-quiz__grid-row--3">
+                    <label class="modal-quiz-radio">
+                        <input class="modal-quiz-radio__input" type="radio" name="city" value="В москве">
+                        <div class="modal-quiz-radio__label">
+                            <span class="modal-quiz-radio__text">В москве</span>
+                            <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </label>
+                    <label class="modal-quiz-radio">
+                        <input class="modal-quiz-radio__input" type="radio" name="city" value="В санкт-петербурге">
+                        <div class="modal-quiz-radio__label">
+                            <span class="modal-quiz-radio__text">В санкт-петербурге</span>
+                            <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </label>
+                    <label class="modal-quiz-radio">
+                        <input class="modal-quiz-radio__input" type="radio" name="city" value="В другой стране">
+                        <div class="modal-quiz-radio__label">
+                            <span class="modal-quiz-radio__text">В другой стране</span>
+                            <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00003L41 41M41 41L1 41M41 41L40.9998 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-quiz__step" data-step_id="444">
+                <span class="modal-quiz__question">Где расположен офис?</span>
+                <div class="landing-first__input modal-quiz__input">
+                    <input placeholder="Район" type="text" name="tratata">
+                </div>
+                <div class="landing-first__input modal-quiz__input">
+                    <input placeholder="Метро" type="text" name="tratata">
+                </div>
+                <div class="landing-first__input modal-quiz__input">
+                    <input placeholder="Адрес" type="text" name="tratata">
+                </div>
+            </div>
+            <div class="modal-quiz__step" data-step_id="555">
+                <span class="modal-quiz__question">Площадь вашего офиса?</span>
+                <div class="landing-first__input modal-quiz__input">
+                    <input placeholder="Площадь в м²" type="number" name="p">
+                </div>
+            </div>
         </div>
-        <div class="modal-quiz__buttons" v-if="modalQuiz.currentQuestion < 7">
-            <button class="modal-quiz-btn" :disabled="modalQuiz.currentQuestion === 1" @click.prevent="modalQuiz.prevQuestion()">
+        <div class="modal-quiz__buttons">
+            <button class="modal-quiz-btn" @click="modalQuiz.getStep.apply(modalQuiz)">
                 <svg class="modal-quiz-btn__icon" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M30.2843 15.1421L2 15.1421M2 15.1421L16.1421 29.2842M2 15.1421L16.1422 1" stroke="currentColor" stroke-width="2" />
                 </svg>
@@ -2011,8 +2038,8 @@
                 <span class="modal-quiz-btn__text">Предыдущий вопрос</span>
             </button>
 
-            <button class="modal-quiz-btn" :class="{'modal-quiz-btn--yellow': modalQuiz.currentQuestion === 6}" :disabled="modalQuiz.disabledNextBtn()" @click.prevent="modalQuiz.nextQuestion()">
-                <span class="modal-quiz-btn__text">{{ modalQuiz.currentQuestion !== 6 ? 'Следующий вопрос' : 'Отправить' }}</span>
+            <button class="modal-quiz-btn" @click="modalQuiz.getStep.apply(modalQuiz)">
+                <span class="modal-quiz-btn__text">Следующий вопрос</span>
 
                 <svg class="modal-quiz-btn__icon" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M-1.33514e-05 15.1421L28.2842 15.1421M28.2842 15.1421L14.1421 29.2842M28.2842 15.1421L14.142 1" stroke="currentColor" stroke-width="2" />

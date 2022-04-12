@@ -1710,7 +1710,7 @@ var ModalQuiz = /*#__PURE__*/function () {
     key: "init",
     value: function init() {
       if (!document.querySelector('.modal-quiz__steps')) return;
-      this.stepId = document.querySelector('.modal-quiz__step.isActive') ? document.querySelector('.modal-quiz__step.isActive').dataset.step_id : null;
+      this.stepId = document.querySelector('.modal-quiz__step.isActive') ? +document.querySelector('.modal-quiz__step.isActive').dataset.step_id : null;
       document.querySelector('.modal-quiz__steps').style.height = "".concat(+document.querySelector('.modal-quiz__step.isActive').offsetHeight + 5, "px");
       console.log('this.stepId', this.stepId);
     }

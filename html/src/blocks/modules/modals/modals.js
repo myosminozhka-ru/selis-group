@@ -14,7 +14,7 @@ const Modals = class Modals {
     }
     addClickListener() {
         document.addEventListener('click', (event) => {
-            
+            console.log('click to open modal');
             if (event.target.dataset.modalId) {
                 event.preventDefault();
                 this.openModal(event.target.dataset.modalId);
@@ -25,8 +25,10 @@ const Modals = class Modals {
             if (event.target.classList.contains('modal__closer')) {
                 event.target.closest('.modal').classList.remove('isOpened')
             }
-            if (event.target.closest('.property-item') && document.querySelector('.propertyModal .modal__left img')) {
-                document.querySelector('.propertyModal .modal__left img').src = event.target.closest('.property-item').querySelector('.property-item__left .glide__slide--active img').src;
+            if (event.target.closest('.property-item') && document.querySelector(`.propertyModal[data-modal="${event.target.dataset.modalId}"] .modal__left img`)) {
+                console.log('image', event.target.closest('.property-item').querySelector('.property-item__left .glide__slide--active img').src);
+                document.querySelector(`.propertyModal[data-modal="${event.target.dataset.modalId}"] .modal__left img`).src = event.target.closest('.property-item').querySelector('.property-item__left .glide__slide--active img').src;
+                console.log('image2', document.querySelector('.propertyModal .modal__left img').src);
             }
         })
     }

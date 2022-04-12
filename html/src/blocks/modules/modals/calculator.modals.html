@@ -1,0 +1,42 @@
+<div class="modal objectModal" data-modal="h1g2hg2hg3">
+    <div class="modal__in">
+        <div class="modal__closer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 34 34" fill="none">
+                <path
+                    d="M3.41422 0.585786C2.63317 -0.195262 1.36684 -0.195262 0.585794 0.585787C-0.195254 1.36684 -0.195254 2.63317 0.585795 3.41421L3.41422 0.585786ZM30.5858 33.4142C31.3669 34.1953 32.6332 34.1953 33.4142 33.4142C34.1953 32.6332 34.1953 31.3668 33.4142 30.5858L30.5858 33.4142ZM33.4142 3.41421C34.1953 2.63317 34.1953 1.36684 33.4142 0.585787C32.6332 -0.195262 31.3668 -0.195262 30.5858 0.585786L33.4142 3.41421ZM0.585787 30.5858C-0.195262 31.3668 -0.195262 32.6332 0.585786 33.4142C1.36683 34.1953 2.63316 34.1953 3.41421 33.4142L0.585787 30.5858ZM0.585795 3.41421L30.5858 33.4142L33.4142 30.5858L3.41422 0.585786L0.585795 3.41421ZM30.5858 0.585786L0.585787 30.5858L3.41421 33.4142L33.4142 3.41421L30.5858 0.585786Z"
+                    fill="black" />
+            </svg>
+        </div>
+        <div class="modal__left">
+            <img src="https://picsum.photos/600/600" alt="">
+            <div class="modal__left_message">
+                <div class="modal__left_title">ОТЛИЧНО!</div>
+                <div class="modal__left_msg">Ожидайте звонка нашего менеджера! Теперь вы будете вкурсе самого крутого и новогоТеперь вы будете вкурсе самого крутого и нового</div>
+                <div class="modal__left_button"><a href="#" class="button"><div class="text">Подробнее</div> <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none"><path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#050505" stroke-width="2"></path></svg></div></a></div>
+            </div>
+        </div>
+        <div class="modal__right">
+            <div class="modal__title">отправить<br /> заявку</div>
+            <div class="modal__subtitle">Оставьте свои контакты и мы свяжемся с вами в ближайшее время.</div>
+            <form class="modal__form" action="#">
+                <input type="hidden" :value="calculatorPrice" name="calculatorPrice">
+                <input type="hidden" :value="calculatorFirstPayment" name="calculatorFirstPayment">
+                <input type="hidden" :value="calculatorMortgageTerm" name="calculatorMortgageTerm">
+                <input type="hidden" :value="calculatorResult" name="calculatorResult">
+                <input type="hidden" :value="calculatorCurrency" name="calculatorCurrency">
+                <div class="questions-form__input"><input type="text" placeholder="Ваш имя"></div>
+                <div class="questions-form__input"><input type="tel" placeholder="Телефон"></div>
+                <div class="questions-form__button">
+                    <button class="button orange">
+                        <span class="text">Оставить заявку</span>
+                    </button>
+                </div>
+                <label class="questions-form__checkbox">
+                    <input type="checkbox">
+                    <span class="phantom"></span>
+                    <span class="text">Нажимая на кнопку “Оставить заявку” вы даете согласие на обработку персональных данных.</span>
+                </label>
+            </form>
+        </div>
+    </div>
+</div>

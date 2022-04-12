@@ -11153,6 +11153,10 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   color: #000000;
 }
 
+.object-calculator__button .text {
+  pointer-events: none;
+}
+
 .object-similar {
   padding-bottom: 6.25vw;
 }

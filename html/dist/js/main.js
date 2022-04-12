@@ -1822,6 +1822,8 @@ var Modals = /*#__PURE__*/function () {
       var _this = this;
 
       document.addEventListener('click', function (event) {
+        console.log('click to open modal');
+
         if (event.target.dataset.modalId) {
           event.preventDefault();
 
@@ -1836,8 +1838,10 @@ var Modals = /*#__PURE__*/function () {
           event.target.closest('.modal').classList.remove('isOpened');
         }
 
-        if (event.target.closest('.property-item') && document.querySelector('.propertyModal .modal__left img')) {
-          document.querySelector('.propertyModal .modal__left img').src = event.target.closest('.property-item').querySelector('.property-item__left .glide__slide--active img').src;
+        if (event.target.closest('.property-item') && document.querySelector(".propertyModal[data-modal=\"".concat(event.target.dataset.modalId, "\"] .modal__left img"))) {
+          console.log('image', event.target.closest('.property-item').querySelector('.property-item__left .glide__slide--active img').src);
+          document.querySelector(".propertyModal[data-modal=\"".concat(event.target.dataset.modalId, "\"] .modal__left img")).src = event.target.closest('.property-item').querySelector('.property-item__left .glide__slide--active img').src;
+          console.log('image2', document.querySelector('.propertyModal .modal__left img').src);
         }
       });
     }

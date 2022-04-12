@@ -396,4 +396,9 @@
             font-size: 14px;
         }
     }
+    &__button {
+        .text {
+            pointer-events: none;
+        }
+    }
 }

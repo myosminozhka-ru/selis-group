@@ -1706,6 +1706,7 @@ var ModalQuiz = /*#__PURE__*/function () {
     this.isShowModal = false;
     this.questionHeight = 0;
     this.stepId = null;
+    this.requestUri = document.querySelector('.modal-quiz').dataset.requestUri;
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ModalQuiz, [{
@@ -1743,12 +1744,12 @@ var ModalQuiz = /*#__PURE__*/function () {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get('https://api.npoint.io/b791be325d9557b568a6');
+                return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get(this.requestUri);
 
               case 2:
                 newStep = _context.sent;
                 console.log(newStep, document.querySelector("[data-step_id=\"".concat(newStep.data[0].previousId, "\"]")));
-                document.querySelector("[data-step_id=\"".concat(newStep.data[0].previousId, "\"]")).classList.add("isSlided");
+                document.querySelector(".modal-quiz__step.isActive:not(.isSlided)").classList.add("isSlided");
                 document.querySelector("[data-step_id=\"".concat(newStep.data[0].nextId, "\"]")).classList.add("isActive");
                 this.setQuestionHeight(document.querySelector("[data-step_id=\"".concat(newStep.data[0].nextId, "\"]")));
 

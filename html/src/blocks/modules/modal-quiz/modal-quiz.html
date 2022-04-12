@@ -1,4 +1,4 @@
-<div class="modal-quiz" :class="{'modal-quiz--is-visible' : modalQuiz.isShowModal}" @click.self="modalQuiz.hiddenModalQuiz()">
+<div class="modal-quiz" :class="{'modal-quiz--is-visible' : modalQuiz.isShowModal}" @click.self="modalQuiz.hiddenModalQuiz()" data-request-uri="https://api.npoint.io/b791be325d9557b568a6">
     <div class="modal-quiz__content">
         <img :key="1" src="/img/modal-quiz/1.png" :style="modalQuiz.currentQuestion === 7 ? 'opacity: 1' : 'opacity: 0'" alt="" class="modal-quiz__bg">
         <img :key="2" src="/img/modal-quiz/2.png" :style="modalQuiz.currentQuestion === 8 ? 'opacity: 1' : 'opacity: 0'" alt="" class="modal-quiz__bg">

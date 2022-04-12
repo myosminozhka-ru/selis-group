@@ -2906,13 +2906,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
-/* harmony import */ var nativejs_select__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! nativejs-select */ "./node_modules/nativejs-select/build/nativejs-select.min.js");
-/* harmony import */ var nativejs_select__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(nativejs_select__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
+/* harmony import */ var nativejs_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! nativejs-select */ "./node_modules/nativejs-select/build/nativejs-select.min.js");
+/* harmony import */ var nativejs_select__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(nativejs_select__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default()(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+
+
+
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function setCookie(name, value) {
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  options = _objectSpread({
+    path: '/'
+  }, options);
+
+  if (options.expires instanceof Date) {
+    options.expires = options.expires.toUTCString();
+  }
+
+  var updatedCookie = name + "=" + value;
+
+  for (var optionKey in options) {
+    updatedCookie += "; " + optionKey;
+    var optionValue = options[optionKey];
+
+    if (optionValue !== true) {
+      updatedCookie += "=" + optionValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+}
+
+var itemsArray = [];
 /**
 * Программный код для элементов каталога
 @class PropertyItem
@@ -2949,7 +2988,7 @@ var PropertyItem = /*#__PURE__*/function () {
     key: "initSelectStyler",
     value: function initSelectStyler() {
       if (!document.querySelector('.property-item__price-in')) return;
-      new nativejs_select__WEBPACK_IMPORTED_MODULE_3___default.a({
+      new nativejs_select__WEBPACK_IMPORTED_MODULE_4___default.a({
         selector: '.property-item__price-in select',
         disableMobile: true
       });
@@ -2983,7 +3022,7 @@ var PropertyItem = /*#__PURE__*/function () {
     value: function initSlider() {
       if (document.querySelector('.property-item__slider-glide')) {
         document.querySelectorAll('.property-item__slider-glide').forEach(function (item) {
-          new _glidejs_glide__WEBPACK_IMPORTED_MODULE_2__["default"](item, {
+          new _glidejs_glide__WEBPACK_IMPORTED_MODULE_3__["default"](item, {
             perView: 1,
             type: 'slider',
             gap: 0,
@@ -2991,6 +3030,33 @@ var PropertyItem = /*#__PURE__*/function () {
           }).mount();
         });
       }
+    }
+  }, {
+    key: "toggleToFavorites",
+    value: function toggleToFavorites(event) {
+      if (!event.target.dataset.property_id) return;
+      event.preventDefault();
+
+      if (itemsArray.indexOf(event.target.dataset.property_id) === -1) {
+        itemsArray.push(event.target.dataset.property_id);
+        event.target.classList.add('isActive');
+        document.querySelector('.header__favorites').classList.add('hasItems');
+        document.querySelector('.header__favorites .value').innerHTML = +document.querySelector('.header__favorites .value').innerHTML + 1;
+      } else {
+        event.target.classList.remove('isActive');
+        itemsArray = itemsArray.filter(function (item) {
+          return item !== event.target.dataset.property_id;
+        });
+
+        if (itemsArray.length > 0) {
+          document.querySelector('.header__favorites .value').innerHTML = +document.querySelector('.header__favorites .value').innerHTML - 1;
+        } else {
+          document.querySelector('.header__favorites').classList.remove('hasItems');
+          document.querySelector('.header__favorites .value').innerHTML = 0;
+        }
+      }
+
+      setCookie('osm', JSON.stringify(itemsArray));
     }
     /** 
     * инициализирует работу элементов каталога

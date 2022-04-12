@@ -9938,6 +9938,10 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   margin-right: 1.0416666667vw;
 }
 
+.property-item__action svg {
+  pointer-events: none;
+}
+
 .property-item__action .fill {
   transition: fill 0.3s ease;
 }

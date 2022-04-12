@@ -224,6 +224,9 @@
         &:not(:last-child) {
             margin-right: vw(20);
         }
+        svg {
+            pointer-events: none;
+        }
         .fill {
             transition: fill .3s ease;
         }

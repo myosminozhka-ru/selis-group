@@ -1683,17 +1683,14 @@ var mobileFilter = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ModalQuiz; });
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var form_serialize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! form-serialize */ "./node_modules/form-serialize/index.js");
+/* harmony import */ var form_serialize__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(form_serialize__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -1701,19 +1698,21 @@ __webpack_require__.r(__webpack_exports__);
 
 var ModalQuiz = /*#__PURE__*/function () {
   function ModalQuiz() {
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, ModalQuiz);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, ModalQuiz);
 
-    this.isShowModal = false;
+    this.isShowModal = true;
     this.questionHeight = 0;
     this.stepId = null;
-    this.requestUri = document.querySelector('.modal-quiz').dataset.requestUri;
+    this.requestUri = document.querySelector('.modal-quiz') ? document.querySelector('.modal-quiz').dataset.requestUri : null;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ModalQuiz, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ModalQuiz, [{
     key: "init",
     value: function init() {
       if (!document.querySelector('.modal-quiz__steps')) return;
-      document.querySelector('.modal-quiz__steps').style.height = "".concat(document.querySelector('.modal-quiz__step.isActive').offsetHeight, "px");
+      this.stepId = document.querySelector('.modal-quiz__step.isActive') ? document.querySelector('.modal-quiz__step.isActive').dataset.step_id : null;
+      document.querySelector('.modal-quiz__steps').style.height = "".concat(+document.querySelector('.modal-quiz__step.isActive').offsetHeight + 5, "px");
+      console.log('this.stepId', this.stepId);
     }
   }, {
     key: "showModalQuiz",
@@ -1736,37 +1735,23 @@ var ModalQuiz = /*#__PURE__*/function () {
     }
   }, {
     key: "getStep",
-    value: function () {
-      var _getStep = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.mark(function _callee() {
-        var newStep;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_3___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_4___default.a.get(this.requestUri);
+    value: function getStep() {
+      var _this = this;
 
-              case 2:
-                newStep = _context.sent;
-                console.log(newStep, document.querySelector("[data-step_id=\"".concat(newStep.data[0].previousId, "\"]")));
-                document.querySelector(".modal-quiz__step.isActive:not(.isSlided)").classList.add("isSlided");
-                document.querySelector("[data-step_id=\"".concat(newStep.data[0].nextId, "\"]")).classList.add("isActive");
-                this.setQuestionHeight(document.querySelector("[data-step_id=\"".concat(newStep.data[0].nextId, "\"]")));
+      console.log(document.querySelector("[data-step_id=\"".concat(this.stepId, "\"]")));
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post(this.requestUri, {
+        currentStep: this.stepId,
+        value: form_serialize__WEBPACK_IMPORTED_MODULE_3___default()(document.querySelector("[data-step_id=\"".concat(this.stepId, "\"]")))
+      }).then(function (response) {
+        console.log('response', response);
+        document.querySelector(".modal-quiz__step.isActive:not(.isSlided)").classList.add("isSlided");
+        document.querySelector("[data-step_id=\"".concat(newStep.data[0].nextId, "\"]")).classList.add("isActive");
 
-              case 7:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function getStep() {
-        return _getStep.apply(this, arguments);
-      }
-
-      return getStep;
-    }()
+        _this.setQuestionHeight(document.querySelector("[data-step_id=\"".concat(newStep.data[0].nextId, "\"]")));
+      })["catch"](function (error) {
+        _this.hiddenModalQuiz();
+      });
+    }
   }]);
 
   return ModalQuiz;

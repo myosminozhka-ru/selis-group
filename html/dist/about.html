@@ -1904,8 +1904,7 @@
         </button>
         <h3 class="modal-quiz__title">Выберите, что вас интересует?</h3>
         <div class="modal-quiz__steps">
-            
-            <div class="modal-quiz__step isActive" data-step_id="111">
+            <form class="modal-quiz__step isActive" data-step_id="111">
                 <span class="modal-quiz__description">Ответьте на несколько вопросов и узнайте, есть ли прямо сейчас клиенты на покупку или аренду вашей недвижимости</span>
                 <div class="modal-quiz__grid-row modal-quiz__grid-row--3">
                     <label class="modal-quiz-radio">
@@ -1936,8 +1935,8 @@
                         </div>
                     </label>
                 </div>
-            </div>
-            <div class="modal-quiz__step" data-step_id="222">
+            </form>
+            <form class="modal-quiz__step" data-step_id="222">
                 <span class="modal-quiz__question">Категория недвижимости?</span>
                 <div class="modal-quiz__grid-row modal-quiz__grid-row--4">
                     <label class="modal-quiz-radio">
@@ -1977,8 +1976,8 @@
                         </div>
                     </label>
                 </div>
-            </div>
-            <div class="modal-quiz__step" data-step_id="333">
+            </form>
+            <form class="modal-quiz__step" data-step_id="333">
                 <span class="modal-quiz__question">Где вы планируете продажу Офиса?</span>
                 <div class="modal-quiz__grid-row modal-quiz__grid-row--3">
                     <label class="modal-quiz-radio">
@@ -2009,8 +2008,8 @@
                         </div>
                     </label>
                 </div>
-            </div>
-            <div class="modal-quiz__step" data-step_id="444">
+            </form>
+            <form class="modal-quiz__step" data-step_id="444">
                 <span class="modal-quiz__question">Где расположен офис?</span>
                 <div class="landing-first__input modal-quiz__input">
                     <input placeholder="Район" type="text" name="tratata">
@@ -2021,13 +2020,13 @@
                 <div class="landing-first__input modal-quiz__input">
                     <input placeholder="Адрес" type="text" name="tratata">
                 </div>
-            </div>
-            <div class="modal-quiz__step" data-step_id="555">
+            </form>
+            <form class="modal-quiz__step" data-step_id="555">
                 <span class="modal-quiz__question">Площадь вашего офиса?</span>
                 <div class="landing-first__input modal-quiz__input">
                     <input placeholder="Площадь в м²" type="number" name="p">
                 </div>
-            </div>
+            </form>
         </div>
         <div class="modal-quiz__buttons">
             <button class="modal-quiz-btn" @click="modalQuiz.getStep.apply(modalQuiz)">

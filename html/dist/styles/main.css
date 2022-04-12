@@ -9942,7 +9942,8 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   transition: fill 0.3s ease;
 }
 
-.property-item__action:hover .fill {
+.property-item__action:hover .fill,
+.property-item__action.isActive .fill {
   fill: #FFBC19;
 }
 

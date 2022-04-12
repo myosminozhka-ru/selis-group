@@ -234,7 +234,8 @@
                 margin-right: 10px;
             }
         }
-        &:hover {
+        &:hover,
+        &.isActive {
             .fill {
                 fill: #FFBC19;
             }

@@ -2906,18 +2906,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
-/* harmony import */ var nativejs_select__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! nativejs-select */ "./node_modules/nativejs-select/build/nativejs-select.min.js");
-/* harmony import */ var nativejs_select__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(nativejs_select__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _glidejs_glide__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @glidejs/glide */ "./node_modules/@glidejs/glide/dist/glide.esm.js");
+/* harmony import */ var nativejs_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! nativejs-select */ "./node_modules/nativejs-select/build/nativejs-select.min.js");
+/* harmony import */ var nativejs_select__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(nativejs_select__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default()(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3___default()(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 
 
@@ -2951,7 +2954,10 @@ function setCookie(name, value) {
   document.cookie = updatedCookie;
 }
 
-var itemsArray = [];
+var itemsArray = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_2___default()(JSON.parse(getCookie('osm'))); // console.log(JSON.parse(getCookie('osm')), document.cookie);
+
+
+console.log(itemsArray);
 /**
 * Программный код для элементов каталога
 @class PropertyItem
@@ -2988,7 +2994,7 @@ var PropertyItem = /*#__PURE__*/function () {
     key: "initSelectStyler",
     value: function initSelectStyler() {
       if (!document.querySelector('.property-item__price-in')) return;
-      new nativejs_select__WEBPACK_IMPORTED_MODULE_4___default.a({
+      new nativejs_select__WEBPACK_IMPORTED_MODULE_5___default.a({
         selector: '.property-item__price-in select',
         disableMobile: true
       });
@@ -3022,7 +3028,7 @@ var PropertyItem = /*#__PURE__*/function () {
     value: function initSlider() {
       if (document.querySelector('.property-item__slider-glide')) {
         document.querySelectorAll('.property-item__slider-glide').forEach(function (item) {
-          new _glidejs_glide__WEBPACK_IMPORTED_MODULE_3__["default"](item, {
+          new _glidejs_glide__WEBPACK_IMPORTED_MODULE_4__["default"](item, {
             perView: 1,
             type: 'slider',
             gap: 0,
@@ -3039,6 +3045,7 @@ var PropertyItem = /*#__PURE__*/function () {
 
       if (itemsArray.indexOf(event.target.dataset.property_id) === -1) {
         itemsArray.push(event.target.dataset.property_id);
+        console.log(itemsArray);
         event.target.classList.add('isActive');
         document.querySelector('.header__favorites').classList.add('hasItems');
         document.querySelector('.header__favorites .value').innerHTML = +document.querySelector('.header__favorites .value').innerHTML + 1;
@@ -3047,6 +3054,7 @@ var PropertyItem = /*#__PURE__*/function () {
         itemsArray = itemsArray.filter(function (item) {
           return item !== event.target.dataset.property_id;
         });
+        console.log(itemsArray);
 
         if (itemsArray.length > 0) {
           document.querySelector('.header__favorites .value').innerHTML = +document.querySelector('.header__favorites .value').innerHTML - 1;
@@ -3056,6 +3064,7 @@ var PropertyItem = /*#__PURE__*/function () {
         }
       }
 
+      console.log(itemsArray);
       setCookie('osm', JSON.stringify(itemsArray));
     }
     /** 

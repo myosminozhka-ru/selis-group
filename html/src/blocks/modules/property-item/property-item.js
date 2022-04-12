@@ -33,8 +33,9 @@ function setCookie(name, value, options = {}) {
     document.cookie = updatedCookie;
 }
 
-let itemsArray = [];
-
+let itemsArray = [...JSON.parse(getCookie('osm'))];
+// console.log(JSON.parse(getCookie('osm')), document.cookie);
+console.log(itemsArray)
 /**
 * Программный код для элементов каталога
 @class PropertyItem
@@ -109,9 +110,11 @@ const PropertyItem = class PropertyItem {
     toggleToFavorites(event) {
         if (!event.target.dataset.property_id) return;
         event.preventDefault();
+        
         if (itemsArray.indexOf(event.target.dataset.property_id) === -1) {
 
             itemsArray.push(event.target.dataset.property_id);
+            console.log(itemsArray)
             event.target.classList.add('isActive');
             document.querySelector('.header__favorites').classList.add('hasItems');
             document.querySelector('.header__favorites .value').innerHTML = +document.querySelector('.header__favorites .value').innerHTML + 1;
@@ -120,6 +123,7 @@ const PropertyItem = class PropertyItem {
 
             event.target.classList.remove('isActive');
             itemsArray = itemsArray.filter(item => item !== event.target.dataset.property_id);
+            console.log(itemsArray)
             if (itemsArray.length > 0) {
                 document.querySelector('.header__favorites .value').innerHTML = +document.querySelector('.header__favorites .value').innerHTML -1;
             } else {
@@ -128,6 +132,7 @@ const PropertyItem = class PropertyItem {
             }
             
         }
+        console.log(itemsArray)
         setCookie('osm', JSON.stringify(itemsArray));
     }
     /** 

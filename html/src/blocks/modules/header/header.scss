@@ -887,10 +887,11 @@
         }
     }
     &__favorites {
-        width: vw(30);
+        width: vw(20);
         position: relative;
         z-index: 1;
         margin-right: vw(20);
+        // display: none;
         @media all and (max-width: 1023px) {
             margin-right: 20px;
             width: 20px;
@@ -934,6 +935,7 @@
             }
         }
         &.hasItems {
+            display: block;
             .icon {
                 font-size: 0;
                 svg {

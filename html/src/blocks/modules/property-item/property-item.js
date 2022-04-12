@@ -33,7 +33,7 @@ function setCookie(name, value, options = {}) {
     document.cookie = updatedCookie;
 }
 
-let itemsArray = [...JSON.parse(getCookie('osm'))];
+let itemsArray = getCookie('osm') ? [...JSON.parse(getCookie('osm'))] : [];
 // console.log(JSON.parse(getCookie('osm')), document.cookie);
 console.log(itemsArray)
 /**

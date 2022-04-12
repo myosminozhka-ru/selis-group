@@ -2954,8 +2954,7 @@ function setCookie(name, value) {
   document.cookie = updatedCookie;
 }
 
-var itemsArray = _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_2___default()(JSON.parse(getCookie('osm'))); // console.log(JSON.parse(getCookie('osm')), document.cookie);
-
+var itemsArray = getCookie('osm') ? _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_2___default()(JSON.parse(getCookie('osm'))) : []; // console.log(JSON.parse(getCookie('osm')), document.cookie);
 
 console.log(itemsArray);
 /**

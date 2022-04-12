@@ -501,11 +501,17 @@
         text-decoration: none;
         display: block;
         color: #ffffff;
+        @media all and (max-width: 1440px) and (min-width: 1024px) {
+            font-size: vw(22);
+        }
     }
     &__worktime {
         font-size: vw(16);
         line-height: 80%;
         color: #ffffff;
+        @media all and (max-width: 1440px) and (min-width: 1024px) {
+            font-size: vw(14);
+        }
     }
     &__main-menu-opener {
         
@@ -914,12 +920,27 @@
         .icon {
             font-size: 0;
             svg {
-                fill: #fff;
+                fill: transparent;
                 transition: all .3s ease;
+                stroke: #FFBC19;
             }
         }
         &:hover .icon svg {
             fill: #FFBC19;
+        }
+        &:not(.hasItems) {
+            .value {
+                display: none;
+            }
+        }
+        &.hasItems {
+            .icon {
+                font-size: 0;
+                svg {
+                    fill: #fff !important;
+                    stroke: #fff !important;
+                }
+            }
         }
     }
 }

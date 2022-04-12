@@ -8,6 +8,7 @@ export default class ModalQuiz {
     }
 
     init() {
+        if (!document.querySelector('.modal-quiz__steps')) return;
         document.querySelector('.modal-quiz__steps').style.height = `${document.querySelector('.modal-quiz__step.isActive').offsetHeight}px`;
     }
 

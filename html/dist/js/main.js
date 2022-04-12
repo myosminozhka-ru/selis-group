@@ -1711,6 +1711,7 @@ var ModalQuiz = /*#__PURE__*/function () {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ModalQuiz, [{
     key: "init",
     value: function init() {
+      if (!document.querySelector('.modal-quiz__steps')) return;
       document.querySelector('.modal-quiz__steps').style.height = "".concat(document.querySelector('.modal-quiz__step.isActive').offsetHeight, "px");
     }
   }, {

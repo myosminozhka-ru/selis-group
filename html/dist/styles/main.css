@@ -8081,12 +8081,26 @@ body .header__main-mobile-menu-opener.isOpened div:nth-child(3) {
 }
 
 .header__favorites .icon svg {
-  fill: #fff;
+  fill: transparent;
   transition: all 0.3s ease;
+  stroke: #FFBC19;
 }
 
 .header__favorites:hover .icon svg {
   fill: #FFBC19;
+}
+
+.header__favorites:not(.hasItems) .value {
+  display: none;
+}
+
+.header__favorites.hasItems .icon {
+  font-size: 0;
+}
+
+.header__favorites.hasItems .icon svg {
+  fill: #fff !important;
+  stroke: #fff !important;
 }
 
 body.isMounted .header__main-menu-opener:not(.isOpened) div,
@@ -18277,6 +18291,16 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
 @media all and (max-width: 450px) {
   .property-map-content__items-in {
     display: block;
+  }
+}
+
+@media all and (max-width: 1440px) and (min-width: 1024px) {
+  .header__phone {
+    font-size: 1.1458333333vw;
+  }
+
+  .header__worktime {
+    font-size: 0.7291666667vw;
   }
 }
 

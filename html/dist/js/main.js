@@ -639,8 +639,9 @@ var Header = /*#__PURE__*/function () {
         var contacts = document.querySelector('.header__contacts');
         var servicesLeft = services.offsetLeft;
         var contactsLeft = contacts.closest('.header__right').offsetLeft;
-        var contactsWidth = contacts.clientWidth;
-        servicesDropdown.style.width = contactsLeft - servicesLeft + contactsWidth + 'px';
+        console.log('contactsLeft', contactsLeft, servicesLeft);
+        var headerRightWidth = document.querySelector('.header__right').clientWidth;
+        servicesDropdown.style.width = contactsLeft - servicesLeft + headerRightWidth + 'px';
       }
     }
   }, {

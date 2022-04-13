@@ -330,8 +330,9 @@ const Header = class Header {
                 const contacts = document.querySelector('.header__contacts');
                 const servicesLeft = services.offsetLeft;
                 const contactsLeft = contacts.closest('.header__right').offsetLeft;
-                const contactsWidth = contacts.clientWidth;
-                servicesDropdown.style.width = (contactsLeft - servicesLeft) + contactsWidth + 'px';
+                console.log('contactsLeft', contactsLeft, servicesLeft)
+                const headerRightWidth = document.querySelector('.header__right').clientWidth;
+                servicesDropdown.style.width = (contactsLeft - servicesLeft) + headerRightWidth + 'px';
         }
     }
 

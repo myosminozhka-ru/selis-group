@@ -65,7 +65,8 @@
     }
     &__form {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        flex-direction: column;
         margin-bottom: vw(40);
         @media all and (max-width: 1023px) {
             margin-bottom: 20px;
@@ -138,6 +139,14 @@
             }
             button {
                 border-color: #EA0B19;
+            }
+        }
+
+        &-row {
+            display: flex;
+            margin-bottom: vw(40);
+            @media all and (max-width: 1023px) {
+                margin-bottom: 20px;
             }
         }
     }

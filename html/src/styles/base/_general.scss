@@ -150,3 +150,80 @@ img.withLoader {
 .main-page .slider-buttons__button {
     border-width: 2px;
 }
+
+.checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-top: vw(10);
+    cursor: pointer;
+    @media all and (max-width: 1023px) {
+        margin-top: 10px;
+    }
+    input {
+        display: none;
+    }
+    .phantom {
+        width: vw(20);
+        height: vw(20);
+        border: 1px solid #000;
+        margin-right: vw(10);
+        position: relative;
+        display: block;
+        @media all and (max-width: 1023px) {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 50%;
+            right: 50%;
+            bottom: 50%;
+            background: #000;
+            transition: all .3s ease;
+        }
+    }
+    .text {
+        width: calc( 100% - #{vw(30)} );
+        font-weight: 300;
+        font-size: vw(14);
+        line-height: 130%;
+        color: #505050;
+        display: block;
+        @media all and (max-width: 1023px) {
+            width: calc( 100% - 30px );
+            font-size: 14px;
+            margin-left: 10px;
+        }
+    }
+    input:checked + .phantom:after {
+        top: vw(2);
+        left: vw(2);
+        right: vw(2);
+        bottom: vw(2);
+        @media all and (max-width: 1023px) {
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+        }
+    }
+
+    &__link {
+        font-weight: 300;
+        font-size: vw(14);
+        line-height: 160%;
+        color: #2C2C2C;
+        text-decoration: underline;
+        @media all and (max-width: 1023px) {
+            font-size: 10px;
+        }
+        
+        &:hover {
+            font-weight: bold;
+        }
+    }
+}

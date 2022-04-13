@@ -4308,16 +4308,20 @@
                 И получайте первыми информацио о акциях и горячих предложениях!И получайте первыми информацио о акциях и горячих предложениях!И получайте первыми информацио о акциях и горячих предложениях!
             </div>
             <form class="mailing-form__form"> <!-- hasError для добавления стилей ошибки -->
-                <input type="email" placeholder="Ваш e-mail">
-                <button type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
-                        <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#050505" stroke-width="2"/>
-                    </svg>
-                </button>
+                <div class="mailing-form__form-row">
+                    <input type="email" placeholder="Ваш e-mail">
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 22" fill="none">
+                            <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="#050505" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+                <label class="checkbox mailing-form__checkbox">
+                    <input type="checkbox" value="true" name="">
+                    <span class="phantom"></span>
+                    <span class="text">Нажимая на кнопку, вы подтверждаете <a class="checkbox__link" href="#">согласие на обработку персональных данных</a> в соответствии с «Положением об обработке персональных данных».</span>
+                </label>
             </form>
-            <div class="mailing-form__text--secondary">
-                Нажимая на кнопку, вы подтверждаете <a href="#">согласие на обработку персональных данных</a> в соответствии с «Положением об обработке персональных данных».
-            </div>
         </div>
     </div>
 </div>

@@ -3644,6 +3644,75 @@ var PropertyType = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./src/blocks/modules/share/share.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/modules/share/share.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Share; });
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var Share = /*#__PURE__*/function () {
+  function Share() {
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Share);
+
+    this.isShowDropdown = false;
+  }
+
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Share, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      document.addEventListener('click', function (e) {
+        if (!e.composedPath().find(function (item) {
+          var _item$classList;
+
+          return (_item$classList = item.classList) === null || _item$classList === void 0 ? void 0 : _item$classList.contains('share');
+        })) {
+          _this.hiddenDropdown();
+        }
+      });
+    }
+  }, {
+    key: "toggleDropdown",
+    value: function toggleDropdown() {
+      this.isShowDropdown = !this.isShowDropdown;
+    }
+  }, {
+    key: "showDropdown",
+    value: function showDropdown() {
+      this.isShowDropdown = true;
+    }
+  }, {
+    key: "hiddenDropdown",
+    value: function hiddenDropdown() {
+      this.isShowDropdown = false;
+    }
+  }, {
+    key: "copyUrl",
+    value: function copyUrl() {
+      window.navigator.clipboard.writeText(document.location.href);
+      this.isShowDropdown = false;
+    }
+  }]);
+
+  return Share;
+}();
+
+
+
+/***/ }),
+
 /***/ "./src/blocks/modules/unique-offers/unique-offers.js":
 /*!***********************************************************!*\
   !*** ./src/blocks/modules/unique-offers/unique-offers.js ***!
@@ -3831,8 +3900,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modals_modals__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! %modules%/modals/modals */ "./src/blocks/modules/modals/modals.js");
 /* harmony import */ var _modules_modal_quiz_modal_quiz__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! %modules%/modal-quiz/modal-quiz */ "./src/blocks/modules/modal-quiz/modal-quiz.js");
 /* harmony import */ var _modules_inner_first_inner_first__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! %modules%/inner-first/inner-first */ "./src/blocks/modules/inner-first/inner-first.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _modules_share_share__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! %modules%/share/share */ "./src/blocks/modules/share/share.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_24__);
 
 
 
@@ -3857,7 +3927,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-aos__WEBPACK_IMPORTED_MODULE_23___default.a.init({
+
+aos__WEBPACK_IMPORTED_MODULE_24___default.a.init({
   disable: 'mobile'
 });
 window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
@@ -3894,6 +3965,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         modalsOpenerSelector: "data-modal-id",
         openedClass: "isOpened"
       }),
+      share: new _modules_share_share__WEBPACK_IMPORTED_MODULE_23__["default"](),
       sizes: {
         window: {
           width: window.innerWidth,
@@ -3926,6 +3998,7 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     this.mobileFilter.init();
     this.modals.init();
     this.modalQuiz.init();
+    this.share.init();
     window.addEventListener('resize', function () {
       _this.window = {
         width: window.innerWidth,

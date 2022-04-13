@@ -1,7 +1,7 @@
 <div class="modal-quiz" :class="{'modal-quiz--is-visible' : modalQuiz.isShowModal}" @click.self="modalQuiz.hiddenModalQuiz()" data-request-uri="https://api.npoint.io/b791be325d9557b568a6">
     <div class="modal-quiz__content">
-        <img :key="1" src="/img/modal-quiz/1.png" :style="modalQuiz.stepId === 7 ? 'opacity: 1' : 'opacity: 0'" alt="" class="modal-quiz__bg">
-        <img :key="2" src="/img/modal-quiz/2.png" :style="modalQuiz.stepId === 8 ? 'opacity: 1' : 'opacity: 0'" alt="" class="modal-quiz__bg">
+        <img :key="1" src="/img/modal-quiz/1.png" :style="modalQuiz.stepId === 'form' ? 'opacity: 1' : 'opacity: 0'" alt="" class="modal-quiz__bg">
+        <img :key="2" src="/img/modal-quiz/2.png" :style="modalQuiz.stepId === 'final' ? 'opacity: 1' : 'opacity: 0'" alt="" class="modal-quiz__bg">
 
         <button class="modal-quiz__close" @click="modalQuiz.hiddenModalQuiz()">
             <svg class="modal-quiz__close-icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,13 +9,13 @@
                     stroke-linejoin="round" />
             </svg>
         </button>
-        <h3 class="modal-quiz__title">Выберите, что вас интересует?</h3>
+        <h3 class="modal-quiz__title" v-if="modalQuiz.stepId !== 'final'">Выберите, что вас интересует?</h3>
         <div class="modal-quiz__steps">
             <form class="modal-quiz__step isActive" data-step_id="111">
                 <span class="modal-quiz__description">Ответьте на несколько вопросов и узнайте, есть ли прямо сейчас клиенты на покупку или аренду вашей недвижимости</span>
                 <div class="modal-quiz__grid-row modal-quiz__grid-row--3">
                     <label class="modal-quiz-radio">
-                        <input class="modal-quiz-radio__input" type="radio" name="what" value="Продать">
+                        <input class="modal-quiz-radio__input" type="radio" name="what" value="222">
                         <div class="modal-quiz-radio__label">
                             <span class="modal-quiz-radio__text">Продать</span>
                             <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +24,7 @@
                         </div>
                     </label>
                     <label class="modal-quiz-radio">
-                        <input class="modal-quiz-radio__input" type="radio" name="what" value="Сдать">
+                        <input class="modal-quiz-radio__input" type="radio" name="what" value="444">
                         <div class="modal-quiz-radio__label">
                             <span class="modal-quiz-radio__text">Сдать</span>
                             <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@
                         </div>
                     </label>
                     <label class="modal-quiz-radio">
-                        <input class="modal-quiz-radio__input" type="radio" name="what" value="арендовать">
+                        <input class="modal-quiz-radio__input" type="radio" name="what" value="form">
                         <div class="modal-quiz-radio__label">
                             <span class="modal-quiz-radio__text">арендовать</span>
                             <svg class="modal-quiz-radio__icon" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,9 +96,46 @@
                     <input placeholder="Адрес" type="text" name="tratata">
                 </div>
             </form>
+            <form class="modal-quiz__step" data-step_id="form">
+                <div class="modal-quiz__grid-row modal-quiz__grid-row--10">
+                    <div class="modal-quiz__col-3">
+                        <span class="modal-quiz__description modal-quiz__description--big">Оставьте свои контакты для дальнейшей работы</span>
+                        <div class="landing-first__input modal-quiz__input">
+                            <input type="text" placeholder="Ваш имя">
+                        </div>
+                        <div class="landing-first__input modal-quiz__input">
+                            <input type="tel" placeholder="Телефон">
+                        </div>
+
+                        <button class="modal-quiz-btn modal-quiz-btn--yellow modal-quiz-btn--form">
+                            <span class="modal-quiz-btn__text">Оставить заявку</span>
+                        </button>
+
+                        <label class="landing-form__checkbox modal-quiz__checkbox">
+                            <input type="checkbox" value="true" v-model="modalQuiz.seventhCheckbox">
+                            <span class="phantom"></span>
+                            <span class="text">Нажимая на кнопку “Оставить заявку” вы даете согласие на обработку персональных данных.</span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-quiz__step" data-step_id="final">
+                <div class="modal-quiz__grid-row modal-quiz__grid-row--10">
+                    <div class="modal-quiz__col-3">
+                        <h3 class="modal-quiz__title">Отлично!</h3>
+                        <span class="modal-quiz__description modal-quiz__description--big">Ожидайте звонка нашего менеджера!</span>
+                        <a href="#" class="modal-quiz-btn modal-quiz-btn--yellow">
+                            <span class="modal-quiz-btn__text">На главную</span>
+                            <svg class="modal-quiz-btn__icon modal-quiz-btn__icon--20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.00001 1.00002L21 21M21 21L1 21M21 21L20.9999 1" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="modal-quiz__buttons">
-            <button class="modal-quiz-btn" @click="modalQuiz.getStep.apply(modalQuiz)">
+        <div class="modal-quiz__buttons" v-if="modalQuiz.stepId !== 'form' && modalQuiz.stepId !== 'final'">
+            <button class="modal-quiz-btn" @click="modalQuiz.getStep.apply(modalQuiz, ['prev'])">
                 <svg class="modal-quiz-btn__icon" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M30.2843 15.1421L2 15.1421M2 15.1421L16.1421 29.2842M2 15.1421L16.1422 1" stroke="currentColor" stroke-width="2" />
                 </svg>
@@ -106,7 +143,7 @@
                 <span class="modal-quiz-btn__text">Предыдущий вопрос</span>
             </button>
 
-            <button class="modal-quiz-btn" @click="modalQuiz.getStep.apply(modalQuiz)">
+            <button class="modal-quiz-btn" @click="modalQuiz.getStep.apply(modalQuiz, ['next'])">
                 <span class="modal-quiz-btn__text">Следующий вопрос</span>
 
                 <svg class="modal-quiz-btn__icon" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">

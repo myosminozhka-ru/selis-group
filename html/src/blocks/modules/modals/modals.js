@@ -50,6 +50,11 @@ const Modals = class Modals {
         this.addClickListener();
         this.addKeyupListener();
     }
+    fakeSend(event) {
+        if (event.target.closest('.modal')) {
+            event.target.closest('.modal').classList.add('isSended')
+        }
+    }
 }
 
 export default Modals;

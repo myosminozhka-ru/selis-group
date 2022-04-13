@@ -27,7 +27,7 @@
                 <div class="questions-form__input"><input type="text" placeholder="Ваш имя"></div>
                 <div class="questions-form__input"><input type="tel" placeholder="Телефон"></div>
                 <div class="questions-form__button">
-                    <button class="button orange">
+                    <button class="button orange" @click.prevent="modals.fakeSend">
                         <span class="text">Оставить заявку</span>
                     </button>
                 </div>

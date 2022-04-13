@@ -1683,36 +1683,49 @@ var mobileFilter = /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ModalQuiz; });
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var form_serialize__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! form-serialize */ "./node_modules/form-serialize/index.js");
-/* harmony import */ var form_serialize__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(form_serialize__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var form_serialize__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! form-serialize */ "./node_modules/form-serialize/index.js");
+/* harmony import */ var form_serialize__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(form_serialize__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
 
+
+var nextId = null;
+var prevId = null;
+
+var setQuestionHeight = function setQuestionHeight(item) {
+  document.querySelector('.modal-quiz__steps').style.height = "".concat(item.offsetHeight, "px");
+};
 
 var ModalQuiz = /*#__PURE__*/function () {
   function ModalQuiz() {
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, ModalQuiz);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, ModalQuiz);
 
-    this.isShowModal = true;
+    this.isShowModal = false;
     this.questionHeight = 0;
     this.stepId = null;
     this.requestUri = document.querySelector('.modal-quiz') ? document.querySelector('.modal-quiz').dataset.requestUri : null;
+    this.prevId = null;
+    this.history = [];
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ModalQuiz, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ModalQuiz, [{
     key: "init",
     value: function init() {
       if (!document.querySelector('.modal-quiz__steps')) return;
-      this.stepId = document.querySelector('.modal-quiz__step.isActive') ? +document.querySelector('.modal-quiz__step.isActive').dataset.step_id : null;
-      document.querySelector('.modal-quiz__steps').style.height = "".concat(+document.querySelector('.modal-quiz__step.isActive').offsetHeight + 5, "px");
-      console.log('this.stepId', this.stepId);
+      this.stepId = document.querySelector('.modal-quiz__step.isActive') ? document.querySelector('.modal-quiz__step.isActive').dataset.step_id : null;
+      setTimeout(function () {
+        document.querySelector('.modal-quiz__steps').style.height = "".concat(document.querySelector('.modal-quiz__step.isActive').offsetHeight + 5, "px");
+      }, 500);
+      console.log('this.stepId', document.querySelector('.modal-quiz__step.isActive').offsetHeight + 'px');
     }
   }, {
     key: "showModalQuiz",
@@ -1727,30 +1740,75 @@ var ModalQuiz = /*#__PURE__*/function () {
       document.querySelector('body').style.overflow = 'auto';
     }
   }, {
-    key: "setQuestionHeight",
-    value: function setQuestionHeight(item) {
-      console.log(item);
-      this.questionHeight = item.offsetHeight;
-      document.querySelector('.modal-quiz__steps').style.height = "".concat(this.questionHeight, "px");
-    }
-  }, {
     key: "getStep",
-    value: function getStep() {
-      var _this = this;
+    value: function getStep(button) {
+      // console.log(document.querySelector(`[data-step_id="${this.stepId}"]`));
+      // let data = {
+      //     currentStep: this.stepId,
+      //     value: document.querySelector(`[data-step_id="${this.stepId}"]`) ? serialize(document.querySelector(`[data-step_id="${this.stepId}"]`)) : null
+      // }
+      // var form_data = new FormData();
+      // form_data.append("data", JSON.stringify(data) );
+      // if (data.value) {
+      //     axios.post(this.requestUri, form_data).then(response => {
+      //         console.log('response', response, data, form_data);
+      //         document.querySelector(`.modal-quiz__step.isActive:not(.isSlided)`).classList.add(`isSlided`);
+      //         document.querySelector(`[data-step_id="${newStep.data[0].nextId}"]`).classList.add(`isActive`);
+      //         this.setQuestionHeight(document.querySelector(`[data-step_id="${newStep.data[0].nextId}"]`));
+      //     }).catch(error => {
+      //         this.hiddenModalQuiz();
+      //     });
+      // } else {
+      //     alert('Заполните поля');
+      // }
+      console.log(button);
 
-      console.log(document.querySelector("[data-step_id=\"".concat(this.stepId, "\"]")));
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post(this.requestUri, {
-        currentStep: this.stepId,
-        value: form_serialize__WEBPACK_IMPORTED_MODULE_3___default()(document.querySelector("[data-step_id=\"".concat(this.stepId, "\"]")))
-      }).then(function (response) {
-        console.log('response', response);
-        document.querySelector(".modal-quiz__step.isActive:not(.isSlided)").classList.add("isSlided");
-        document.querySelector("[data-step_id=\"".concat(newStep.data[0].nextId, "\"]")).classList.add("isActive");
+      if (button === 'next') {
+        if (this.stepId !== 42) {
+          if (document.querySelector(".modal-quiz__step.isActive:not(.isSlided) input[type=\"radio\"]:checked")) {
+            this.history = [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(this.history), [this.stepId]);
+            this.stepId = document.querySelector(".modal-quiz__step.isActive:not(.isSlided) input[type=\"radio\"]:checked").value; // if (!document.querySelector(`[data-step_id="${this.stepId}"]`)) {
+            //     this.stepId = 43;
+            // } else {
+            // }
 
-        _this.setQuestionHeight(document.querySelector("[data-step_id=\"".concat(newStep.data[0].nextId, "\"]")));
-      })["catch"](function (error) {
-        _this.hiddenModalQuiz();
-      });
+            if (!document.querySelector("[data-step_id=\"".concat(this.stepId, "\"]"))) {
+              this.stepId = 42;
+              console.log('is 42');
+            }
+
+            console.log('forward', _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(this.history), this.stepId);
+            document.querySelector(".modal-quiz__step.isActive:not(.isSlided)").classList.add("isSlided");
+            document.querySelector("[data-step_id=\"".concat(this.stepId, "\"]")).classList.add("isActive");
+          } else {
+            alert('Простите, но Вы должны что то выбрать.');
+          }
+        } else {
+          var title = document.querySelector('.modal-quiz__title');
+          var buttons = document.querySelector('.modal-quiz__buttons');
+          console.log('last screen');
+          document.querySelector(".modal-quiz__step.isActive:not(.isSlided)").classList.add("isSlided");
+          document.querySelector("[data-step_id=\"12341234\"]").classList.add("isActive"); // this.stepId = 12341234;
+
+          title.remove();
+          buttons.remove();
+        }
+      } else {
+        if (this.history.length) {
+          console.log('back', this.stepId, this.history[this.history.length - 1]);
+          document.querySelector("[data-step_id=\"".concat(this.stepId, "\"]")).classList.remove("isActive");
+          document.querySelector("[data-step_id=\"".concat(this.history[this.history.length - 1], "\"]")).classList.remove("isSlided"); // document.querySelector(`[data-step_id="${this.history[this.history.length - 1]}"]`).classList.add('isActive');
+
+          this.stepId = this.history[this.history.length - 1];
+          this.history.pop();
+        } else {
+          alert('Вы еще ничего не выбрали');
+        }
+      }
+
+      setTimeout(function () {
+        document.querySelector('.modal-quiz__steps').style.height = "".concat(document.querySelector('.modal-quiz__step.isActive').offsetHeight + 5, "px");
+      }, 500);
     }
   }]);
 
@@ -1856,6 +1914,13 @@ var Modals = /*#__PURE__*/function () {
       if (!this.modalsSelector && this.modalsOpenerSelector) return;
       this.addClickListener();
       this.addKeyupListener();
+    }
+  }, {
+    key: "fakeSend",
+    value: function fakeSend(event) {
+      if (event.target.closest('.modal')) {
+        event.target.closest('.modal').classList.add('isSended');
+      }
     }
   }]);
 

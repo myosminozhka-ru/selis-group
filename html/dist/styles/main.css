@@ -14353,6 +14353,11 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   padding: 0 2.7604166667vw;
 }
 
+.modal-quiz__grid-row--2 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0 1.0416666667vw;
+}
+
 .modal-quiz__grid-row--3 {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0 1.0416666667vw;
@@ -14360,6 +14365,11 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
 
 .modal-quiz__grid-row--4 {
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0 1.0416666667vw;
+}
+
+.modal-quiz__grid-row--5 {
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 0 1.0416666667vw;
 }
 

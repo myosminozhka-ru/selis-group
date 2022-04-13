@@ -14497,6 +14497,10 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   transition: all 0.5s ease;
 }
 
+.modal-quiz-radio__icon path {
+  stroke: #FFBC19;
+}
+
 .modal-quiz-btn {
   display: inline-flex;
   align-items: center;
@@ -17992,6 +17996,7 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
     align-self: center;
     width: 20px;
     height: 20px;
+    fill: #FFBC19;
   }
 
   .modal-quiz__buttons {

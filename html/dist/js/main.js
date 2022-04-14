@@ -465,6 +465,7 @@ var Header = /*#__PURE__*/function () {
         this.isLangMenuOpened = false;
         this.isMobileMenuOpened = false;
         this.isServicesMenuOpened = false;
+        this.closeModalMenu();
       }
     }
     /**
@@ -486,6 +487,7 @@ var Header = /*#__PURE__*/function () {
         this.isMainMenuOpened = false;
         this.isMobileMenuOpened = false;
         this.isServicesMenuOpened = false;
+        this.closeModalMenu();
       }
     }
     /**
@@ -508,6 +510,7 @@ var Header = /*#__PURE__*/function () {
         this.isMainMenuOpened = false;
         this.isMobileMenuOpened = false;
         this.isLangMenuOpened = false;
+        this.closeModalMenu();
       }
     }
     /**

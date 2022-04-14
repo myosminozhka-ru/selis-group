@@ -411,7 +411,7 @@
         }
     }
     &__lang-dropdown {
-        padding: vw(75) vw(10) vw(20);
+        padding: vw(75) vw(10) vw(9);
     }
     &__services-dropdown {
         padding: vw(124) vw(10) vw(20);
@@ -616,9 +616,9 @@
         box-sizing: border-box;
         position: absolute;
         top: vw(-27);
-        right: vw(-60);
+        right: vw(-25);
         width: calc(100% + #{vw(60)});
-        padding: vw(109) vw(10) vw(20);
+        padding: vw(109) vw(10) vw(20) vw(35);
         transform: translateY(-100%);
         transition: all .3s ease;
         background: rgba(23, 23, 23, 0.5);

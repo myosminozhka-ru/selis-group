@@ -2007,7 +2007,7 @@
                     </div>
                 </div>
             </form>
-            <div class="modal-quiz__step" data-step_id="final">
+            <div class="modal-quiz__step" data-step_id="12341234">
                 <div class="modal-quiz__grid-row modal-quiz__grid-row--10">
                     <div class="modal-quiz__col-3">
                         <h3 class="modal-quiz__title">Отлично!</h3>
@@ -2021,6 +2021,29 @@
                     </div>
                 </div>
             </div>
+            <form class="modal-quiz__step quiz_final_form" data-step_id="43214321">
+                <div class="modal-quiz__grid-row modal-quiz__grid-row--10">
+                    <div class="modal-quiz__col-3">
+                        <span class="modal-quiz__description modal-quiz__description--big">Оставьте свои контакты для дальнейшей работы</span>
+                        <div class="landing-first__input modal-quiz__input">
+                            <input type="text"  placeholder="Ваш имя">
+                        </div>
+                        <div class="landing-first__input modal-quiz__input">
+                            <input type="tel"  placeholder="Телефон">
+                        </div>
+
+                        <button class="modal-quiz-btn modal-quiz-btn--yellow modal-quiz-btn--form">
+                            <span class="modal-quiz-btn__text">Оставить заявку</span>
+                        </button>
+
+                        <label class="landing-form__checkbox modal-quiz__checkbox">
+                            <input type="checkbox" value="true" v-model="modalQuiz.seventhCheckbox">
+                            <span class="phantom"></span>
+                            <span class="text">Нажимая на кнопку “Оставить заявку” вы даете согласие на обработку персональных данных.</span>
+                        </label>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="modal-quiz__buttons" v-if="modalQuiz.stepId !== 'form' && modalQuiz.stepId !== 'final'">
             <button class="modal-quiz-btn" @click="modalQuiz.getStep.apply(modalQuiz, ['prev'])">

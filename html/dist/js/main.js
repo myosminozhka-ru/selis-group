@@ -1706,6 +1706,7 @@ var nextId = null;
 var prevId = null;
 
 var setQuestionHeight = function setQuestionHeight(item) {
+  console.log(item);
   document.querySelector('.modal-quiz__steps').style.height = "".concat(item.offsetHeight, "px");
 };
 
@@ -1719,17 +1720,50 @@ var ModalQuiz = /*#__PURE__*/function () {
     this.requestUri = document.querySelector('.modal-quiz') ? document.querySelector('.modal-quiz').dataset.requestUri : null;
     this.prevId = null;
     this.history = [];
+    this.isFinish = false;
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ModalQuiz, [{
     key: "init",
     value: function init() {
+      var _this = this;
+
       if (!document.querySelector('.modal-quiz__steps')) return;
       this.stepId = document.querySelector('.modal-quiz__step.isActive') ? document.querySelector('.modal-quiz__step.isActive').dataset.step_id : null;
       setTimeout(function () {
         document.querySelector('.modal-quiz__steps').style.height = "".concat(document.querySelector('.modal-quiz__step.isActive').offsetHeight + 5, "px");
-      }, 500);
-      console.log('this.stepId', document.querySelector('.modal-quiz__step.isActive').offsetHeight + 'px');
+      }, 500); // console.log('this.stepId', document.querySelector('.modal-quiz__step.isActive').offsetHeight+'px')
+
+      document.querySelector('.quiz_final_form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!document.querySelectorAll('form.modal-quiz__step')) return; // var form_data = new FormData();
+
+        var form_data = [];
+        document.querySelectorAll('form.modal-quiz__step.isActive').forEach(function (item) {
+          // console.log(serialize(item));
+          form_data.push(form_serialize__WEBPACK_IMPORTED_MODULE_4___default()(item));
+          console.log('form_data', form_data);
+        });
+
+        if (form_data) {
+          var data = new FormData();
+          data.append('data', JSON.stringify(form_data));
+          axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(_this.requestUri, data).then(function (response) {
+            console.log('response', response, data);
+            var title = document.querySelector('.modal-quiz__title');
+            title.remove();
+            setQuestionHeight(document.querySelector("[data-step_id=\"12341234\"]"));
+            document.querySelector(".modal-quiz__step.isActive:not(.isSlided)").classList.add("isSlided");
+            document.querySelector("[data-step_id=\"12341234\"]").classList.add("isActive");
+          })["catch"](function (error) {
+            console.log(error);
+
+            _this.hiddenModalQuiz();
+          });
+        } else {
+          alert('Заполните поля');
+        }
+      });
     }
   }, {
     key: "showModalQuiz",
@@ -1768,7 +1802,7 @@ var ModalQuiz = /*#__PURE__*/function () {
       console.log(button);
 
       if (button === 'next') {
-        if (this.stepId !== 42) {
+        if (this.stepId !== 43214321 && document.querySelector(".modal-quiz__step.isActive:not(.isSlided) input[type=\"radio\"]")) {
           if (document.querySelector(".modal-quiz__step.isActive:not(.isSlided) input[type=\"radio\"]:checked")) {
             this.history = [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(this.history), [this.stepId]);
             this.stepId = document.querySelector(".modal-quiz__step.isActive:not(.isSlided) input[type=\"radio\"]:checked").value; // if (!document.querySelector(`[data-step_id="${this.stepId}"]`)) {
@@ -1777,24 +1811,23 @@ var ModalQuiz = /*#__PURE__*/function () {
             // }
 
             if (!document.querySelector("[data-step_id=\"".concat(this.stepId, "\"]"))) {
-              this.stepId = 42;
-              console.log('is 42');
+              this.stepId = 43214321;
+              console.log('is 43214321');
             }
 
-            console.log('forward', _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(this.history), this.stepId);
             document.querySelector(".modal-quiz__step.isActive:not(.isSlided)").classList.add("isSlided");
             document.querySelector("[data-step_id=\"".concat(this.stepId, "\"]")).classList.add("isActive");
           } else {
             alert('Простите, но Вы должны что то выбрать.');
           }
         } else {
-          var title = document.querySelector('.modal-quiz__title');
+          // const title = document.querySelector('.modal-quiz__title');
           var buttons = document.querySelector('.modal-quiz__buttons');
           console.log('last screen');
           document.querySelector(".modal-quiz__step.isActive:not(.isSlided)").classList.add("isSlided");
-          document.querySelector("[data-step_id=\"12341234\"]").classList.add("isActive"); // this.stepId = 12341234;
+          document.querySelector("[data-step_id=\"43214321\"]").classList.add("isActive"); // this.stepId = 12341234;
+          // title.remove();
 
-          title.remove();
           buttons.remove();
         }
       } else {
@@ -1811,7 +1844,8 @@ var ModalQuiz = /*#__PURE__*/function () {
       }
 
       setTimeout(function () {
-        document.querySelector('.modal-quiz__steps').style.height = "".concat(document.querySelector('.modal-quiz__step.isActive').offsetHeight + 5, "px");
+        console.log("height ".concat(document.querySelector('.modal-quiz__step.isActive').offsetHeight + 5, "px"), document.querySelector('.modal-quiz__step.isActive:not(.isSlided)'));
+        document.querySelector('.modal-quiz__steps').style.height = "".concat(document.querySelector('.modal-quiz__step.isActive:not(.isSlided)').offsetHeight + 5, "px");
       }, 500);
     }
   }]);

@@ -1,3 +1,9 @@
+@media print {
+    @page {
+        margin: 0;
+    }
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background: #ddd;

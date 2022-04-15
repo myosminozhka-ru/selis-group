@@ -1,0 +1,14 @@
+.pdf-logo {
+    display: flex;
+    align-items: center;
+    max-width: pt(150);
+
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+}

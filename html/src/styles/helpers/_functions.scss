@@ -1,7 +1,12 @@
+@use 'sass:math';
+
 @function rem($px) {
     @return ($px / 16) +rem;
 }
 @function vw($target) {
-    $vw-result: $target * 100 / 1920 * 1vw;
+    $vw-result: math.div($target * 100, 1920) * 1vw;
     @return $vw-result;
+}
+@function pt($target) {
+    @return  math.div($target, 1.3281472327365) * 1pt;
 }

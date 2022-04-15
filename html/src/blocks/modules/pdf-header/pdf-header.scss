@@ -1,0 +1,25 @@
+.pdf-header {
+    &__content {
+        display: flex;
+        align-items: center;
+        padding: pt(20) pt(60);
+    }
+
+    &__logo {
+        margin-right: auto;
+    }
+
+    &__link {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: pt(16);
+        line-height: pt(19);
+        color: #000000;
+        margin-right: pt(20);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

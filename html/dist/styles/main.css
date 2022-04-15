@@ -7600,7 +7600,7 @@ img.withLoader {
 }
 
 .header__lang-dropdown {
-  padding: 3.90625vw 0.5208333333vw 1.0416666667vw;
+  padding: 3.90625vw 0.5208333333vw 0.46875vw;
 }
 
 .header__services-dropdown {
@@ -7802,9 +7802,9 @@ body .header__main-mobile-menu-opener.isOpened div:nth-child(3) {
   box-sizing: border-box;
   position: absolute;
   top: -1.40625vw;
-  right: -3.125vw;
-  width: calc(100% + 3.125vw);
-  padding: 5.6770833333vw 0.5208333333vw 1.0416666667vw;
+  right: -1.3020833333vw;
+  width: calc(100% + 2.0833333333vw);
+  padding: 5.6770833333vw 0.5208333333vw 1.0416666667vw 1.8229166667vw;
   transform: translateY(-100%);
   transition: all 0.3s ease;
   background: rgba(23, 23, 23, 0.5);

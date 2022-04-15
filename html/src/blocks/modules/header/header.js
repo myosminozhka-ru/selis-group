@@ -178,6 +178,7 @@ const Header = class Header {
             this.isLangMenuOpened = false;
             this.isMobileMenuOpened = false;
             this.isServicesMenuOpened = false;
+            this.closeModalMenu();
         }
     }
     /**
@@ -196,6 +197,7 @@ const Header = class Header {
             this.isMainMenuOpened = false;
             this.isMobileMenuOpened = false;
             this.isServicesMenuOpened = false;
+            this.closeModalMenu();
         }
     }
     /**
@@ -215,6 +217,7 @@ const Header = class Header {
             this.isMainMenuOpened = false;
             this.isMobileMenuOpened = false;
             this.isLangMenuOpened = false;
+            this.closeModalMenu();
         }
     }
     /**

@@ -21,6 +21,7 @@ import mobileFilter from "%modules%/mobile-filter/mobile-filter";
 import Modals from "%modules%/modals/modals";
 import ModalQuiz from "%modules%/modal-quiz/modal-quiz";
 import Blog from "%modules%/inner-first/inner-first";
+import Share from "%modules%/share/share";
 
 
 import AOS from 'aos';
@@ -62,6 +63,7 @@ window.app = new Vue({
             modalsOpenerSelector: "data-modal-id",
             openedClass: "isOpened"
         }),
+        share: new Share(),
         sizes: {
             window: {
                 width: window.innerWidth,
@@ -91,6 +93,7 @@ window.app = new Vue({
         this.mobileFilter.init();
         this.modals.init();
         this.modalQuiz.init();
+        this.share.init();
         window.addEventListener('resize', () => {
             this.window = {
                 width: window.innerWidth,

@@ -7136,6 +7136,66 @@ img.withLoader {
   border-width: 2px;
 }
 
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0.5208333333vw;
+  cursor: pointer;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox .phantom {
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  border: 1px solid #000;
+  margin-right: 0.5208333333vw;
+  position: relative;
+  display: block;
+}
+
+.checkbox .phantom:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+.checkbox .text {
+  width: calc( 100% - 1.5625vw );
+  font-weight: 300;
+  font-size: 0.7291666667vw;
+  line-height: 130%;
+  color: #505050;
+  display: block;
+}
+
+.checkbox input:checked + .phantom:after {
+  top: 0.1041666667vw;
+  left: 0.1041666667vw;
+  right: 0.1041666667vw;
+  bottom: 0.1041666667vw;
+}
+
+.checkbox__link {
+  font-weight: 300;
+  font-size: 0.7291666667vw;
+  line-height: 160%;
+  color: #2C2C2C;
+  text-decoration: underline;
+}
+
+.checkbox__link:hover {
+  font-weight: bold;
+}
+
 .header {
   position: fixed;
   z-index: 21;
@@ -9569,7 +9629,8 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
 
 .mailing-form__form {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   margin-bottom: 2.0833333333vw;
 }
 
@@ -9637,6 +9698,11 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
 
 .mailing-form__form.hasError button {
   border-color: #EA0B19;
+}
+
+.mailing-form__form-row {
+  display: flex;
+  margin-bottom: 2.0833333333vw;
 }
 
 .main-info {
@@ -14557,6 +14623,84 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   margin-right: 0;
 }
 
+.share {
+  position: relative;
+}
+
+.share__top {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.share__dropdown {
+  position: absolute;
+  top: 300%;
+  left: 0;
+  opacity: 0;
+  visibility: collapse;
+  transition: all 0.5s ease;
+}
+
+.share__dropdown-top {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.5208333333vw;
+}
+
+.share__dropdown--is-open {
+  opacity: 1;
+  visibility: visible;
+  top: calc(100% + 0.78125vw);
+  z-index: 2;
+  background-color: #fff;
+}
+
+.share__link {
+  display: flex;
+  margin-right: 0.2604166667vw;
+  color: #000;
+}
+
+.share__link-icon {
+  transition: all 0.5s ease;
+}
+
+.share__link-icon.icon {
+  margin-right: 0;
+}
+
+.share__link:last-child {
+  margin-right: 0;
+}
+
+.share__link:hover {
+  color: #FFBC19;
+}
+
+.share__copy {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.2604166667vw 0.5208333333vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #505050;
+  transition: all 0.5s ease;
+}
+
+.share__copy-text {
+  font-weight: 300;
+  font-size: 0.6770833333vw;
+  line-height: 130%;
+  display: block;
+}
+
+.share__copy:hover {
+  background-color: #FFBC19;
+}
+
 @media all and (min-width: 800px) {
   .property-item {
     display: flex;
@@ -14935,6 +15079,33 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   .inner-page {
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+
+  .checkbox {
+    margin-top: 10px;
+  }
+
+  .checkbox .phantom {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .checkbox .text {
+    width: calc(100% - 30px);
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .checkbox input:checked + .phantom:after {
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+  }
+
+  .checkbox__link {
+    font-size: 10px;
   }
 
   .header {
@@ -15728,6 +15899,10 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
     width: 60px;
     height: 60px;
     padding: 20px;
+  }
+
+  .mailing-form__form-row {
+    margin-bottom: 20px;
   }
 
   .main-info {
@@ -17906,6 +18081,26 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   .cookies-form__button {
     font-size: 15px;
     padding: 10px;
+  }
+
+  .share__dropdown-top {
+    padding: 10px;
+  }
+
+  .share__dropdown--is-open {
+    top: calc(100% + 15px);
+  }
+
+  .share__link {
+    margin-right: 5px;
+  }
+
+  .share__copy {
+    padding: 5px 10px;
+  }
+
+  .share__copy-text {
+    font-size: 13px;
   }
 }
 

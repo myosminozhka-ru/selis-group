@@ -166,4 +166,11 @@
             color: #313131;
         }
     }
+
+    @media print {
+        @page {
+            margin: 0;
+            size: landscape;
+        }
+    }
 }

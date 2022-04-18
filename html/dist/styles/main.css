@@ -14717,6 +14717,8 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
 }
 
 .pdf-wrapper {
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
   min-height: 100vh;
   -webkit-print-color-adjust: exact;
@@ -14934,6 +14936,215 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   font-size: 12.0468571598pt;
   line-height: 14.3056428773pt;
   color: #000000;
+}
+
+.pdf-object {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.pdf-object__top {
+  padding: 0 45.1757143494pt;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  margin-bottom: 30.1171428996pt;
+}
+
+.pdf-object__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-object__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7.5292857249pt;
+  max-width: 406.5814291443pt;
+}
+
+.pdf-object__country {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11.2939285873pt;
+  line-height: 80%;
+  text-transform: uppercase;
+  color: #050505;
+}
+
+.pdf-object__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 37.6464286245pt;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #050505;
+  margin-bottom: 15.0585714498pt;
+  margin-right: 33.881785762pt;
+}
+
+.pdf-object__characteristic {
+  display: flex;
+  align-items: center;
+}
+
+.pdf-object__characteristic-item {
+  display: flex;
+  align-items: center;
+  margin-right: 22.5878571747pt;
+}
+
+.pdf-object__characteristic-item:last-child {
+  margin-right: 0;
+}
+
+.pdf-object__characteristic-icon {
+  color: #050505;
+  width: 15.0585714498pt;
+  height: 15.0585714498pt;
+  margin-right: 7.5292857249pt;
+}
+
+.pdf-object__characteristic-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10.5410000149pt;
+  line-height: 100%;
+  text-transform: lowercase;
+  color: #050505;
+}
+
+.pdf-object__profitability {
+  display: flex;
+  margin-right: 41.4110714869pt;
+}
+
+.pdf-object__profitability-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11.2939285873pt;
+  line-height: 80%;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.pdf-object__profitability-count {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11.5323810662pt;
+  line-height: 120%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 10.3828850146pt 13.2590721615pt;
+  background-color: #286FE3;
+  border-radius: 2.306468684pt;
+  align-self: flex-start;
+}
+
+.pdf-object__price {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+  color: #050505;
+  font-style: normal;
+  font-weight: 400;
+  align-self: end;
+}
+
+.pdf-object__price-title {
+  font-size: 22.5878571747pt;
+  line-height: 100%;
+  text-transform: lowercase;
+  margin-bottom: 7.5292857249pt;
+}
+
+.pdf-object__price-row {
+  display: flex;
+  align-items: baseline;
+}
+
+.pdf-object__price-value {
+  font-size: 30.1171428996pt;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-right: 9.0351428699pt;
+}
+
+.pdf-object__price-symbol {
+  font-size: 15.0585714498pt;
+  line-height: 80%;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.pdf-object__bottom {
+  position: relative;
+  padding: 22.5878571747pt 45.1757143494pt 0;
+}
+
+.pdf-object__bottom-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70.28%;
+  background-color: #FFBC19;
+}
+
+.pdf-object__bottom-content {
+  padding: 0 22.5878571747pt;
+  margin-bottom: 22.5878571747pt;
+}
+
+.pdf-object__heading {
+  position: relative;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13.5527143048pt;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 15.0585714498pt;
+}
+
+.pdf-object__text {
+  position: relative;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10.5410000149pt;
+  line-height: 140%;
+  color: #313131;
+}
+
+.pdf-object__row-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0 15.0585714498pt;
+}
+
+.pdf-object__item-wrapper-img {
+  position: relative;
+  width: 100%;
+  padding-bottom: 112.71%;
+  overflow: hidden;
+}
+
+.pdf-object__item-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media all and (min-width: 800px) {

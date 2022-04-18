@@ -1,0 +1,211 @@
+.pdf-object {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &__top {
+        padding: 0 pt(60);
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        margin-bottom: pt(40);
+    }
+
+    &__column{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: pt(10);
+        max-width: pt(540);
+    }
+
+    &__country {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: pt(15);
+        line-height: 80%;
+        text-transform: uppercase;
+        color: #050505;
+    }
+
+    &__title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: pt(50);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #050505;
+        margin-bottom: pt(20);
+        margin-right: pt(45);
+    }
+
+    &__characteristic {
+        display: flex;
+        align-items: center;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-right: pt(30);
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &-icon {
+            color: #050505;
+            width: pt(20);
+            height: pt(20);
+            margin-right: pt(10);
+        }
+
+        &-text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: pt(14);
+            line-height: 100%;
+            text-transform: lowercase;
+            color: #050505;
+        }
+    }
+
+    &__profitability {
+        display: flex;
+        margin-right: pt(55);
+
+        &-title {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            font-size: pt(15);
+            line-height: 80%;
+            text-transform: uppercase;
+            color: #000000;
+        }
+
+        &-count {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: pt(15.3167);
+            line-height: 120%;
+            text-align: center;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            padding: pt(13.79) pt(17.61);
+            background-color: #286FE3;
+            border-radius: pt(3.06333);
+            align-self: flex-start;
+        }
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Roboto';
+        color: #050505;
+        font-style: normal;
+        font-weight: 400;
+        align-self: end;
+
+        &-title {
+            font-size: pt(30);
+            line-height: 100%;
+            text-transform: lowercase;
+            margin-bottom: pt(10);
+            
+        }
+
+        &-row {
+            display: flex;
+            align-items: baseline;
+        }
+
+        &-value {
+            font-size: pt(40);
+            line-height: 100%;
+            text-transform: uppercase;
+            margin-right: pt(12);
+        }
+
+        &-symbol {
+            font-size: pt(20);
+            line-height: 80%;
+            text-align: right;
+            text-transform: uppercase;
+        }
+    }
+
+    &__bottom {
+        position: relative;
+        padding: pt(30) pt(60) 0;
+
+        &-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70.28%;
+            background-color: #FFBC19;
+        }
+
+        &-content {
+            padding: 0 pt(30);
+            margin-bottom: pt(30);
+        }
+    }
+
+    &__heading {
+        position: relative;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: pt(18);
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: pt(20);
+    }
+
+    &__text {
+        position: relative;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: pt(14);
+        line-height: 140%;
+        color: #313131;
+    }
+
+    &__row-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0 pt(20);
+    }
+
+    &__item {
+        &-wrapper-img {
+            position: relative;
+            width: 100%;
+            padding-bottom: 112.71%;
+            overflow: hidden;
+        }
+
+        &-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

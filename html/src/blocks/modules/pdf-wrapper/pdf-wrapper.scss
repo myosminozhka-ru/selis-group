@@ -1,4 +1,6 @@
 .pdf-wrapper {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     min-height: 100vh;
     -webkit-print-color-adjust: exact;

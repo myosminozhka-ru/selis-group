@@ -24,6 +24,251 @@
         <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
         <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
         <link rel="stylesheet" href="styles/main.css">
+        <style>
+            @media print {
+                @page {
+                    margin: 0;
+                    size: landscape;
+                }
+            }
+            
+            .pdf-logo {
+                display: flex;
+                align-items: center;
+                max-width: 112.9392858734pt;
+            }
+
+            .pdf-logo__link {
+                display: flex;
+                align-items: center;
+            }
+
+            .pdf-logo__img {
+                max-width: 100%;
+            }
+
+            .pdf-wrapper {
+                display: flex;
+                flex-direction: column;
+                background-color: #fff;
+                min-height: 100vh;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .pdf-header__content {
+                display: flex;
+                align-items: center;
+                padding: 15.0585714498pt 45.1757143494pt;
+            }
+
+            .pdf-header__logo {
+                margin-right: auto;
+            }
+
+            .pdf-header__link {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12.0468571598pt;
+                line-height: 14.3056428773pt;
+                color: #000000;
+                margin-right: 15.0585714498pt;
+            }
+
+            .pdf-header__link:last-child {
+                margin-right: 0;
+            }
+
+            .pdf-main {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .pdf-main__grid-row {
+                display: grid;
+                grid-template-columns: 280.8423575385pt 235.6666431892pt 280.8423575385pt;
+                grid-gap: 0 22.5878571747pt;
+                margin-bottom: 22.5878571747pt;
+            }
+
+            .pdf-main__grid-row:last-child {
+                margin-bottom: 0;
+            }
+
+            .pdf-main__column {
+                min-width: 0;
+            }
+
+            .pdf-main__title {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 13.5527143048pt;
+                line-height: 120%;
+                text-transform: uppercase;
+                color: #000000;
+            }
+
+            .pdf-main__gray-title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 11.2939285873pt 3.7646428624pt;
+                background: #f8f8f8;
+                margin-bottom: 15.0585714498pt;
+            }
+
+            .pdf-main__characteristic {
+                display: grid;
+                grid-template-columns: repeat(2, 87.3397144088pt);
+                grid-gap: 11.2939285873pt 37.6464286245pt;
+                padding-left: 45.1757143494pt;
+                margin-bottom: 15.0585714498pt;
+            }
+
+            .pdf-main__characteristic-item {
+                display: flex;
+                align-items: center;
+            }
+
+            .pdf-main__characteristic-icon {
+                width: 15.0585714498pt;
+                height: 15.0585714498pt;
+                margin-right: 7.5292857249pt;
+                color: #000;
+            }
+
+            .pdf-main__characteristic-text {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10.5410000149pt;
+                line-height: 100%;
+                text-transform: lowercase;
+                color: #000000;
+            }
+
+            .pdf-main__optionally {
+                display: flex;
+                flex-direction: column;
+                padding-left: 45.1757143494pt;
+                max-width: 233.4078574717pt;
+            }
+
+            .pdf-main__optionally-title {
+                margin-bottom: 11.2939285873pt;
+            }
+
+            .pdf-main__optionally-row {
+                overflow: hidden;
+            }
+
+            .pdf-main__optionally-row-hidden {
+                display: flex;
+                flex-wrap: wrap;
+                margin: -3.7646428624pt;
+            }
+
+            .pdf-main__optionally-item {
+                padding: 3.7646428624pt 7.5292857249pt;
+                background-color: #EFEFEF;
+                border-radius: 3.01171429pt;
+                display: flex;
+                align-items: center;
+                margin: 3.7646428624pt;
+            }
+
+            .pdf-main__optionally-icon {
+                width: 11.2939285873pt;
+                height: 11.2939285873pt;
+                color: #000;
+                margin-right: 7.5292857249pt;
+            }
+
+            .pdf-main__optionally-text {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 300;
+                font-size: 9.0351428699pt;
+                line-height: 100%;
+                text-transform: lowercase;
+                color: #050505;
+            }
+
+            .pdf-main__layout,
+            .pdf-main__map {
+                width: 100%;
+            }
+
+            .pdf-main__location {
+                grid-column: span 2;
+                background-color: #FFBC19;
+                padding: 22.5878571747pt 22.5878571747pt 22.5878571747pt 45.1757143494pt;
+            }
+
+            .pdf-main__location-title {
+                margin-bottom: 15.0585714498pt;
+            }
+
+            .pdf-main__location-text {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10.5410000149pt;
+                line-height: 140%;
+                color: #313131;
+            }
+
+            .pdf-main__contacts {
+                display: flex;
+                flex-direction: column;
+                padding-top: 22.5878571747pt;
+            }
+
+            .pdf-main__contacts-title {
+                margin-bottom: 15.0585714498pt;
+            }
+
+            .pdf-main__contacts-item {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10.5410000149pt;
+                line-height: 140%;
+                color: #313131;
+                margin-bottom: 11.2939285873pt;
+            }
+
+            .pdf-main__contacts-item:last-child {
+                margin-bottom: 0;
+            }
+
+            .pdf-main__contacts-link {
+                text-decoration: none;
+                color: #313131;
+            }
+
+            .pdf-footer__content {
+                display: flex;
+                align-items: center;
+                padding: 11.2939285873pt 45.1757143494pt;
+            }
+
+            .pdf-footer__logo {
+                margin-right: auto;
+                margin-left: auto;
+                height: 18.0702857397pt;
+            }
+
+            .pdf-footer__link {
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12.0468571598pt;
+                line-height: 14.3056428773pt;
+                color: #000000;
+            }
+        </style>
     </head>
     <body>
         <div class="wrapper pdf-wrapper" id="app">

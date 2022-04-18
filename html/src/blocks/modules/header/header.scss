@@ -425,11 +425,7 @@
         transform: translateY(-100%);
         transition: all .3s ease;
         // z-index: 9;
-        background: rgba(23, 23, 23, 0.5);
-        @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-            backdrop-filter: blur(#{vw(50)});
-            -webkit-backdrop-filter: blur(#{vw(50)});
-        }
+        background: rgba(23, 23, 23, 1);
         @media all and (max-width: 1023px) {
             left: -10px;
             right: -10px;
@@ -621,11 +617,7 @@
         padding: vw(109) vw(10) vw(20) vw(35);
         transform: translateY(-100%);
         transition: all .3s ease;
-        background: rgba(23, 23, 23, 0.5);
-        @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-            backdrop-filter: blur(#{vw(50)});
-            -webkit-backdrop-filter: blur(#{vw(50)});
-        }
+        background: rgba(23, 23, 23, 1);
         will-change: transform;
         @media all and (max-width: 1023px) {
             display: none;

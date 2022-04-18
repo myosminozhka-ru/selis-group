@@ -196,23 +196,22 @@ window.app = new Vue({
         calculatorResult: {
             get() {
                 // let result = Math.round((this.objectCalculator.price.split(' ').join('') - this.objectCalculator.firstPayment)*(this.objectCalculator.precentage / 12)/(1-(1/(1+(this.objectCalculator.precentage / 12)))*(this.objectCalculator.mortgageTerm * 12))).toLocaleString().replace('-', '');
-                console.clear();
+                // console.clear();
                 let S = this.calculatorPrice - this.calculatorFirstPayment;
-                let r = this.calculatorPercentage / 12
+                let r = this.calculatorPercentage / 100 / 12
                 let n = this.objectCalculator.mortgageTerm * 12;
-                // let result = Math.round((S + (S*this.objectCalculator.percentage/100)) / n);
-                let result = S*r/(1-(1/(1+r))*n);
-                console.log(`
-                    Фомула: S*r/(1-(1/(1+r))*n)
-                    S = ${this.calculatorPrice - this.calculatorFirstPayment} (Цена (${this.calculatorPrice}) - Первый взнос (${this.calculatorFirstPayment}) )
-                    r = ${this.calculatorPercentage / 12} (Процентная ставка (${this.calculatorPercentage} / 12))
-                    n = ${this.objectCalculator.mortgageTerm * 12} (Срок ипотеки (${this.objectCalculator.mortgageTerm}) * 12)
-                    Результат = ${result.toFixed(2).replace('-', '')}
-                `)
-                return result.toFixed(2).replace('-', '');
+                let result = (S * r) / (1 - (1 / Math.pow((1 + r), n)) );
+                // console.log(`
+                //     Фомула: S*r/(1-(1/(1+r))*n)
+                //     S = ${this.calculatorPrice - this.calculatorFirstPayment} (Цена (${this.calculatorPrice}) - Первый взнос (${this.calculatorFirstPayment}) )
+                //     r = ${this.calculatorPercentage / 100 / 12} (Процентная ставка (${this.calculatorPercentage} / 12))
+                //     n = ${this.objectCalculator.mortgageTerm * 12} (Срок ипотеки (${this.objectCalculator.mortgageTerm}) * 12)
+                //     Результат = ${result.toFixed(0)}
+                // `)
+                return result.toFixed(0);
             },
             set(newValue) {
-                console.log(newValue);
+                // console.log(newValue);
             }
         }
     },

@@ -4145,17 +4145,21 @@ window.app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     calculatorResult: {
       get: function get() {
         // let result = Math.round((this.objectCalculator.price.split(' ').join('') - this.objectCalculator.firstPayment)*(this.objectCalculator.precentage / 12)/(1-(1/(1+(this.objectCalculator.precentage / 12)))*(this.objectCalculator.mortgageTerm * 12))).toLocaleString().replace('-', '');
-        console.clear();
+        // console.clear();
         var S = this.calculatorPrice - this.calculatorFirstPayment;
-        var r = this.calculatorPercentage / 12;
-        var n = this.objectCalculator.mortgageTerm * 12; // let result = Math.round((S + (S*this.objectCalculator.percentage/100)) / n);
+        var r = this.calculatorPercentage / 100 / 12;
+        var n = this.objectCalculator.mortgageTerm * 12;
+        var result = S * r / (1 - 1 / Math.pow(1 + r, n)); // console.log(`
+        //     Фомула: S*r/(1-(1/(1+r))*n)
+        //     S = ${this.calculatorPrice - this.calculatorFirstPayment} (Цена (${this.calculatorPrice}) - Первый взнос (${this.calculatorFirstPayment}) )
+        //     r = ${this.calculatorPercentage / 100 / 12} (Процентная ставка (${this.calculatorPercentage} / 12))
+        //     n = ${this.objectCalculator.mortgageTerm * 12} (Срок ипотеки (${this.objectCalculator.mortgageTerm}) * 12)
+        //     Результат = ${result.toFixed(0)}
+        // `)
 
-        var result = S * r / (1 - 1 / (1 + r) * n);
-        console.log("\n                    \u0424\u043E\u043C\u0443\u043B\u0430: S*r/(1-(1/(1+r))*n)\n                    S = ".concat(this.calculatorPrice - this.calculatorFirstPayment, " (\u0426\u0435\u043D\u0430 (").concat(this.calculatorPrice, ") - \u041F\u0435\u0440\u0432\u044B\u0439 \u0432\u0437\u043D\u043E\u0441 (").concat(this.calculatorFirstPayment, ") )\n                    r = ").concat(this.calculatorPercentage / 12, " (\u041F\u0440\u043E\u0446\u0435\u043D\u0442\u043D\u0430\u044F \u0441\u0442\u0430\u0432\u043A\u0430 (").concat(this.calculatorPercentage, " / 12))\n                    n = ").concat(this.objectCalculator.mortgageTerm * 12, " (\u0421\u0440\u043E\u043A \u0438\u043F\u043E\u0442\u0435\u043A\u0438 (").concat(this.objectCalculator.mortgageTerm, ") * 12)\n                    \u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 = ").concat(result.toFixed(2).replace('-', ''), "\n                "));
-        return result.toFixed(2).replace('-', '');
+        return result.toFixed(0);
       },
-      set: function set(newValue) {
-        console.log(newValue);
+      set: function set(newValue) {// console.log(newValue);
       }
     }
   }

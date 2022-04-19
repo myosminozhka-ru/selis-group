@@ -8099,6 +8099,7 @@ body .header__main-mobile-menu-opener.isOpened div:nth-child(3) {
 
 .header__favorites {
   width: 1.0416666667vw;
+  height: 1.0416666667vw;
   position: relative;
   z-index: 1;
   margin-right: 1.0416666667vw;
@@ -15207,6 +15208,7 @@ body.isMounted .header__main-mobile-menu-opener:not(.isOpened) div:last-child {
   .header__favorites {
     margin-right: 20px;
     width: 20px;
+    height: 20px;
   }
 
   .header__favorites .value {

@@ -285,18 +285,22 @@
                 line-height: 140%;
                 color: #313131;
             }
-
             .pdf-object__row-grid {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-gap: 0 15.0585714498pt;
+                font-size: 0;
             }
-
+            .pdf-object__item {
+                width: calc(100% / 4  - 15pt);
+                display: inline-block;
+                vertical-align: top;
+            }
             .pdf-object__item-wrapper-img {
                 position: relative;
                 width: 100%;
                 padding-bottom: 112.71%;
                 overflow: hidden;
+            }
+            .pdf-object__item:not(:last-child) {
+                margin-right: 15.0585714498pt;
             }
 
             .pdf-object__item-img {
@@ -426,22 +430,22 @@
                     <div class="pdf-object__row-grid">
                         <div class="pdf-object__item">
                             <div class="pdf-object__item-wrapper-img">
-                                <img src="https://picsum.photos/600/600?random=1" alt="" class="pdf-object__item-img">
+                                <img src="img/main_first.png" alt="" class="pdf-object__item-img">
                             </div>
                         </div>
                         <div class="pdf-object__item">
                             <div class="pdf-object__item-wrapper-img">
-                                <img src="https://picsum.photos/600/600?random=2" alt="" class="pdf-object__item-img">
+                                <img src="img/main_first.png" alt="" class="pdf-object__item-img">
                             </div>
                         </div>
                         <div class="pdf-object__item">
                             <div class="pdf-object__item-wrapper-img">
-                                <img src="https://picsum.photos/600/600?random=3" alt="" class="pdf-object__item-img">
+                                <img src="img/main_first.png" alt="" class="pdf-object__item-img">
                             </div>
                         </div>
                         <div class="pdf-object__item">
                             <div class="pdf-object__item-wrapper-img">
-                                <img src="https://picsum.photos/600/600?random=4" alt="" class="pdf-object__item-img">
+                                <img src="img/main_first.png" alt="" class="pdf-object__item-img">
                             </div>
                         </div>
                     </div>
@@ -467,7 +471,19 @@
             var opt = {
                 margin: 0,
                 filename: 'myfile.pdf',
-                jsPDF: { format: 'a4', orientation: 'landscape' }
+                jsPDF: { format: 'a4', orientation: 'landscape' },
+                html2canvas: {
+                    onclone: (element) => {
+                        const svgElements = Array.from(element.querySelectorAll('svg'));
+                        svgElements.forEach(s => {
+                            const bBox = s.getBBox();
+                            s.setAttribute("x", bBox.x);
+                            s.setAttribute("y", bBox.y);
+                            s.setAttribute("width", bBox.width);
+                            s.setAttribute("height", bBox.height);
+                        })
+                    }
+                },
             };
             html2pdf().set(opt).from(element).save().then(result => {
                 setTimeout(() => {

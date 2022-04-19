@@ -519,7 +519,19 @@
         var opt = {
             margin: 0,
             filename: 'myfile.pdf',
-            jsPDF: { format: 'a4', orientation: 'landscape' }
+            jsPDF: { format: 'a4', orientation: 'landscape' },
+            html2canvas: {
+                onclone: (element) => {
+                    const svgElements = Array.from(element.querySelectorAll('svg'));
+                    svgElements.forEach(s => {
+                        const bBox = s.getBBox();
+                        s.setAttribute("x", bBox.x);
+                        s.setAttribute("y", bBox.y);
+                        s.setAttribute("width", bBox.width);
+                        s.setAttribute("height", bBox.height);
+                    })
+                }
+            },
         };
         html2pdf().set(opt).from(element).save().then(result => {
             setTimeout(() => {

@@ -512,6 +512,7 @@
             }
             .pdf-object__row-grid {
                 font-size: 0;
+                display: flex;
             }
             .pdf-object__item {
                 width: calc(100% / 4  - 15pt);
@@ -526,6 +527,15 @@
                 position: relative;
                 max-width: 100%;
                 min-width: 100%;
+            }
+            .pdf-object__item-wrapper-img {
+                height: 100%;
+            }
+            .pdf-object__item-wrapper-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
             }
         </style>
     </head>
@@ -645,12 +655,12 @@
                     <div class="pdf-object__row-grid">
                         <div class="pdf-object__item">
                             <div class="pdf-object__item-wrapper-img">
-                                <img src="https://picsum.photos/600/600?random=1" alt="" class="pdf-object__item-img">
+                                <img src="https://picsum.photos/600/500?random=1" alt="" class="pdf-object__item-img">
                             </div>
                         </div>
                         <div class="pdf-object__item">
                             <div class="pdf-object__item-wrapper-img">
-                                <img src="https://picsum.photos/600/600?random=2" alt="" class="pdf-object__item-img">
+                                <img src="https://picsum.photos/600/300?random=2" alt="" class="pdf-object__item-img">
                             </div>
                         </div>
                         <div class="pdf-object__item">
